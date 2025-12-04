@@ -5,12 +5,12 @@ let allLogs = []; // Tüm logları hafızada tutmak için
 function applyFiltersAndRender() {
     const container = document.getElementById('panel-logs-list');
     if (!container) return;
-
+    
     const userFilter = document.getElementById('panel-logs-user-filter').value.toLowerCase();
     const dateFilter = document.getElementById('panel-logs-date-filter').value;
-
+    
     let filteredLogs = allLogs;
-
+    
     // Kullanıcıya göre filtrele (ID veya Tag)
     if (userFilter) {
         filteredLogs = filteredLogs.filter(log =>
@@ -18,7 +18,7 @@ function applyFiltersAndRender() {
             log.userId.includes(userFilter)
         );
     }
-
+    
     // Tarihe göre filtrele
     if (dateFilter) {
         filteredLogs = filteredLogs.filter(log => log.timestamp.startsWith(dateFilter));
@@ -74,17 +74,14 @@ export async function initPanelLogsPage() {
     container.innerHTML = '<p>Panel logları yükleniyor...</p>';
 
     // Filtreleme elemanlarına olay dinleyicileri ekle
-    const userFilterInput = document.getElementById('panel-logs-user-filter');
-    const dateFilterInput = document.getElementById('panel-logs-date-filter');
-    const clearFiltersBtn = document.getElementById('panel-logs-clear-filters');
-
-    userFilterInput.addEventListener('input', applyFiltersAndRender);
-    dateFilterInput.addEventListener('change', applyFiltersAndRender);
-
-    clearFiltersBtn.addEventListener('click', () => {
-        userFilterInput.value = '';
-        dateFilterInput.value = '';
-        applyFiltersAndRender();
+    document.getElementById('panel-logs-user-filter').addEventListener('input', applyFiltersAndRender);
+    document.getElementById('panel-logs-date-filter').addEventListener('change', applyFiltersAndRender);
+    
+    // YENİ: Filtreleri temizleme butonu
+    document.getElementById('panel-logs-clear-filters').addEventListener('click', () => {
+        document.getElementById('panel-logs-user-filter').value = '';
+        document.getElementById('panel-logs-date-filter').value = '';
+        applyFiltersAndRender(); // Filtreleri temizledikten sonra listeyi yeniden render et
     });
 
     try {

@@ -1618,6 +1618,7 @@
             <h2><i class="fa-solid fa-file-lines"></i> Panel İşlem Logları</h2>
             <div class="header-controls">
               <input type="text" id="panel-logs-user-filter" class="setting-input" placeholder="Kullanıcıya göre filtrele...">
+              <!-- YENİ: Tarih filtresi eklendi -->
               <input type="date" id="panel-logs-date-filter" class="setting-input">
               <button id="panel-logs-clear-filters" class="header-action-btn" style="background: var(--bg-quaternary);"><i class="fa-solid fa-xmark"></i> Filtreleri Temizle</button>
             </div>
@@ -1658,6 +1659,21 @@
               <p>Şu anda bu sunucuda çalan bir müzik yok veya bot bir ses kanalında değil.</p>
             </div>
           </div>
+          <!-- YENİ: Şarkı Arama Bölümü -->
+          <div class="plugin-category-header" style="margin-top: 40px;">
+            <i class="fa-solid fa-magnifying-glass"></i> Şarkı Ekle
+          </div>
+          <div class="add-item-container" style="margin-bottom: 20px;">
+            <input type="text" id="music-search-query" class="setting-input" placeholder="Şarkı adı veya YouTube linki...">
+            <button id="music-search-btn" class="header-action-btn">
+              <i class="fa-solid fa-search"></i> Ara
+            </button>
+          </div>
+          <div id="music-search-results-container" class="leaderboard-container" style="display: none;">
+            <!-- Arama sonuçları buraya JS ile eklenecek -->
+          </div>
+          <!-- Arama Bölümü Sonu -->
+
           <div class="plugin-category-header" style="margin-top: 40px;">
             Sıradaki Şarkılar
           </div>

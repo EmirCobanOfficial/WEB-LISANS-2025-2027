@@ -46,6 +46,16 @@ export const api = {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action, volume }), // YENİ: volume'u isteğe ekle
     }),
+    searchMusic: (guildId, query) => fetchJSON(`/api/guild/${guildId}/music/search`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query }),
+    }),
+    playTrack: (guildId, trackUrl) => fetchJSON(`/api/guild/${guildId}/music/play`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ trackUrl }),
+    }),
 
     // POST, PATCH, DELETE istekleri
     saveSettings: (guildId, moduleName, newSettings) => fetchJSON('/api/settings', {

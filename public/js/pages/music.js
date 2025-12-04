@@ -64,6 +64,34 @@ function renderPlayer(data) {
     startProgressUpdater(initialProgressMs, durationMs, data.isPaused);
 }
 
+// YENİ: Arama sonuçlarını render eder
+function renderSearchResults(tracks) {
+    const container = document.getElementById('music-search-results-container');
+    if (!container) return;
+
+    container.style.display = 'block';
+    container.innerHTML = tracks.map(track => `
+        <div class="leaderboard-entry" style="padding: 15px 20px; cursor: pointer;" data-track-url="${track.url}">
+            <img src="${track.thumbnail}" alt="thumbnail" style="width: 60px; height: 60px; border-radius: 8px; margin-right: 15px;">
+            <div class="leaderboard-user" style="flex-grow: 1;">
+                <div class="leaderboard-user-info">
+                    <span class="leaderboard-user-tag">${track.title}</span>
+                    <span class="list-item-description">${track.author}</span>
+                </div>
+            </div>
+            <div class="leaderboard-stats" style="min-width: auto;">
+                <span class="leaderboard-level"><span>Süre</span>${track.duration}</span>
+            </div>
+        </div>
+    `).join('');
+}
+
+function clearSearchResults() {
+    const container = document.getElementById('music-search-results-container');
+    if (container) container.style.display = 'none';
+    if (container) container.innerHTML = '';
+}
+
 function renderQueue(tracks) {
     const container = document.getElementById('music-queue-list');
     if (!container) return;
@@ -134,6 +162,7 @@ async function fetchAndRenderMusicData() {
 
     playerContainer.innerHTML = '<p>Müzik verileri yükleniyor...</p>';
     queueContainer.innerHTML = '';
+    clearSearchResults(); // YENİ: Sayfa yenilendiğinde arama sonuçlarını temizle
 
     // YENİ: Sayfa değiştirildiğinde interval'ı durdurmak için
     if (progressInterval) clearInterval(progressInterval);
@@ -157,13 +186,41 @@ export function initMusicPlayerPage() {
 
     // Olay dinleyicilerini ayarla
     document.getElementById('music-refresh-btn')?.addEventListener('click', fetchAndRenderMusicData);
-    
+
+    // YENİ: Arama butonu için olay dinleyicisi
+    const searchBtn = document.getElementById('music-search-btn');
+    const searchInput = document.getElementById('music-search-query');
+    if (searchBtn && searchInput) {
+        const handleSearch = async () => {
+            const query = searchInput.value.trim();
+            if (!query) return;
+            searchBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Aranıyor...';
+            searchBtn.disabled = true;
+            try {
+                const results = await api.searchMusic(state.selectedGuildId, query);
+                renderSearchResults(results);
+            } catch (error) {
+                showToast(`Arama hatası: ${error.message}`, 'error');
+                clearSearchResults();
+            } finally {
+                searchBtn.innerHTML = '<i class="fa-solid fa-search"></i> Ara';
+                searchBtn.disabled = false;
+            }
+        };
+        searchBtn.addEventListener('click', handleSearch);
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') handleSearch();
+        });
+    }
+
     const playerContainer = document.getElementById('music-player-container');
-    if (!playerContainer) return;
+    const searchResultsContainer = document.getElementById('music-search-results-container');
+    if (!playerContainer || !searchResultsContainer) return;
 
     // YENİ: Olay dinleyicilerinin tekrar tekrar eklenmesini önle
-    if (playerContainer.dataset.listenerAttached) return;
-    playerContainer.dataset.listenerAttached = 'true';
+    const pageElement = document.getElementById('music-player-page');
+    if (pageElement.dataset.listenerAttached) return;
+    pageElement.dataset.listenerAttached = 'true';
 
     playerContainer.addEventListener('click', async (e) => {
         const button = e.target.closest('.music-control-btn');
@@ -207,6 +264,24 @@ export function initMusicPlayerPage() {
                 console.error(`Ses ayarı hatası:`, error);
                 showToast('Ses seviyesi ayarlanamadı.', 'error');
             }
+        }
+    });
+
+    // YENİ: Arama sonuçlarından birine tıklama
+    searchResultsContainer.addEventListener('click', async (e) => {
+        const trackElement = e.target.closest('.leaderboard-entry');
+        if (!trackElement || !trackElement.dataset.trackUrl) return;
+
+        const url = trackElement.dataset.trackUrl;
+        showToast('Şarkı sıraya ekleniyor...', 'info');
+        try {
+            const result = await api.playTrack(state.selectedGuildId, url);
+            showToast(result.message, 'success');
+            searchInput.value = '';
+            clearSearchResults();
+            setTimeout(fetchAndRenderMusicData, 1000); // Sırayı ve çaları güncelle
+        } catch (error) {
+            showToast(`Şarkı eklenemedi: ${error.message}`, 'error');
         }
     });
 }

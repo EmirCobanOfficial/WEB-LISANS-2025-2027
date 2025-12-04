@@ -227,6 +227,12 @@ export function setupPluginPageListeners() {
             ui.renderAutoPunishmentsList(state.guildData.settings.moderation.autoPunishments);
             ui.markUnsavedChanges(deletePunishmentBtn);
         }
+        // YENİ: Bilet konusu ekleme modalını açan buton
+        else if (target.id === 'add-ticket-topic-btn') {
+            // ui.js'deki openTicketTopicModal fonksiyonunu çağırır.
+            // İlk parametre olarak tüm sunucu verisini, ikinci parametre olarak null (yeni konu olduğu için) gönderir.
+            ui.openTicketTopicModal(state.guildData, null);
+        }
 
         // Listeden öğe silme butonu (remove-item-btn)
         const removeBtn = target.closest('.remove-item-btn');
