@@ -263,4 +263,50 @@ export function setupPluginPageListeners() {
     });
 
     pluginsPage.dataset.listenerAttached = 'true'; // Dinleyicinin kurulduğunu işaretle.
+
+    // =================================================================
+    // YENİ: Bilet Konusu Modal Formu Yönetimi
+    // =================================================================
+    const ticketTopicForm = document.getElementById('ticket-topic-form');
+    if (ticketTopicForm) {
+        ticketTopicForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Formun sayfayı yenilemesini engelle
+
+            const topicId = document.getElementById('ticket-topic-id').value;
+            const newTopic = {
+                id: topicId,
+                label: document.getElementById('ticket-topic-label').value,
+                description: document.getElementById('ticket-topic-description').value,
+                emoji: document.getElementById('ticket-topic-emoji').value,
+                categoryId: document.getElementById('ticket-topic-category').value || null,
+                supportRoleId: document.getElementById('ticket-topic-support-role').value || null,
+            };
+
+            if (!newTopic.label) {
+                ui.showToast('Konu başlığı boş bırakılamaz.', 'error');
+                return;
+            }
+
+            const settings = state.guildData.settings.tickets;
+            if (!settings.topics) settings.topics = [];
+
+            const existingIndex = settings.topics.findIndex(t => t.id === topicId);
+
+            if (existingIndex > -1) {
+                // Var olanı güncelle
+                settings.topics[existingIndex] = newTopic;
+            } else {
+                // Yeni ekle
+                settings.topics.push(newTopic);
+            }
+
+            // Arayüzü güncelle ve değişikliği kaydetmeye hazırla
+            ui.renderTicketTopicsList(settings.topics);
+            ui.markUnsavedChanges(ticketTopicForm);
+
+            // Modalı kapat
+            document.getElementById('ticket-topic-modal').style.display = 'none';
+            ui.showToast('Bilet konusu başarıyla kaydedildi. Değişiklikleri uygulamak için ana "Ayarları Kaydet" butonuna tıklayın.', 'info');
+        });
+    }
 }
