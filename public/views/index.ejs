@@ -16,7 +16,7 @@
     <script>
       const CLIENT_ID = "<%= clientId %>";
       const USER_ID = "<%= USER_ID %>";
-      window.isBotOwner = <%= isBotOwner %>;
+      window.isBotOwner = '<%= isBotOwner %>' === 'true';
     </script>
   </head>
   <body>
@@ -209,41 +209,6 @@
                   Ayarları Kaydet<span class="unsaved-indicator"></span>
                 </button>
               </div>
-
-              <!-- YENİ: Kullanıcı Engelleme Kartı (Sadece yetkililer görür) -->
-              <% if (isBotOwner) { %>
-                <div class="plugin-card" id="block-user-card">
-                  <div class="plugin-header" style="cursor: default;">
-                    <i class="fa-solid fa-user-lock"></i>
-                    <h3>Panel Erişimi Engelleme</h3>
-                  </div>
-                  <p class="plugin-description">
-                    Kullanıcı ID'sini girerek web paneline erişimini kalıcı olarak engelleyin veya kaldırın.
-                  </p>
-                  <div class="plugin-settings" style="display: flex; padding-left: 0;">
-                    <div class="add-item-container">
-                      <input
-                        type="text"
-                        id="user-id-to-block"
-                        class="setting-input"
-                        placeholder="Engellenecek Kullanıcı ID'si"
-                      />
-                      <button
-                        id="block-user-btn"
-                        type="button"
-                        class="add-btn danger"
-                      >
-                        <i class="fa-solid fa-ban"></i> Engelle
-                      </button>
-                    </div>
-                    <hr class="separator" />
-                    <label>Mevcut Engellenen Kullanıcılar</label>
-                    <div id="blocked-users-list" class="item-list-container">
-                      <!-- Engellenen kullanıcılar buraya JS ile eklenecek -->
-                    </div>
-                  </div>
-                </div>
-              <% } %>
   
               <div class="plugin-card" data-module="antiSpam">
                 <div class="plugin-header">
@@ -570,6 +535,40 @@
                 </div>
                 <button class="save-button" data-action="save-plugin">Ayarları Kaydet<span class="unsaved-indicator"></span></button>
               </div>
+
+              <!-- YENİ: Yasaklı Kullanıcılar Kartı (Sadece Bot Sahibi) -->
+              <% if (isBotOwner === 'true') { %>
+                <div class="plugin-card" data-module="blockedUsers">
+                  <div class="plugin-header">
+                    <i class="fa-solid fa-user-lock"></i>
+                    <h3>Yasaklı Kullanıcılar</h3>
+                    <i class="fa-solid fa-chevron-down collapse-icon"></i>
+                  </div>
+                  <p class="plugin-description">
+                    Belirtilen kullanıcıların web paneline giriş yapmasını engelleyin. Bu özellik sadece bot sahibi tarafından yönetilebilir.
+                  </p>
+                  <div class="plugin-settings" style="display: flex;">
+                    <label>Kullanıcı ID'si ile Engelle</label>
+                    <p class="setting-description">
+                      Engellemek istediğiniz kullanıcının Discord ID'sini girin.
+                    </p>
+                    <div class="add-item-container">
+                      <input type="text" id="user-id-to-block" class="setting-input" placeholder="Kullanıcı ID'si...">
+                      <button id="block-user-btn" type="button" class="add-btn">Engelle</button>
+                    </div>
+                    <hr class="separator" />
+                    <label>Engellenmiş Kullanıcılar</label>
+                    <p class="setting-description">
+                      Aşağıdaki kullanıcılar panele giriş yapamaz.
+                    </p>
+                    <div id="blocked-users-list" class="item-list-container">
+                      <!-- Engellenen kullanıcılar buraya JS ile render edilecek -->
+                    </div>
+                  </div>
+                  <!-- Bu kartın kaydetme butonu yoktur, işlemler anlıktır -->
+                </div>
+              <% } %>
+              <!-- YENİ KART SONU -->
 
             </div>
           </div>

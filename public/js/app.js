@@ -221,11 +221,6 @@ async function updatePluginCardsUI() {
         ui.renderAutoModIgnoredRoles(roles, settings.autoModeration.ignoredRoles);
     }
 
-    // YENİ: Engellenen kullanıcılar listesini render et
-    if (window.isBotOwner) {
-        const blockedUsers = await api.getBlockedUsers();
-        renderBlockedUsersList(blockedUsers);
-    }
     // Bilet sistemi gibi daha karmaşık listeler için de buraya ekleme yapılabilir.
 }
 
@@ -588,7 +583,7 @@ export async function saveSettings(button) {
  * @param {string[]} userIds Engellenen kullanıcı ID'lerinin dizisi.
  */
 function renderBlockedUsersList(userIds) {
-    const listContainer = document.getElementById('blocked-users-list');
+    const listContainer = document.getElementById('blocked-users-list'); // Bu ID'nin yeni kartta olduğundan emin olun
     if (!listContainer) return;
 
     listContainer.innerHTML = '';
@@ -599,7 +594,7 @@ function renderBlockedUsersList(userIds) {
 
     userIds.forEach(userId => {
         const item = document.createElement('div');
-        item.className = 'protected-item';
+        item.className = 'list-item'; // Daha genel bir sınıf adı kullanıldı
         item.innerHTML = `
             <span>${userId}</span>
             <button type="button" class="remove-item-btn unblock-user-btn" data-id="${userId}" title="Engeli Kaldır">
@@ -633,6 +628,12 @@ async function init() {
         ui.elements.mainContent.style.display = 'block';
         ui.elements.modal.style.display = 'none'; // EKRANI GİZLEMEK İÇİN EKLENEN SATIR
         await loadGuildData(lastGuildId); // Sunucu verilerinin yüklenmesini bekle
+
+        // YENİ: Sayfa yüklendikten sonra engellenen kullanıcılar listesini de yükle
+        if (window.isBotOwner) {
+            const blockedUsers = await api.getBlockedUsers();
+            renderBlockedUsersList(blockedUsers);
+        }
     } else {
         await showServerSelector();
     }

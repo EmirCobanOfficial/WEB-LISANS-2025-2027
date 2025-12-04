@@ -45,8 +45,7 @@ export async function initAuthorizedUsersPage() {
 
     try {
         // API'den kullanıcı listesini çekmek için yeni bir endpoint çağıracağız.
-        // Bu endpoint'i guild.js içinde oluşturacağız.
-        const users = await api.getAuthorizedUsers(state.selectedGuildId); // GuildId burada formalite, global bir veri çekiyoruz.
+        const users = await api.getAuthorizedUsers(); // DÜZELTME: Bu global bir veri olduğu için guildId göndermeye gerek yok.
         displayAuthorizedUsers(users);
     } catch (error) {
         // YENİ: Yetki hatası geldiğinde modern bir uyarı göster
