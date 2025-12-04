@@ -1,1 +1,117 @@
-const a0_0x2dd263=a0_0x5e00;(function(_0x168f2e,_0x3488eb){const _0x3bd9b4=a0_0x5e00,_0x3a219a=_0x168f2e();while(!![]){try{const _0x3dd23c=-parseInt(_0x3bd9b4(0x169))/(-0x2657+0x5e0*-0x1+0x2c38)+parseInt(_0x3bd9b4(0x17b))/(-0x3*0x61d+-0x2500+0x3759*0x1)*(parseInt(_0x3bd9b4(0x135))/(0x1*0xbf5+0xc21+-0x1813))+parseInt(_0x3bd9b4(0x165))/(0x159+-0x14db+0x1386)+-parseInt(_0x3bd9b4(0x11b))/(-0xb8d*0x3+-0x169d+0x3949)+parseInt(_0x3bd9b4(0x19d))/(0x2241+-0x1e81+-0x3ba)*(-parseInt(_0x3bd9b4(0x18a))/(-0x1134+-0x5c*-0x8+0x20d*0x7))+-parseInt(_0x3bd9b4(0xdc))/(-0x270a+0x1*-0x10d+0x281f)*(-parseInt(_0x3bd9b4(0x12a))/(0x1*-0xa27+-0x1*0x33f+0xd6f))+parseInt(_0x3bd9b4(0x155))/(0x2f9*0xb+-0x20f2+0x49);if(_0x3dd23c===_0x3488eb)break;else _0x3a219a['push'](_0x3a219a['shift']());}catch(_0x126f65){_0x3a219a['push'](_0x3a219a['shift']());}}}(a0_0x28bb,0x19b684+0x7efd0+0x1*-0x141bb3));const fs=require('fs'),readline=require(a0_0x2dd263(0x137)),{exec}=require(a0_0x2dd263(0x138)+a0_0x2dd263(0x17f)),a0_0x5cd92c={};a0_0x5cd92c[a0_0x2dd263(0x126)]=process[a0_0x2dd263(0x144)],a0_0x5cd92c[a0_0x2dd263(0x18c)]=process[a0_0x2dd263(0x12e)];const rl=readline[a0_0x2dd263(0x167)+a0_0x2dd263(0x16a)](a0_0x5cd92c);console['log'](a0_0x2dd263(0x112)+'=========='+a0_0x2dd263(0x112)+a0_0x2dd263(0x112)+a0_0x2dd263(0x112)+a0_0x2dd263(0x178)),console[a0_0x2dd263(0x1a0)](a0_0x2dd263(0x114)+'lli\x20Discor'+a0_0x2dd263(0x195)+a0_0x2dd263(0x19b)+'azına\x20Hoş\x20'+a0_0x2dd263(0x11c)),console[a0_0x2dd263(0x1a0)](a0_0x2dd263(0x112)+'=========='+'=========='+a0_0x2dd263(0x112)+'=========='+a0_0x2dd263(0x178)),console[a0_0x2dd263(0x1a0)](a0_0x2dd263(0xf4)+'ğıdaki\x20bil'+a0_0x2dd263(0xf5)+a0_0x2dd263(0x154)+a0_0x2dd263(0x100));function a0_0x5e00(_0xea1b2b,_0x277934){const _0x4f9ee7=a0_0x28bb();return a0_0x5e00=function(_0x3ad2a7,_0x57c0de){_0x3ad2a7=_0x3ad2a7-(-0x6b9+-0x1*-0x1ed7+-0x2*0xba2);let _0x4d3c77=_0x4f9ee7[_0x3ad2a7];if(a0_0x5e00['iCkYRh']===undefined){var _0x19ec55=function(_0x4d6726){const _0x352e5c='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x7418d2='',_0x78f07a='';for(let _0x505e58=-0x18b+-0x513+-0xf2*-0x7,_0x2d8c9c,_0x526490,_0x3850c7=0x3*-0x6df+0x1dd4+0x1*-0x937;_0x526490=_0x4d6726['charAt'](_0x3850c7++);~_0x526490&&(_0x2d8c9c=_0x505e58%(0x1*-0x213b+-0xd*-0x28+0x1f37)?_0x2d8c9c*(0x1*0x2079+-0x8d*0x35+-0x308*0x1)+_0x526490:_0x526490,_0x505e58++%(0xf9*-0x14+0x14ab+-0x133))?_0x7418d2+=String['fromCharCode'](0x1391+0x6c9+-0x195b*0x1&_0x2d8c9c>>(-(-0x927+0x1*-0x3ad+0x35*0x3e)*_0x505e58&-0x3*0xa2d+-0x1149+0x4e*0x9d)):-0x686+-0x893*-0x1+-0x20d){_0x526490=_0x352e5c['indexOf'](_0x526490);}for(let _0x3ad7a7=-0x2c*-0x7b+0x1*-0x20cf+0xbab,_0x3ac64a=_0x7418d2['length'];_0x3ad7a7<_0x3ac64a;_0x3ad7a7++){_0x78f07a+='%'+('00'+_0x7418d2['charCodeAt'](_0x3ad7a7)['toString'](0x1eb9+0x1*-0x78d+-0x171c))['slice'](-(-0xf2f+0x3*-0xce1+-0x109*-0x34));}return decodeURIComponent(_0x78f07a);};a0_0x5e00['SvrIua']=_0x19ec55,_0xea1b2b=arguments,a0_0x5e00['iCkYRh']=!![];}const _0x1e399a=_0x4f9ee7[-0x1*0x24f1+-0x3*-0x6c6+-0x25*-0x73],_0x5b4519=_0x3ad2a7+_0x1e399a,_0x4a6a3c=_0xea1b2b[_0x5b4519];return!_0x4a6a3c?(_0x4d3c77=a0_0x5e00['SvrIua'](_0x4d3c77),_0xea1b2b[_0x5b4519]=_0x4d3c77):_0x4d3c77=_0x4a6a3c,_0x4d3c77;},a0_0x5e00(_0xea1b2b,_0x277934);}const a0_0xd262bc={};a0_0xd262bc[a0_0x2dd263(0x15d)]='BOT_TOKEN',a0_0xd262bc['prompt']=a0_0x2dd263(0x18f)+a0_0x2dd263(0xed)+a0_0x2dd263(0x1a3);const a0_0x2669e0={};a0_0x2669e0[a0_0x2dd263(0x15d)]='CLIENT_ID',a0_0x2669e0[a0_0x2dd263(0xea)]=a0_0x2dd263(0x120)+a0_0x2dd263(0x141)+'t\x20ID\x27niz:\x20';const a0_0x4a4a77={};a0_0x4a4a77[a0_0x2dd263(0x15d)]='CLIENT_SEC'+a0_0x2dd263(0x164),a0_0x4a4a77[a0_0x2dd263(0xea)]=a0_0x2dd263(0xf8)+a0_0x2dd263(0x141)+a0_0x2dd263(0x124)+'nız:\x20';const a0_0x2f8ead={};a0_0x2f8ead['key']=a0_0x2dd263(0x14f),a0_0x2f8ead['prompt']='4.\x20Web\x20Pan'+a0_0x2dd263(0xe1)+a0_0x2dd263(0x149)+'p://SUNUCU'+a0_0x2dd263(0xde)+'\x20';const a0_0x546515={};a0_0x546515[a0_0x2dd263(0x15d)]=a0_0x2dd263(0x129)+'Y',a0_0x546515['prompt']=a0_0x2dd263(0x11e)+a0_0x2dd263(0x11f)+a0_0x2dd263(0x123)+'ınız:\x20';const questions=[a0_0xd262bc,a0_0x2669e0,a0_0x4a4a77,a0_0x2f8ead,a0_0x546515],answers={};function askQuestion(_0x3cf1e5){const _0x4e400e=a0_0x2dd263,_0x5610b5={'WIapt':_0x4e400e(0x103)+'\x20boş\x20bırak'+_0x4e400e(0x160)+_0x4e400e(0x146)+_0x4e400e(0x130)+'\x0a','dKkIs':function(_0x128f5a,_0x5c9f1e){return _0x128f5a(_0x5c9f1e);},'KAJwM':function(_0x267f44,_0x2ffae7){return _0x267f44+_0x2ffae7;},'jVhEF':function(_0xbc8641,_0x347e2f){return _0xbc8641===_0x347e2f;},'lLEnV':_0x4e400e(0x199),'BQOkg':'wFvqJ','vfeaN':function(_0x187e34,_0x247daf){return _0x187e34(_0x247daf);},'tQdSb':_0x4e400e(0x101),'lNEGk':function(_0x2dc018){return _0x2dc018();}};if(_0x3cf1e5>=questions[_0x4e400e(0x1a5)]){if(_0x4e400e(0x101)!==_0x5610b5[_0x4e400e(0x145)])_0x4791ba[_0x4e400e(0x1a0)](_0x5610b5[_0x4e400e(0xfa)]),_0x5610b5[_0x4e400e(0x14a)](_0x37f85b,_0x1fe1bc);else{_0x5610b5[_0x4e400e(0x13f)](createEnvFile);return;}}const {key:_0xc718dc,prompt:_0x5d1745}=questions[_0x3cf1e5];rl[_0x4e400e(0x174)](_0x5d1745,_0xcae121=>{const _0x1228ab=_0x4e400e;_0x5610b5[_0x1228ab(0x156)](_0x1228ab(0x199),_0x5610b5[_0x1228ab(0x162)])?!_0xcae121[_0x1228ab(0x177)]()?(console[_0x1228ab(0x1a0)](_0x5610b5[_0x1228ab(0xfa)]),askQuestion(_0x3cf1e5)):_0x5610b5[_0x1228ab(0x156)]('LlrXa',_0x5610b5[_0x1228ab(0x159)])?!_0x322b29[_0x1228ab(0x177)]()?(_0x307b18[_0x1228ab(0x1a0)](_0x5610b5[_0x1228ab(0xfa)]),_0x5610b5[_0x1228ab(0x14a)](_0x5bf65a,_0x14380b)):(_0x4687d2[_0x3137df]=_0x17f227[_0x1228ab(0x177)](),_0x5610b5['dKkIs'](_0x48e99a,_0x5610b5[_0x1228ab(0x19a)](_0x58c34e,-0x2367+0x92e+-0x8be*-0x3))):(answers[_0xc718dc]=_0xcae121['trim'](),_0x5610b5[_0x1228ab(0x192)](askQuestion,_0x3cf1e5+(0x2*-0x871+-0x1641*-0x1+-0x55e))):_0x5cdd67['warn'](_0x1228ab(0x12c)+'\x20'+_0x4adfb6);});}function createEnvFile(){const _0x4e0fde=a0_0x2dd263,_0x59f10d={'sgFHx':'\x0a✅\x20Bilgile'+_0x4e0fde(0x113)+_0x4e0fde(0xfe)+_0x4e0fde(0x153)+_0x4e0fde(0x118),'DaIRk':_0x4e0fde(0x13a)+'yası\x20başar'+'ıyla\x20oluşt'+_0x4e0fde(0x181),'krnZl':function(_0x26a493){return _0x26a493();}};rl['close'](),console['log'](_0x59f10d[_0x4e0fde(0x163)]);const _0x5c0954='\x0a#\x20Discord'+_0x4e0fde(0x161)+_0x4e0fde(0x111)+_0x4e0fde(0xec)+answers[_0x4e0fde(0x13e)]+(_0x4e0fde(0x173)+'=')+answers['CLIENT_ID']+(_0x4e0fde(0x168)+_0x4e0fde(0x139))+answers['CLIENT_SEC'+_0x4e0fde(0x164)]+('\x0a\x0a#\x20Web\x20Pa'+_0x4e0fde(0x191)+'rı\x0aAPP_URL'+'=')+answers['APP_URL']+('\x0aPORT=3000'+_0x4e0fde(0xe7)+_0x4e0fde(0x176)+'\x0aLICENSE_K'+_0x4e0fde(0xe5))+answers[_0x4e0fde(0x129)+'Y']+(_0x4e0fde(0x10d)+_0x4e0fde(0x11d)+_0x4e0fde(0xe6)+_0x4e0fde(0x16b)+_0x4e0fde(0x193)+_0x4e0fde(0x152)+_0x4e0fde(0x115)+_0x4e0fde(0x112)+_0x4e0fde(0x112)+'=========='+_0x4e0fde(0x112)+_0x4e0fde(0x136)+_0x4e0fde(0xe3)+_0x4e0fde(0xe0)+_0x4e0fde(0x142)+_0x4e0fde(0x112)+_0x4e0fde(0x112)+'=========='+_0x4e0fde(0x112)+_0x4e0fde(0x105)+_0x4e0fde(0x109)+'\x20kullanıcı'+_0x4e0fde(0x1a1)+'ahibi\x20gibi'+_0x4e0fde(0x13b)+_0x4e0fde(0x171)+_0x4e0fde(0x15f)+_0x4e0fde(0x106)+_0x4e0fde(0x17a)+_0x4e0fde(0x15c)+'lenen\x20kull'+'anıcılar\x20('+_0x4e0fde(0x172)+'şimi\x20engel'+_0x4e0fde(0x132)+_0x4e0fde(0xef)+'\x20ayırın)\x0aB'+_0x4e0fde(0x175)+'RS=\x0a');fs['writeFileS'+'ync'](_0x4e0fde(0x158),_0x5c0954[_0x4e0fde(0x177)]()),console[_0x4e0fde(0x1a0)](_0x59f10d['DaIRk']),_0x59f10d[_0x4e0fde(0x12b)](installDependencies);}function installDependencies(){const _0x9bd7d6=a0_0x2dd263,_0x172a89={};_0x172a89[_0x9bd7d6(0xf6)]=function(_0xe1018a,_0x3d64e8){return _0xe1018a+_0x3d64e8;},_0x172a89[_0x9bd7d6(0x125)]=function(_0x385a9a,_0x206c05){return _0x385a9a===_0x206c05;},_0x172a89['FEdXW']='iOSoY',_0x172a89[_0x9bd7d6(0x1a7)]='CTtfv',_0x172a89[_0x9bd7d6(0xfd)]=function(_0xc3ae35,_0x3ca4b6){return _0xc3ae35!==_0x3ca4b6;},_0x172a89[_0x9bd7d6(0x19e)]=_0x9bd7d6(0x112)+_0x9bd7d6(0x112)+_0x9bd7d6(0x112)+_0x9bd7d6(0x112)+_0x9bd7d6(0x112)+_0x9bd7d6(0x178),_0x172a89[_0x9bd7d6(0xda)]=_0x9bd7d6(0x1a2)+'=========='+'=========='+'=========='+_0x9bd7d6(0x112)+_0x9bd7d6(0x18b),_0x172a89[_0x9bd7d6(0xf7)]=_0x9bd7d6(0x166)+'nun\x20hatası'+_0x9bd7d6(0x1a6)+_0x9bd7d6(0xdd)+_0x9bd7d6(0x197)+_0x9bd7d6(0xe9)+_0x9bd7d6(0x104)+_0x9bd7d6(0x16f)+'İR.',_0x172a89[_0x9bd7d6(0xdf)]=_0x9bd7d6(0xf3)+_0x9bd7d6(0x119)+_0x9bd7d6(0x180)+_0x9bd7d6(0x13c)+'Y\x27\x20eklenti'+_0x9bd7d6(0x131)+'.',_0x172a89[_0x9bd7d6(0x185)]=_0x9bd7d6(0x19f)+'.com\x27a\x20gid'+_0x9bd7d6(0x16e)+_0x9bd7d6(0x108)+'una\x20basara'+_0x9bd7d6(0x12f)+_0x9bd7d6(0x1a4)+'asını\x20indi'+_0x9bd7d6(0xf1),_0x172a89['XHhOT']=_0x9bd7d6(0x121)+_0x9bd7d6(0x13d)+'kies.txt\x27\x20'+'dosyasını,'+_0x9bd7d6(0x133)+_0x9bd7d6(0x17d)+_0x9bd7d6(0xf0)+_0x9bd7d6(0x10a)+_0x9bd7d6(0x10c),_0x172a89[_0x9bd7d6(0x184)]=_0x9bd7d6(0x187)+_0x9bd7d6(0x10e)+_0x9bd7d6(0xfc)+_0x9bd7d6(0x134)+_0x9bd7d6(0x194)+_0x9bd7d6(0x10f),_0x172a89[_0x9bd7d6(0x182)]='----------'+_0x9bd7d6(0xe4)+_0x9bd7d6(0xe4)+_0x9bd7d6(0xe4)+_0x9bd7d6(0xe4)+'----',_0x172a89['vjsyw']='\x0aNormal\x20ba'+_0x9bd7d6(0xdb)+_0x9bd7d6(0x117),_0x172a89[_0x9bd7d6(0x186)]=_0x9bd7d6(0x122)+'rt',_0x172a89['vzsLx']=_0x9bd7d6(0x188)+_0x9bd7d6(0xff)+_0x9bd7d6(0x16d)+_0x9bd7d6(0x14e)+_0x9bd7d6(0x102)+_0x9bd7d6(0x147)+'ilir.',_0x172a89[_0x9bd7d6(0xeb)]=_0x9bd7d6(0x11a);const _0x4ac1b8=_0x172a89;console[_0x9bd7d6(0x1a0)](_0x4ac1b8[_0x9bd7d6(0x14b)]);const _0x58d3cd=exec('npm\x20instal'+_0x9bd7d6(0x15e)+_0x9bd7d6(0x183),(_0x5d18de,_0x32dcf1,_0x2057c1)=>{const _0x40ad81=_0x9bd7d6;if(_0x4ac1b8[_0x40ad81(0x125)](_0x4ac1b8[_0x40ad81(0x17c)],_0x4ac1b8[_0x40ad81(0x1a7)]))_0x4226e5[_0x36e938]=_0x3d4c02[_0x40ad81(0x177)](),_0x3cace4(_0x4ac1b8[_0x40ad81(0xf6)](_0x433aef,0x20d0+-0x1f86+-0x149));else{if(_0x5d18de){console[_0x40ad81(0x116)](_0x40ad81(0x107)+_0x40ad81(0x170)+_0x40ad81(0x140)+'ta\x20oluştu:'+'\x20'+_0x5d18de[_0x40ad81(0x151)]);return;}if(_0x2057c1){if(_0x4ac1b8[_0x40ad81(0xfd)](_0x40ad81(0xe2),_0x40ad81(0xe2))){_0x3c66a9();return;}else console[_0x40ad81(0x14d)](_0x40ad81(0x12c)+'\x20'+_0x2057c1);}console[_0x40ad81(0x1a0)]('\x0a'+_0x32dcf1),console[_0x40ad81(0x1a0)](_0x4ac1b8[_0x40ad81(0x19e)]),console[_0x40ad81(0x1a0)](_0x40ad81(0x190)+_0x40ad81(0x150)+_0x40ad81(0x12d)+_0x40ad81(0x143)),console[_0x40ad81(0x1a0)](_0x4ac1b8[_0x40ad81(0xda)]),console['log'](_0x40ad81(0x157)+'ON\x20ADIM:\x20M'+_0x40ad81(0x198)+_0x40ad81(0xe8)+_0x40ad81(0x196)),console[_0x40ad81(0x1a0)](_0x4ac1b8[_0x40ad81(0x19e)]),console[_0x40ad81(0x1a0)](_0x4ac1b8['DYVqY']),console[_0x40ad81(0x1a0)](_0x40ad81(0x17e)+'ağıdaki\x20ad'+_0x40ad81(0x189)+'eyin:'),console[_0x40ad81(0x1a0)](_0x4ac1b8['XzGhA']),console[_0x40ad81(0x1a0)](_0x4ac1b8[_0x40ad81(0x185)]),console[_0x40ad81(0x1a0)](_0x4ac1b8[_0x40ad81(0xfb)]),console[_0x40ad81(0x1a0)](_0x40ad81(0xee)+_0x40ad81(0x15b)+_0x40ad81(0x18e)+_0x40ad81(0x110)+_0x40ad81(0x16c)+_0x40ad81(0x10b)),console['log'](_0x40ad81(0x19c)+_0x40ad81(0x18d)+_0x40ad81(0x128)+_0x40ad81(0xf2)),console[_0x40ad81(0x1a0)](_0x4ac1b8[_0x40ad81(0x184)]),console['log'](_0x4ac1b8[_0x40ad81(0x182)]),console['log']('\x0aBotu\x20PM2\x20'+_0x40ad81(0x179)+_0x40ad81(0x127)),console['log']('\x20\x20\x20pm2\x20sta'+_0x40ad81(0x15a)+_0x40ad81(0xf9)+'bPanelliBo'+'t\x22'),console[_0x40ad81(0x1a0)](_0x4ac1b8[_0x40ad81(0x148)]),console[_0x40ad81(0x1a0)](_0x4ac1b8[_0x40ad81(0x186)]),console['log'](_0x4ac1b8[_0x40ad81(0x19e)]);}});_0x58d3cd[_0x9bd7d6(0x12e)]['on'](_0x4ac1b8[_0x9bd7d6(0xeb)],_0x21ff26=>{const _0x22f64b=_0x9bd7d6;process[_0x22f64b(0x12e)][_0x22f64b(0x14c)]('.');});}function a0_0x28bb(){const _0x549575=['BgvUz3rO','EIddP2fSXlhfN21HCW','uLbWy2K','sefgz3C','Xz9SyxrTywSGACoN','nJi0otK0neXQrK9uBa','XleGACoNAw4Gww91','x0LqoJmWmdaPoG','whPhAee','Xj5fiejbXj5mssbb','zwWGvvjmj25PEG','Ee9dq1y','icaGicaGXlbtveu','ls0Tls0Tls0Tlq','rvK9','vd1ODhrWoI8Voq','cGOJieXPC2fUCW','quTuXlbwqvnzt04','BgvYAw5PEMKGzq','ChjVBxb0','txjLvK4','s0vopq','iejVDcbuB2TLBG','nc4GjY5LBNyNia','lcb2AxjNW7XSBgu','ACoNAw5KzwTPicC','CMLUlG','B2TPzxmUDhH0','cJeUifrHCMf5Xle','tmo8DgzLBIbHXz9H','z2LSzxjPigrPAW','CMTjuK8','rfLwCvK','mY4GrgLZy29Yza','ls1Uyw1Licjxzq','v0LHChq','weHOt1q','DgfUihnVBNjHia','twvZs3K','lMvUDIbKB3n5yq','AsbWywTLDgXLCG','CMLUlGO','BhHUB2i','BgvTigjPCMf6ia','cUkDJcbcDsbHBgfU','A2XLBwvUAxOGrW','pt09pt09pt0kiW','ECsXCSsXBIKkvfjv','cUkDJcbqywTLDgXL','B3j0jYbIDxrVBG','ieFdVhzLBMLSAxi','zgiNigTSyxpdTNi','Bgv5Aw46','W7XUzsbHDmsXBI4','cKXjq0vou0vFqq','DgfTyw1SywteSwS','AxOU','igfSDmsXBMeGXz91','yxleSqPct1rFve8','pt09pt09pt09pq','CIbHBmsXBMteSs4G','8j+AGcbxzwiGugfUzq','zqOkiYa9pt09pq','zxjYB3i','Aw46','DwX1Ew9YlI4U','y8sXBSsXEMeGj0DL','zgf0yq','mtK1odC3mfniyKXnCa','r2vSzgLUAxOH','ueLFru5eue9jtG','ns4Gu2L6zsb2zq','CMLSzw4GtgLZyq','mI4GrgLZy29Yza','mY4GXlbUzgLYzgK','icaGBNbTihn0yq','BNmGqw5HAhrHCG','DcbtzwnYzxqNXle','CLzOD1O','Aw5WDxq','BwfRigNdP2LUoG','veG9lI9KyI9JBW','teLdru5trv9lrq','mtHNuu53Ee0','A3jUwMW','cLv5yxleSwXHCJO','CSsXEwXHihrHBwe','C3rKB3v0','AYaNy29VA2LLCW','CIbKzw5LEwLUlG','C2LUAsbRDxj1BG','BgvTzwSGACoNAw4','igjVDhvUigrVCW','yM90DsbIyCwFBge','mtHzvwPTBvq','pt09pqOJicaGia','CMvHzgXPBMu','y2HPBgrFChjVyW','q1jfvd0','4PYfic5LBNyGzg9Z','ihLLDgTPihzLCG','DhH0ieXpq0fmta','Xj9PBML6icDJB28','qK9ux1rps0vo','Be5fr2S','A2vUigjPCIbOyq','iejVDcbdBgLLBG','wufstefscImGpq','BwXHBMteSse','C3rKAw4','DffKu2i','DgzLBIb0zwTYyq','EMfTyw4GywXHyG','DMPZExC','icJdLNjUoIbODhq','zeTRsxm','DNPZthG','D3jPDgu','D2fYBG','CI4UlIbcDsbPXz8','qvbqx1vsta','CNvSDw0GyMhfN2e','BwvZC2fNzq','CgKVDMfSAwrHDa','C8sXig9SDCwFDhvY','A2f0BgLJzsbNAq','mtmWntm3nZbMB2zPs3u','ALzOruy','4P2ximowtKvntmsWifm','lMvUDG','qLfpA2C','CNqGyM90lMPZia','zg9ZEwfZXlfUXleG','pqOkiYbfBMDLBa','A2v5','BcaTlxbYB2r1yW','DMLYz8o8BgXLige','XlfSyw1HEI4Gtmo8','iejVDcbbEwfYBa','BeXfBLy','C2DgshG','uKvu','mtiXoduYrMjYC0rM','tCo8EMLRigjVDhu','y3jLyxrLsw50zq','cKnmsuvovf9trq','mtKWmZG2uKP2Avzk','CMzHy2u','ms4YmZiUmtaZlG','ihnHDmsXCSsXigvR','ihNdVgTSzw5PEw8','Aw4GDMuGj0v4Ca','rvjfs01fs1rfra','CIb5W7XRBgvUAxi','BwvRigNdP2LUlca','ugfUzwXLigvYAq','cKnmsuvovf9jra','CxvLC3rPB24','te9ds0vex1vtrq','iejPBgDPBgvYAq','DhjPBq','pt09pq','AwXLigjHXz9Syxq','u1rfrf9vu0vsuW','mtK3nZrTDKnLyLq','rKvKwfC','EwfSyxleSw7eSw4G','cKZdVhrMzw4GyCwF','zxnZ','DcbJB29RAwvZlG','Dxj1Bgr1lG','BwXUDeq','DgLVBG','tvPZBLy','z2r2vKq','CMHWreG','cKj1igfKXlfTXleG','cUkAME+4JYaGr2vYzwTS','XlfTBgfYXleGAxPS','nty3CeHYtePc','pt09pt0','B3v0Chv0','x0npt0Tjrv9qqq','yCoNXlfUihzLigvU','ms4GrgLZy29Yza','4PYfifrLBwvSigT1','BMvSief5yxjSyq','DMzLyu4','mtaXoJGWodaVyq','DgfIAwXPCNnPBG','zcbcB3qGs3vYDq','vsdINzC','vhvIzsddP2vYzxO','W5XAXlbliejpvfuG','vvb5uuq','s0fkD00','BhvTifnPAgLYyG','icaGwu9vvfvcrq','mteWmJi2yvn1A2v0','BvbKDxa','mI4Gww91vhvIzq','Bg9N','BgfYicHcB3qGCW','cJ09pt09pt09pq','j8sXBSsXEJOG','lNr4DcCGzg9ZEq'];a0_0x28bb=function(){return _0x549575;};return a0_0x28bb();}askQuestion(-0x1*-0x2085+0x1629+-0x36ae);
+// c:\Users\emirc\OneDrive\Desktop\web-panelli-lisans\web-panelli-discord-bot\setup.js
+
+const fs = require('fs');
+const readline = require('readline');
+const { exec } = require('child_process');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+console.log("======================================================");
+console.log("🚀 Web Panelli Discord Bot Kurulum Sihirbazına Hoş Geldiniz!");
+console.log("======================================================");
+console.log("Lütfen aşağıdaki bilgileri dikkatlice girin.\n");
+
+const questions = [
+    { key: 'BOT_TOKEN', prompt: '1. Discord Bot Token\'ınız: ' },
+    { key: 'CLIENT_ID', prompt: '2. Discord Bot Client ID\'niz: ' },
+    { key: 'CLIENT_SECRET', prompt: '3. Discord Bot Client Secret\'ınız: ' },
+    { key: 'APP_URL', prompt: '4. Web Panel URL\'niz (Örn: http://SUNUCU_IP:3000): ' },
+    { key: 'LICENSE_KEY', prompt: '5. Size verilen Lisans Anahtarınız: ' }
+];
+
+const answers = {};
+
+function askQuestion(index) {
+    if (index >= questions.length) {
+        createEnvFile();
+        return;
+    }
+
+    const { key, prompt } = questions[index];
+    rl.question(prompt, (answer) => {
+        if (!answer.trim()) {
+            console.log("\n❌ Bu alan boş bırakılamaz. Lütfen tekrar deneyin.\n");
+            askQuestion(index);
+        } else {
+            answers[key] = answer.trim();
+            askQuestion(index + 1);
+        }
+    });
+}
+
+function createEnvFile() {
+    rl.close();
+    console.log("\n✅ Bilgiler alındı. .env dosyası oluşturuluyor...");
+
+    const envContent = `
+# Discord Bot Ayarları
+BOT_TOKEN=${answers.BOT_TOKEN}
+CLIENT_ID=${answers.CLIENT_ID}
+CLIENT_SECRET=${answers.CLIENT_SECRET}
+
+# Web Panel Ayarları
+APP_URL=${answers.APP_URL}
+PORT=3000
+
+# Lisans Bilgileri
+LICENSE_KEY=${answers.LICENSE_KEY}
+LICENSE_API_ENDPOINT=http://91.232.103.101:8080/api/validate
+
+# =================================================
+#          İSTEĞE BAĞLI AYARLAR
+# =================================================
+# Güvenilir kullanıcılar (Bot sahibi gibi yetki vermek için, virgülle ayırın)
+TRUSTED_USERS=
+
+# Engellenen kullanıcılar (Panele erişimi engellemek için, virgülle ayırın)
+BLOCKED_USERS=
+`;
+
+    fs.writeFileSync('.env', envContent.trim());
+    console.log("✅ .env dosyası başarıyla oluşturuldu.");
+    installDependencies();
+}
+
+function installDependencies() {
+    console.log("\n⚙️  Gerekli paketler yükleniyor... Bu işlem biraz zaman alabilir.");
+
+    const installProcess = exec('npm install --production', (error, stdout, stderr) => {
+        if (error) {
+            console.error(`\n❌ Paketler yüklenirken bir hata oluştu: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.warn(`\nUyarılar: ${stderr}`);
+        }
+        console.log(`\n${stdout}`);
+        console.log("======================================================");
+        console.log("✅ Temel kurulum başarıyla tamamlandı!");
+        console.log("\n======================================================");
+        console.log("❗ ÖNEMLİ SON ADIM: MÜZİK BOTU AKTİVASYONU ❗");
+        console.log("======================================================");
+        console.log("Müzik botunun hatasız çalışması için YouTube çerezlerinizi eklemeniz GEREKMEKTEDİR.");
+        console.log("\nLütfen aşağıdaki adımları izleyin:");
+        console.log("\n1. Tarayıcınıza 'Get cookies.txt LOCALLY' eklentisini kurun.");
+        console.log("2. YouTube.com'a gidin ve 'Export' butonuna basarak 'cookies.txt' dosyasını indirin.");
+        console.log("3. İndirdiğiniz 'cookies.txt' dosyasını, botun dosyalarının içindeki 'db' klasörüne atın.");
+        console.log("4. '.env' dosyasını açın ve en altına şu satırı ekleyin:");
+        console.log("   YOUTUBE_COOKIE_PATH=./db/cookies.txt");
+        console.log("\nBu adımı tamamladıktan sonra botu başlatabilirsiniz.");
+        console.log("------------------------------------------------------");
+        console.log("\nBotu PM2 ile başlatmak için:");
+        console.log("   pm2 start bot.js --name \"WebPanelliBot\"");
+        console.log("\nNormal başlatmak için:");
+        console.log("   npm start");
+        console.log("======================================================");
+    });
+
+    installProcess.stdout.on('data', (data) => {
+        process.stdout.write('.'); // Her ilerlemede bir nokta yazdır
+    });
+}
+
+// Kurulumu başlat
+askQuestion(0);
