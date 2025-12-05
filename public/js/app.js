@@ -148,24 +148,20 @@ async function updatePluginCardsUI() {
             if (input.type === 'checkbox') {
                 input.checked = savedValue;
             } else if (input.tagName.toLowerCase() === 'select') {
-                // YENİ: Daha esnek doldurma mantığı
+                // DÜZELTME: Kanal ve rol menülerini doldurma mantığı birleştirildi ve basitleştirildi.
                 const channelTypesAttr = input.dataset.channelTypes;
-                if (channelTypesAttr) {
-                    let dataSource = [];
+                const isChannelSelect = channelTypesAttr || settingName.toLowerCase().includes('channelid') || settingName.toLowerCase().includes('categoryid');
+
+                if (isChannelSelect) {
+                    // Eski mantıkla uyumluluk için
+                    let dataSource = channels.filter(c => [0, 5, 10, 11, 12].includes(c.type)); // Varsayılan: metin kanalları
                     if (channelTypesAttr === 'voice') {
-                        dataSource = channels.filter(c => c.type === 2); // Sadece ses kanalları
-                    } else if (channelTypesAttr === 'category') {
-                        dataSource = channels.filter(c => c.type === 4); // Sadece kategoriler
-                    } else {
-                        dataSource = channels.filter(c => [0, 5, 10, 11, 12].includes(c.type)); // Varsayılan metin kanalları
+                        dataSource = channels.filter(c => c.type === 2);
+                    } else if (channelTypesAttr === 'category' || settingName.toLowerCase().includes('categoryid')) {
+                        dataSource = channels.filter(c => c.type === 4);
                     }
                     ui.populateSelect(input, dataSource, savedValue, { defaultText: 'Bir kanal seçin...' });
-                } else if (settingName.toLowerCase().includes('channelid') || settingName.toLowerCase().includes('categoryid')) {
-                    // Eski mantıkla uyumluluk için
-                    const isCategory = settingName.toLowerCase().includes('categoryid');
-                    const dataSource = isCategory ? channels.filter(c => c.type === 4) : channels.filter(c => [0, 5, 10, 11, 12].includes(c.type));
-                    ui.populateSelect(input, dataSource, savedValue, { defaultText: 'Bir kanal seçin...' });
-                } else if (settingName.toLowerCase().includes('roleid') || input.id.toLowerCase().includes('role-select')) {
+                } else if (settingName.toLowerCase().includes('roleid') || input.id.includes('role-select')) {
                     // Rol menülerini doldur
                     ui.populateSelect(input, roles, savedValue, { defaultText: 'Bir rol seçin...' });
                 } else if (settingName.toLowerCase().includes('roleid')) {
