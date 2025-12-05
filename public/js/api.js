@@ -38,6 +38,7 @@ export const api = {
     getAuditLogEvents: () => fetchJSON('/api/audit-log-events'),
     getAuthorizedUsers: () => fetchJSON('/api/authorized-users'), // YENİ: Giriş yapanları getiren rota
     getPanelLogs: () => fetchJSON('/api/panel-logs'), // YENİ: Panel loglarını getiren rota
+    checkPermissions: (guildId) => fetchJSON(`/api/guild/${guildId}/permissions-check`), // YENİ: İzin kontrolü
 
     // YENİ: Müzik API
     getMusicQueue: (guildId) => fetchJSON(`/api/guild/${guildId}/music/queue`),

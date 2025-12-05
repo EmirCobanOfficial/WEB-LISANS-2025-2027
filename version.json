@@ -1,5 +1,5 @@
 {
-  "version": "0.0.3",
-  "notes": "Yeni özellikler eklendi ve performans iyileştirmeleri yapıldı, hatalar giderildi",
+  "version": "0.3",
+  "notes": "Panel ve bot genelinde birçok iyileştirme ve yeni özellik eklendi! Müzik çalar artık şarkı arama ve sıraya ekleme özelliğine sahip. Panel Logları sayfasına tarih filtresi eklendi. Bilet sistemi ve diğer eklentilerdeki çeşitli hatalar giderildi. Botun sunucudaki izinleri eksik olduğunda panelde artık bir uyarı gösteriliyor. Ayrıca, botun çökmesine neden olan çeşitli hatalar düzeltilerek genel stabilite artırıldı.",
   "downloadUrl": "https://github.com/EmirCobanOfficial/WEB-LISANS-2025-2027/archive/refs/heads/main.zip"
 }

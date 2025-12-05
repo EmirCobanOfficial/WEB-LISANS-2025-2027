@@ -224,6 +224,26 @@ async function updatePluginCardsUI() {
     // Bilet sistemi gibi daha karmaşık listeler için de buraya ekleme yapılabilir.
 }
 
+/**
+ * YENİ: Botun sunucudaki izinlerini kontrol eder ve eksikse uyarı gösterir.
+ * @param {string} guildId 
+ */
+async function checkAndShowPermissionsWarning(guildId) {
+    const warningContainer = document.getElementById('permission-warning-container');
+    const warningText = document.getElementById('permission-warning-text');
+    if (!warningContainer || !warningText) return;
+
+    warningContainer.style.display = 'none'; // Kontrol öncesi uyarıyı gizle
+
+    try {
+        await api.checkPermissions(guildId);
+    } catch (error) {
+        const missingPermissionsList = error.missing ? `<ul>${error.missing.map(p => `<li>${p}</li>`).join('')}</ul>` : '';
+        warningText.innerHTML = `<strong>Bot İzinleri Eksik!</strong><br>Panelin düzgün çalışması için botun aşağıdaki izinlere sahip olduğundan emin olun:${missingPermissionsList}`;
+        warningContainer.style.display = 'flex';
+    }
+}
+
 async function loadGuildData(guildId) {
     try {
         const [settings, channels, roles] = await Promise.all([
@@ -231,6 +251,10 @@ async function loadGuildData(guildId) {
             api.getGuildChannels(guildId),
             api.getGuildRoles(guildId),
         ]);
+
+        // YENİ: İzinleri kontrol et ve uyarı göster
+        await checkAndShowPermissionsWarning(guildId);
+
         state.updateGuildData({ settings, channels, roles });
         updatePluginCardsUI(); // EKLENEN SATIR: Arayüzü gelen verilerle doldur.
         console.log("Sunucu verileri yüklendi ve arayüz güncellendi.", state.guildData);
