@@ -111,7 +111,7 @@ async function switchPage(pageId, force = false) {
             if (initializer) {
                 const dataKey = pageId.replace('-page', '');
                 const alwaysReload = ['plugins', 'roles', 'custom-commands', 'backups', 'stats', 'dashboard', 'authorized-users', 'panel-logs', 'music-player'];
-                if (force || alwaysReload.includes(dataKey) || !state.isDataLoaded(dataKey)) {
+                if (force || alwaysReload.includes(dataKey) || pageId === 'fivem-page' || !state.isDataLoaded(dataKey)) {
                     await initializer();
                 }
             }

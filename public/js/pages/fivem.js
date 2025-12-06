@@ -119,22 +119,30 @@ async function showUserProfileModal(userId) {
 }
 
 
-export function initFivemPage() {
+export async function initFivemPage() {
     const page = document.getElementById('fivem-page');
-    if (!page || page.dataset.listenerAttached === 'true') return;
+    if (!page) return;
 
-    // YENİ: Merkezi olay dinleyiciye geçiş
-    page.addEventListener('click', (e) => {
-        const profileLink = e.target.closest('.view-user-profile');
-        if (profileLink) {
-            // DÜZELTME: Olayın daha fazla yayılmasını engelle.
-            // Bu, profile tıklandığında yanlışlıkla whitelist ekleme/kaldırma
-            // butonlarının da tetiklenmesini önler.
-            e.stopPropagation(); 
-            e.preventDefault();
-            // showUserProfileModal(profileLink.dataset.userId); // Bu özellik de kaldırıldı.
+    // Olay dinleyicilerinin tekrar tekrar eklenmesini önlemek için,
+    // fonksiyon her çağrıldığında önce mevcut dinleyicileri kontrol edip kuruyoruz.
+    if (page.dataset.listenerAttached !== 'true') {
+        page.addEventListener('click', (e) => {
+            const profileLink = e.target.closest('.view-user-profile');
+            if (profileLink) {
+                e.stopPropagation();
+                e.preventDefault();
+                showUserProfileModal(profileLink.dataset.userId);
+            }
+        });
+
+        const checkBtn = document.getElementById('fivem-check-status-btn');
+        if (checkBtn) {
+            checkBtn.addEventListener('click', () => checkFiveMStatus(page));
         }
-    });
 
-    page.dataset.listenerAttached = 'true';
+        page.dataset.listenerAttached = 'true';
+    }
+
+    // Sayfa her yüklendiğinde durumu otomatik olarak kontrol et.
+    await checkFiveMStatus(page);
 }
