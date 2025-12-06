@@ -1550,38 +1550,6 @@
                   Sunucunuzun `server.cfg` dosyasındaki RCON şifresini girin.
                 </p>
                 <input type="password" data-setting="rconPassword" placeholder="RCON şifreniz" />
-
-                <hr class="separator" />
-                <label>Özelleştirilebilir RCON Komutları</label>
-                <p class="setting-description">
-                  FiveM sunucunuzun kullandığı script'lere göre aşağıdaki komut şablonlarını düzenleyin.
-                  Değişkenleri süslü parantez içinde kullanın: <code>{playerId}, {message}, {reason}, {discordId}, {itemName}, {amount}, {jobName}, {grade}</code>
-                </p>
-
-                <label style="margin-top: 15px;">Duyuru Komutu</label>
-                <input type="text" data-setting="commandSay" placeholder="say &quot;[DUYURU] {message}&quot;" />
-                <label style="margin-top: 15px;">Özel Mesaj (DM) Komutu</label>
-                <input type="text" data-setting="commandDm" placeholder="dm {playerId} &quot;[PANEL] {message}&quot;" />
-                <label style="margin-top: 15px;">Oyuncu Atma (Kick) Komutu</label>
-                <input type="text" data-setting="commandKick" placeholder="kick {playerId} &quot;{reason}&quot;" />
-                <label style="margin-top: 15px;">Oyuncu Yasaklama (Ban) Komutu</label>
-                <input type="text" data-setting="commandBan" placeholder="ban {playerId} &quot;{reason}&quot;" />
-                <label style="margin-top: 15px;">Whitelist Ekleme Komutu</label>
-                <input type="text" data-setting="commandWhitelistAdd" placeholder="add_whitelist {discordId}" />
-                <label style="margin-top: 15px;">Whitelist Kaldırma Komutu</label>
-                <input type="text" data-setting="commandWhitelistRemove" placeholder="remove_whitelist {discordId}" />
-                <label style="margin-top: 15px;">Whitelist Listeleme Komutu</label>
-                <input type="text" data-setting="commandGetWhitelist" placeholder="get_whitelist" />
-                <label style="margin-top: 15px;">Eşya Verme Komutu</label>
-                <input type="text" data-setting="commandGiveItem" placeholder="giveitem {playerId} {itemName} {amount}" />
-                <label style="margin-top: 15px;">Meslek Verme Komutu</label>
-                <input type="text" data-setting="commandSetJob" placeholder="setjob {playerId} {jobName} {grade}" />
-                <label style="margin-top: 15px;">Can Ayarlama Komutu</label>
-                <input type="text" data-setting="commandSetHealth" placeholder="sethealth {playerId} {amount}" />
-                <label style="margin-top: 15px;">Zırh Ayarlama Komutu</label>
-                <input type="text" data-setting="commandSetArmor" placeholder="setarmor {playerId} {amount}" />
-                <label style="margin-top: 15px;">Para Verme Komutu</label>
-                <input type="text" data-setting="commandGiveMoney" placeholder="addmoney {playerId} {amount}" />
               </div>
               <button class="save-button" data-action="save-plugin">
                 Ayarları Kaydet<span class="unsaved-indicator"></span>
