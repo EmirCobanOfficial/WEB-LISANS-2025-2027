@@ -238,7 +238,11 @@ async function checkAndShowPermissionsWarning(guildId) {
     try {
         await api.checkPermissions(guildId);
     } catch (error) {
-        const missingPermissionsList = error.missing ? `<ul>${error.missing.map(p => `<li>${p}</li>`).join('')}</ul>` : '';
+        // DÜZELTME: Hata mesajını ve eksik izin listesini daha net göster.
+        const missingPermissionsList = error.message.includes('missing') && Array.isArray(error.missing)
+            ? `<ul>${error.missing.map(p => `<li>${p}</li>`).join('')}</ul>`
+            : '<p>Botun temel izinleri kontrol edilemedi. Lütfen botun sunucuda olduğundan emin olun.</p>';
+
         warningText.innerHTML = `<strong>Bot İzinleri Eksik!</strong><br>Panelin düzgün çalışması için botun aşağıdaki izinlere sahip olduğundan emin olun:${missingPermissionsList}`;
         warningContainer.style.display = 'flex';
     }
