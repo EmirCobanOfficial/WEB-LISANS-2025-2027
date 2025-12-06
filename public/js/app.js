@@ -95,7 +95,7 @@ async function switchPage(pageId, force = false) {
         }
 
         // GÜNCELLENDİ: Yetki kontrolü ve sayfa yükleme mantığı düzeltildi.
-        const ownerPages = ['authorized-users-page', 'panel-logs-page'];
+        const ownerPages = ['authorized-users-page', 'panel-logs-page', 'fivem-page', 'trusted-users-page'];
         if (ownerPages.includes(pageId) && !window.isBotOwner) {
             // Yetki yoksa, sadece uyarı göster ve başka bir işlem yapma.
             targetPage.innerHTML = `

@@ -98,6 +98,17 @@ export const api = {
         body: JSON.stringify({ playerId, message }),
     }),
 
+    setFivemPlayerStat: (guildId, playerId, statType, amount) => fetchJSON(`/api/guild/${guildId}/fivem/setstat`, { // YENİ
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ playerId, statType, amount }),
+    }),
+
+    giveFivemPlayerMoney: (guildId, playerId, amount) => fetchJSON(`/api/guild/${guildId}/fivem/givemoney`, { // YENİ
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ playerId, amount }),
+    }),
 
     // POST, PATCH, DELETE istekleri
     saveSettings: (guildId, moduleName, newSettings) => fetchJSON('/api/settings', {

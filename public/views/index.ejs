@@ -1506,7 +1506,7 @@
             </header>
 
             <!-- YENİ: FiveM Ayarları Kartı -->
-            <div class="plugin-card" data-module="fivem" style="margin-bottom: 30px;">
+            <div class="plugin-card collapsed" data-module="fivem" style="margin-bottom: 30px;">
               <div class="plugin-header" data-action="collapse-plugin">
                 <i class="fa-solid fa-gears"></i>
                 <h3>Ayarlar</h3>
@@ -1567,6 +1567,12 @@
                 <input type="text" data-setting="commandGiveItem" placeholder="giveitem {playerId} {itemName} {amount}" />
                 <label style="margin-top: 15px;">Meslek Verme Komutu</label>
                 <input type="text" data-setting="commandSetJob" placeholder="setjob {playerId} {jobName} {grade}" />
+                <label style="margin-top: 15px;">Can Ayarlama Komutu</label>
+                <input type="text" data-setting="commandSetHealth" placeholder="sethealth {playerId} {amount}" />
+                <label style="margin-top: 15px;">Zırh Ayarlama Komutu</label>
+                <input type="text" data-setting="commandSetArmor" placeholder="setarmor {playerId} {amount}" />
+                <label style="margin-top: 15px;">Para Verme Komutu</label>
+                <input type="text" data-setting="commandGiveMoney" placeholder="addmoney {playerId} {amount}" />
               </div>
               <button class="save-button" data-action="save-plugin">
                 Ayarları Kaydet<span class="unsaved-indicator"></span>

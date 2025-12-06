@@ -31,6 +31,15 @@ function renderPlayerList(players) {
                 <button class="action-btn edit fivem-kick-btn" data-player-id="${player.id}" data-player-name="${player.name}" title="Oyuncuyu At">
                     <i class="fa-solid fa-user-minus"></i> Kick
                 </button>
+                <button class="action-btn edit fivem-set-stat-btn" data-player-id="${player.id}" data-player-name="${player.name}" data-stat-type="health" title="Can Ayarla">
+                    <i class="fa-solid fa-heart-pulse"></i> Can
+                </button>
+                <button class="action-btn edit fivem-set-stat-btn" data-player-id="${player.id}" data-player-name="${player.name}" data-stat-type="armor" title="Zırh Ayarla">
+                    <i class="fa-solid fa-shield-halved"></i> Zırh
+                </button>
+                <button class="action-btn edit fivem-give-money-btn" data-player-id="${player.id}" data-player-name="${player.name}" title="Para Ver">
+                    <i class="fa-solid fa-coins"></i> Para Ver
+                </button>
                 <button class="action-btn danger fivem-ban-btn" data-player-id="${player.id}" data-player-name="${player.name}" title="Oyuncuyu Yasakla">
                     <i class="fa-solid fa-user-slash"></i> Ban
                 </button>
@@ -226,6 +235,51 @@ async function handlePlayerAction(action, playerId, playerName) {
 }
 
 /**
+ * YENİ: Oyuncunun can veya zırhını ayarlama işlemini yönetir.
+ * @param {string} playerId - Oyuncunun sunucu içi ID'si.
+ * @param {string} playerName - Oyuncunun adı.
+ * @param {'health' | 'armor'} statType - Ayarlanacak stat (can veya zırh).
+ */
+async function handleSetPlayerStat(playerId, playerName, statType) {
+    const statName = statType === 'health' ? 'can' : 'zırh';
+    const amount = prompt(`'${playerName}' adlı oyuncunun yeni ${statName} değerini girin (Genellikle 0-100):`);
+
+    if (amount === null || amount.trim() === '' || isNaN(amount)) {
+        if (amount !== null) ui.showToast('Lütfen geçerli bir sayı girin.', 'error');
+        return;
+    }
+
+    try {
+        const result = await api.setFivemPlayerStat(state.selectedGuildId, playerId, statType, amount);
+        ui.showToast(result.message, 'success');
+    } catch (error) {
+        ui.showToast(`Hata: ${error.message}`, 'error');
+    }
+}
+
+/**
+ * YENİ: Oyuncuya para verme işlemini yönetir.
+ * @param {string} playerId - Oyuncunun sunucu içi ID'si.
+ * @param {string} playerName - Oyuncunun adı.
+ */
+async function handleGivePlayerMoney(playerId, playerName) {
+    const amount = prompt(`'${playerName}' adlı oyuncuya vermek istediğiniz para miktarını girin:`);
+
+    if (amount === null || amount.trim() === '' || isNaN(amount)) {
+        if (amount !== null) ui.showToast('Lütfen geçerli bir sayı girin.', 'error');
+        return;
+    }
+
+    try {
+        const result = await api.giveFivemPlayerMoney(state.selectedGuildId, playerId, amount);
+        ui.showToast(result.message, 'success');
+    } catch (error) {
+        ui.showToast(`Hata: ${error.message}`, 'error');
+    }
+}
+
+
+/**
  * YENİ: Kullanıcı profili modal'ını açar ve bilgileri yükler.
  * @param {string} userId 
  */
@@ -271,10 +325,14 @@ export function initFivemPage() {
         const kickBtn = e.target.closest('.fivem-kick-btn');
         const banBtn = e.target.closest('.fivem-ban-btn');
         const dmBtn = e.target.closest('.fivem-dm-btn');
+        const statBtn = e.target.closest('.fivem-set-stat-btn');
+        const moneyBtn = e.target.closest('.fivem-give-money-btn'); // YENİ
 
         if (kickBtn) handlePlayerAction('kick', kickBtn.dataset.playerId, kickBtn.dataset.playerName);
         else if (banBtn) handlePlayerAction('ban', banBtn.dataset.playerId, banBtn.dataset.playerName);
         else if (dmBtn) handlePlayerDm(dmBtn.dataset.playerId, dmBtn.dataset.playerName);
+        else if (statBtn) handleSetPlayerStat(statBtn.dataset.playerId, statBtn.dataset.playerName, statBtn.dataset.statType);
+        else if (moneyBtn) handleGivePlayerMoney(moneyBtn.dataset.playerId, moneyBtn.dataset.playerName); // YENİ
 
 
         // YENİ: Ayarlar kartındaki enable/disable toggle'ını dinle
