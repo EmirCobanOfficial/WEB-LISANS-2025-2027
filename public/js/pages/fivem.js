@@ -44,7 +44,7 @@ import { api } from '../api.js';
 import { state } from '../state.js';
 import * as ui from '../ui.js';
 
-async function checkFiveMStatus() {
+async function checkFiveMStatus(page) {
     const statusIcon = document.getElementById('fivem-status-icon');
     const statusText = document.getElementById('fivem-status-text');
     const playerCount = document.getElementById('fivem-player-count');
@@ -216,8 +216,8 @@ async function handlePlayerAction(action, playerId, playerName) {
     try {
         const apiFunction = action === 'kick' ? api.kickFivemPlayer : api.banFivemPlayer;
         const result = await apiFunction(state.selectedGuildId, playerId, reason);
-        ui.showToast(result.message, 'success');
-        await checkFiveMStatus(); // Oyuncu listesini yenilemek için durumu tekrar kontrol et
+        ui.showToast(result.message, 'success'); // Oyuncu listesini yenilemek için durumu tekrar kontrol et
+        await checkFiveMStatus(document.getElementById('fivem-page'));
     } catch (error) {
         ui.showToast(`Hata: ${error.message}`, 'error');
     }
@@ -279,7 +279,7 @@ export function initFivemPage() {
         if (e.target.closest('.plugin-card[data-module="fivem"] .enable-toggle')) {
             // Değişikliğin UI'a yansıması için kısa bir gecikme
             setTimeout(() => {
-                checkFiveMStatus();
+                checkFiveMStatus(page);
                 page.dataset.initialWarningShown = 'true'; // Uyarıyı tekrar gösterme
                 renderWhitelist();
             }, 100);
@@ -296,10 +296,10 @@ export function initFivemPage() {
     document.getElementById('user-profile-modal-close').addEventListener('click', () => {
         document.getElementById('user-profile-modal').style.display = 'none';
     });
-    document.getElementById('fivem-check-status-btn').addEventListener('click', checkFiveMStatus);
+    document.getElementById('fivem-check-status-btn').addEventListener('click', () => checkFiveMStatus(page));
 
 
-    checkFiveMStatus();
+    checkFiveMStatus(page);
     page.dataset.initialWarningShown = 'true'; // İlk yüklemede uyarıyı gösterdik olarak işaretle
     renderWhitelist();
 
