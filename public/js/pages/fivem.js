@@ -62,18 +62,24 @@ async function checkFiveMStatus(page) {
     checkBtn.disabled = true;
 
     // YENİ: Eklenti aktif değilse, diğer kartları gizle ve uyarı göster
-    const fivemSettings = state.guildData.settings?.fivem;
-    if (!fivemSettings || !fivemSettings.enabled) {
-        // DÜZELTME: Sadece yönetim araçlarını gizle, ayarlar kartını (data-module="fivem") gizleme.
+    // DÜZELTME: Ayarların UI'a yansıması için state yerine doğrudan checkbox'ın durumunu kontrol et.
+    const isEnabled = document.querySelector('#fivem-page .plugin-card[data-module="fivem"] .enable-toggle')?.checked;
+    const fivemSettings = state.guildData.settings?.fivem; // Ayarların varlığını kontrol etmek için yine de gerekli.
+
+    if (!isEnabled) {
         document.querySelectorAll('#fivem-page .management-card').forEach(el => el.style.display = 'none');
-        // YENİ: Sayfa her açıldığında uyarı göstermek yerine, sadece ilk yüklemede veya ayar değiştiğinde gösterelim.
         if (!page.dataset.initialWarningShown) {
             ui.showToast('FiveM modülü aktif değil. Lütfen önce Ayarlar kartından modülü etkinleştirin.', 'warning');
         }
         return;
     }
-    // DÜZELTME: Tüm yönetim kartlarını göster. Ayarlar kartı zaten görünür durumda.
-    document.querySelectorAll('#fivem-page .management-card, #fivem-page .stat-card').forEach(el => el.style.display = 'flex'); // Kartları göster
+
+    if (!fivemSettings || !fivemSettings.enabled) {
+        // Ayarlar kaydedilmemişse, API isteği göndermeden önce uyarı ver.
+        return ui.showToast('Ayarları etkinleştirdikten sonra "Ayarları Kaydet" butonuna basmalısınız.', 'warning');
+    }
+
+    document.querySelectorAll('#fivem-page .management-card').forEach(el => el.style.display = 'flex');
     statusText.textContent = 'Kontrol Ediliyor...';
     statusIcon.className = 'fa-solid fa-spinner fa-spin';
 
