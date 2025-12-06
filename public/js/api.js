@@ -59,8 +59,8 @@ export const api = {
         body: JSON.stringify({ trackUrl }),
     }),
 
-    // POST, PATCH, DELETE istekleri
-    saveSettings: (guildId, moduleName, newSettings) => fetchJSON('/api/settings', {
+    getFivemStatus: (guildId) => fetchJSON(`/api/guild/${guildId}/fivem/status`),
+     saveSettings: (guildId, moduleName, newSettings) => fetchJSON('/api/settings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ guildId, module: moduleName, newSettings }),

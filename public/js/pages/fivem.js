@@ -132,26 +132,9 @@ export function initFivemPage() {
             // butonlarının da tetiklenmesini önler.
             e.stopPropagation(); 
             e.preventDefault();
-            showUserProfileModal(profileLink.dataset.userId);
-        }        // YENİ: Ayarlar kartındaki enable/disable toggle'ını dinle
-        if (e.target.closest('.plugin-card[data-module="fivem"] .enable-toggle')) {
-            // Değişikliğin UI'a yansıması için kısa bir gecikme
-            setTimeout(() => {
-                checkFiveMStatus(page);
-                page.dataset.initialWarningShown = 'true'; // Uyarıyı tekrar gösterme
-            }, 100);
+            // showUserProfileModal(profileLink.dataset.userId); // Bu özellik de kaldırıldı.
         }
     });
-
-    // DÜZELTME: Buton olaylarını ana olay dinleyicisine taşıyarak kod tekrarını azalt ve hataları önle.
-    // Sayfa ilk yüklendiğinde durumu ve whitelist'i kontrol et
-    document.getElementById('user-profile-modal-close')?.addEventListener('click', () => {
-        document.getElementById('user-profile-modal').style.display = 'none';
-    });
-    document.getElementById('fivem-check-status-btn').addEventListener('click', () => checkFiveMStatus(page));
-
-    checkFiveMStatus(page);
-    page.dataset.initialWarningShown = 'true'; // İlk yüklemede uyarıyı gösterdik olarak işaretle
 
     page.dataset.listenerAttached = 'true';
 }
