@@ -1505,6 +1505,15 @@
               <h2><i class="fa-solid fa-gamepad"></i> FiveM Yönetim Paneli</h2>
             </header>
 
+            <!-- YENİ: Geliştirme Uyarısı -->
+            <div class="beta-notice">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              <div>
+                <strong>Geliştirme Aşamasında:</strong> Bu özellik üzerinde aktif olarak çalışılmaktadır. Yakın zamanda yeni komut ve yönetim özellikleri eklenecektir. Bu sürecin biraz zaman alabileceğini belirtmek isteriz. Anlayışınız için teşekkürler.
+              </div>
+            </div>
+            <!-- Uyarı Sonu -->
+
             <!-- YENİ: FiveM Ayarları Kartı -->
             <div class="plugin-card collapsed" data-module="fivem" style="margin-bottom: 30px;">
               <div class="plugin-header" data-action="collapse-plugin">
@@ -1606,53 +1615,7 @@
             </div>
             <!-- Oyuncu Listesi Kartı Sonu -->
 
-            <div class="plugins-grid management-card">
-              <!-- Eşya Verme -->
-              <div class="plugin-card" style="cursor: default;">
-                <div class="plugin-header" style="cursor: default;">
-                  <i class="fa-solid fa-box"></i>
-                  <h3>Eşya Verme (Give Item)</h3>
-                </div>
-                <p class="plugin-description">Oyuncuya belirtilen miktarda eşya verin.</p>
-                <div class="plugin-settings" style="display: flex; padding-left: 0;">
-                  <input type="text" id="fivem-giveitem-playerid" class="setting-input" placeholder="Oyuncu ID (Sunucu içi)">
-                  <input type="text" id="fivem-giveitem-itemname" class="setting-input" placeholder="Eşya Kodu (Örn: water)">
-                  <input type="number" id="fivem-giveitem-amount" class="setting-input" placeholder="Miktar" min="1">
-                  <button id="fivem-giveitem-btn" class="save-button">Eşyayı Ver</button>
-                </div>
-              </div>
-
-              <!-- Meslek Verme -->
-              <div class="plugin-card" style="cursor: default;">
-                <div class="plugin-header" style="cursor: default;">
-                  <i class="fa-solid fa-briefcase"></i>
-                  <h3>Meslek Verme (Set Job)</h3>
-                </div>
-                <p class="plugin-description">Oyuncunun mesleğini ve rütbesini ayarlayın.</p>
-                <div class="plugin-settings" style="display: flex; padding-left: 0;">
-                  <input type="text" id="fivem-setjob-playerid" class="setting-input" placeholder="Oyuncu ID (Sunucu içi)">
-                  <input type="text" id="fivem-setjob-jobname" class="setting-input" placeholder="Meslek Kodu (Örn: police)">
-                  <input type="number" id="fivem-setjob-grade" class="setting-input" placeholder="Rütbe (Örn: 0)" min="0">
-                  <button id="fivem-setjob-btn" class="save-button">Mesleği Ayarla</button>
-                </div>
-              </div>
-
-              <!-- YENİ: Duyuru Gönderme -->
-              <div class="plugin-card" style="cursor: default;">
-                <div class="plugin-header" style="cursor: default;">
-                  <i class="fa-solid fa-bullhorn"></i>
-                  <h3>Genel Duyuru Gönder</h3>
-                </div>
-                <p class="plugin-description">Sunucudaki tüm oyunculara bir duyuru mesajı gönderin.</p>
-                <div class="add-item-container">
-                  <input type="text" id="fivem-announcement-message" class="setting-input" placeholder="Duyuru mesajınız...">
-                  <button id="fivem-send-announcement-btn" class="add-btn">
-                    <i class="fa-solid fa-paper-plane"></i> Gönder
-                  </button>
-                </div>
-              </div>
-
-            </div>
+            <!-- Komut gönderme kartları geçici olarak devre dışı bırakıldı. -->
           </div>
         <% } %>
 

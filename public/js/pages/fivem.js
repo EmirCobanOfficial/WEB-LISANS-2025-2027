@@ -24,26 +24,7 @@ function renderPlayerList(players) {
                 <span class="list-item-label">${player.name}</span>
                 <span class="list-item-description">ID: ${player.id} | Ping: ${player.ping}</span>
             </div>
-            <div class="list-item-actions">
-                <button class="action-btn edit fivem-dm-btn" data-player-id="${player.id}" data-player-name="${player.name}" title="Özel Mesaj Gönder">
-                    <i class="fa-solid fa-message"></i> Mesaj
-                </button>
-                <button class="action-btn edit fivem-kick-btn" data-player-id="${player.id}" data-player-name="${player.name}" title="Oyuncuyu At">
-                    <i class="fa-solid fa-user-minus"></i> Kick
-                </button>
-                <button class="action-btn edit fivem-set-stat-btn" data-player-id="${player.id}" data-player-name="${player.name}" data-stat-type="health" title="Can Ayarla">
-                    <i class="fa-solid fa-heart-pulse"></i> Can
-                </button>
-                <button class="action-btn edit fivem-set-stat-btn" data-player-id="${player.id}" data-player-name="${player.name}" data-stat-type="armor" title="Zırh Ayarla">
-                    <i class="fa-solid fa-shield-halved"></i> Zırh
-                </button>
-                <button class="action-btn edit fivem-give-money-btn" data-player-id="${player.id}" data-player-name="${player.name}" title="Para Ver">
-                    <i class="fa-solid fa-coins"></i> Para Ver
-                </button>
-                <button class="action-btn danger fivem-ban-btn" data-player-id="${player.id}" data-player-name="${player.name}" title="Oyuncuyu Yasakla">
-                    <i class="fa-solid fa-user-slash"></i> Ban
-                </button>
-            </div>
+            <!-- Aksiyon butonları kaldırıldı -->
         `;
         listContainer.appendChild(item);
     });
@@ -108,128 +89,6 @@ async function checkFiveMStatus(page) {
     }
 }
 
-async function handleGiveItem() {
-    const playerId = document.getElementById('fivem-giveitem-playerid').value;
-    const itemName = document.getElementById('fivem-giveitem-itemname').value;
-    const amount = document.getElementById('fivem-giveitem-amount').value;
-
-    if (!playerId || !itemName || !amount) {
-        return ui.showToast('Lütfen tüm alanları doldurun.', 'error');
-    }
-
-    try {
-        const result = await api.giveFivemItem(state.selectedGuildId, playerId, itemName, amount);
-        ui.showToast(result.message, 'success');
-    } catch (error) {
-        ui.showToast(`Hata: ${error.message}`, 'error');
-    }
-}
-
-async function handleSetJob() {
-    const playerId = document.getElementById('fivem-setjob-playerid').value;
-    const jobName = document.getElementById('fivem-setjob-jobname').value;
-    const grade = document.getElementById('fivem-setjob-grade').value;
-
-    if (!playerId || !jobName || grade === '') {
-        return ui.showToast('Lütfen tüm alanları doldurun.', 'error');
-    }
-
-    try {
-        const result = await api.setFivemJob(state.selectedGuildId, playerId, jobName, grade);
-        ui.showToast(result.message, 'success');
-    } catch (error) {
-        ui.showToast(`Hata: ${error.message}`, 'error');
-    }
-}
-
-/**
- * YENİ: Oyuncuya özel mesaj gönderme işlemini yönetir.
- * @param {string} playerId - Oyuncunun sunucu içi ID'si.
- * @param {string} playerName - Oyuncunun adı.
- */
-async function handlePlayerDm(playerId, playerName) {
-    const message = prompt(`'${playerName}' adlı oyuncuya göndermek istediğiniz özel mesajı girin:`);
-
-    if (!message) { // Kullanıcı iptal etti veya boş mesaj girdi
-        return;
-    }
-
-    try {
-        const result = await api.sendFivemDm(state.selectedGuildId, playerId, message);
-        ui.showToast(result.message, 'success');
-    } catch (error) {
-        ui.showToast(`Hata: ${error.message}`, 'error');
-    }
-}
-
-/**
- * YENİ: Oyuncuyu sunucudan atma veya yasaklama işlemini yönetir.
- * @param {'kick' | 'ban'} action - Yapılacak eylem (kick veya ban).
- * @param {string} playerId - Oyuncunun sunucu içi ID'si.
- * @param {string} playerName - Oyuncunun adı.
- */
-async function handlePlayerAction(action, playerId, playerName) {
-    const reason = prompt(`'${playerName}' adlı oyuncuyu ${action === 'kick' ? 'atmak' : 'yasaklamak'} için bir sebep girin:`);
-
-    if (!reason) { // Kullanıcı iptal etti veya boş sebep girdi
-        return;
-    }
-
-    try {
-        const apiFunction = action === 'kick' ? api.kickFivemPlayer : api.banFivemPlayer;
-        const result = await apiFunction(state.selectedGuildId, playerId, reason);
-        ui.showToast(result.message, 'success'); // Oyuncu listesini yenilemek için durumu tekrar kontrol et
-        await checkFiveMStatus(document.getElementById('fivem-page'));
-    } catch (error) {
-        ui.showToast(`Hata: ${error.message}`, 'error');
-    }
-}
-
-/**
- * YENİ: Oyuncunun can veya zırhını ayarlama işlemini yönetir.
- * @param {string} playerId - Oyuncunun sunucu içi ID'si.
- * @param {string} playerName - Oyuncunun adı.
- * @param {'health' | 'armor'} statType - Ayarlanacak stat (can veya zırh).
- */
-async function handleSetPlayerStat(playerId, playerName, statType) {
-    const statName = statType === 'health' ? 'can' : 'zırh';
-    const amount = prompt(`'${playerName}' adlı oyuncunun yeni ${statName} değerini girin (Genellikle 0-100):`);
-
-    if (amount === null || amount.trim() === '' || isNaN(amount)) {
-        if (amount !== null) ui.showToast('Lütfen geçerli bir sayı girin.', 'error');
-        return;
-    }
-
-    try {
-        const result = await api.setFivemPlayerStat(state.selectedGuildId, playerId, statType, amount);
-        ui.showToast(result.message, 'success');
-    } catch (error) {
-        ui.showToast(`Hata: ${error.message}`, 'error');
-    }
-}
-
-/**
- * YENİ: Oyuncuya para verme işlemini yönetir.
- * @param {string} playerId - Oyuncunun sunucu içi ID'si.
- * @param {string} playerName - Oyuncunun adı.
- */
-async function handleGivePlayerMoney(playerId, playerName) {
-    const amount = prompt(`'${playerName}' adlı oyuncuya vermek istediğiniz para miktarını girin:`);
-
-    if (amount === null || amount.trim() === '' || isNaN(amount)) {
-        if (amount !== null) ui.showToast('Lütfen geçerli bir sayı girin.', 'error');
-        return;
-    }
-
-    try {
-        const result = await api.giveFivemPlayerMoney(state.selectedGuildId, playerId, amount);
-        ui.showToast(result.message, 'success');
-    } catch (error) {
-        ui.showToast(`Hata: ${error.message}`, 'error');
-    }
-}
-
-
 /**
  * YENİ: Kullanıcı profili modal'ını açar ve bilgileri yükler.
  * @param {string} userId 
@@ -274,23 +133,7 @@ export function initFivemPage() {
             e.stopPropagation(); 
             e.preventDefault();
             showUserProfileModal(profileLink.dataset.userId);
-        }
-
-        // YENİ: Oyuncu aksiyon butonlarını dinle
-        const kickBtn = e.target.closest('.fivem-kick-btn');
-        const banBtn = e.target.closest('.fivem-ban-btn');
-        const dmBtn = e.target.closest('.fivem-dm-btn');
-        const statBtn = e.target.closest('.fivem-set-stat-btn');
-        const moneyBtn = e.target.closest('.fivem-give-money-btn'); // YENİ
-
-        if (kickBtn) handlePlayerAction('kick', kickBtn.dataset.playerId, kickBtn.dataset.playerName);
-        else if (banBtn) handlePlayerAction('ban', banBtn.dataset.playerId, banBtn.dataset.playerName);
-        else if (dmBtn) handlePlayerDm(dmBtn.dataset.playerId, dmBtn.dataset.playerName);
-        else if (statBtn) handleSetPlayerStat(statBtn.dataset.playerId, statBtn.dataset.playerName, statBtn.dataset.statType);
-        else if (moneyBtn) handleGivePlayerMoney(moneyBtn.dataset.playerId, moneyBtn.dataset.playerName); // YENİ
-
-
-        // YENİ: Ayarlar kartındaki enable/disable toggle'ını dinle
+        }        // YENİ: Ayarlar kartındaki enable/disable toggle'ını dinle
         if (e.target.closest('.plugin-card[data-module="fivem"] .enable-toggle')) {
             // Değişikliğin UI'a yansıması için kısa bir gecikme
             setTimeout(() => {
@@ -301,28 +144,11 @@ export function initFivemPage() {
     });
 
     // DÜZELTME: Buton olaylarını ana olay dinleyicisine taşıyarak kod tekrarını azalt ve hataları önle.
-    // document.getElementById('fivem-whitelist-add-btn').addEventListener('click', () => handleWhitelist('add'));
-    // document.getElementById('fivem-whitelist-remove-btn').addEventListener('click', () => handleWhitelist('remove'));
-    // document.getElementById('fivem-giveitem-btn').addEventListener('click', handleGiveItem);
-    document.getElementById('fivem-setjob-btn').addEventListener('click', handleSetJob);
-
     // Sayfa ilk yüklendiğinde durumu ve whitelist'i kontrol et
-    document.getElementById('user-profile-modal-close').addEventListener('click', () => {
+    document.getElementById('user-profile-modal-close')?.addEventListener('click', () => {
         document.getElementById('user-profile-modal').style.display = 'none';
     });
     document.getElementById('fivem-check-status-btn').addEventListener('click', () => checkFiveMStatus(page));
-
-    // YENİ: Buton olaylarını merkezi dinleyiciye ekle
-    const managementCards = page.querySelector('.management-card');
-    if (managementCards) {
-        page.addEventListener('click', (e) => {
-            if (e.target.id === 'fivem-giveitem-btn') handleGiveItem();
-            if (e.target.id === 'fivem-send-announcement-btn') {
-                const message = document.getElementById('fivem-announcement-message').value;
-                if (message) api.sendFivemAnnouncement(state.selectedGuildId, message).then(res => ui.showToast(res.message, 'success')).catch(err => ui.showToast(err.message, 'error'));
-            }
-        });
-    }
 
     checkFiveMStatus(page);
     page.dataset.initialWarningShown = 'true'; // İlk yüklemede uyarıyı gösterdik olarak işaretle

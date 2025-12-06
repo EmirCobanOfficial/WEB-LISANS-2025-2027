@@ -59,51 +59,6 @@ export const api = {
         body: JSON.stringify({ trackUrl }),
     }),
 
-    // YENİ: FiveM API
-    getFivemStatus: (guildId) => fetchJSON(`/api/guild/${guildId}/fivem/status`),
-    giveFivemItem: (guildId, playerId, itemName, amount) => fetchJSON(`/api/guild/${guildId}/fivem/giveitem`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ playerId, itemName, amount }),
-    }),
-    setFivemJob: (guildId, playerId, jobName, grade) => fetchJSON(`/api/guild/${guildId}/fivem/setjob`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ playerId, jobName, grade }),
-    }),
-    kickFivemPlayer: (guildId, playerId, reason) => fetchJSON(`/api/guild/${guildId}/fivem/kick`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ playerId, reason }),
-    }),
-    banFivemPlayer: (guildId, playerId, reason) => fetchJSON(`/api/guild/${guildId}/fivem/ban`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ playerId, reason }),
-    }),
-    sendFivemAnnouncement: (guildId, message) => fetchJSON(`/api/guild/${guildId}/fivem/announcement`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message }),
-    }),
-    sendFivemDm: (guildId, playerId, message) => fetchJSON(`/api/guild/${guildId}/fivem/dm`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ playerId, message }),
-    }),
-
-    setFivemPlayerStat: (guildId, playerId, statType, amount) => fetchJSON(`/api/guild/${guildId}/fivem/setstat`, { // YENİ
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ playerId, statType, amount }),
-    }),
-
-    giveFivemPlayerMoney: (guildId, playerId, amount) => fetchJSON(`/api/guild/${guildId}/fivem/givemoney`, { // YENİ
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ playerId, amount }),
-    }),
-
     // POST, PATCH, DELETE istekleri
     saveSettings: (guildId, moduleName, newSettings) => fetchJSON('/api/settings', {
         method: 'POST',
