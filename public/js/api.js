@@ -61,12 +61,6 @@ export const api = {
 
     // YENİ: FiveM API
     getFivemStatus: (guildId) => fetchJSON(`/api/guild/${guildId}/fivem/status`),
-    getFivemWhitelist: (guildId) => fetchJSON(`/api/guild/${guildId}/fivem/whitelist`),
-    manageFivemWhitelist: (guildId, discordId, action) => fetchJSON(`/api/guild/${guildId}/fivem/whitelist`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ discordId, action }),
-    }),
     giveFivemItem: (guildId, playerId, itemName, amount) => fetchJSON(`/api/guild/${guildId}/fivem/giveitem`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
