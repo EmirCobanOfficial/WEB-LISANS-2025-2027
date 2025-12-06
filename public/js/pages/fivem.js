@@ -108,61 +108,6 @@ async function checkFiveMStatus(page) {
     }
 }
 
-async function renderWhitelist() {
-    const listContainer = document.getElementById('fivem-whitelist-list');
-    const refreshBtn = document.getElementById('fivem-refresh-whitelist-btn');
-    if (!listContainer || !refreshBtn) return;
-
-    // YENİ: Modül aktif değilse işlemi durdur.
-    const fivemSettings = state.guildData.settings?.fivem;
-    if (!fivemSettings || !fivemSettings.enabled) {
-        return;
-    }
-
-    refreshBtn.disabled = true;
-    listContainer.innerHTML = '<p class="setting-description" style="text-align: center;">Liste yükleniyor...</p>';
-
-    try {
-        const whitelist = await api.getFivemWhitelist(state.selectedGuildId);
-        listContainer.innerHTML = ''; // Listeyi temizle
-
-        if (!whitelist || whitelist.length === 0) {
-            listContainer.innerHTML = '<p class="setting-description" style="text-align: center;">Whitelist boş veya alınamadı.</p>';
-            return;
-        }
-
-        whitelist.forEach(id => {
-            const item = document.createElement('div');
-            item.className = 'list-item';
-            // YENİ: ID'yi tıklanabilir yap
-            item.innerHTML = `
-                <a href="#" class="list-item-label view-user-profile" data-user-id="${id}" title="Profili Görüntüle">${id}</a>
-                <div class="list-item-actions"></div>
-            `;
-            listContainer.appendChild(item);
-        });
-    } catch (error) {
-        listContainer.innerHTML = `<p class="setting-description" style="text-align: center; color: var(--red);">${error.message}</p>`;
-    } finally {
-        refreshBtn.disabled = false;
-    }
-}
-
-async function handleWhitelist(action) {
-    const discordId = document.getElementById('fivem-whitelist-id').value;
-    if (!discordId) {
-        return ui.showToast('Lütfen bir Discord ID girin.', 'error');
-    }
-    try {
-        const result = await api.manageFivemWhitelist(state.selectedGuildId, discordId, action);
-        ui.showToast(result.message, 'success');
-        // İşlem sonrası listeyi yenile
-        await renderWhitelist();
-    } catch (error) {
-        ui.showToast(`Hata: ${error.message}`, 'error');
-    }
-}
-
 async function handleGiveItem() {
     const playerId = document.getElementById('fivem-giveitem-playerid').value;
     const itemName = document.getElementById('fivem-giveitem-itemname').value;
@@ -351,7 +296,6 @@ export function initFivemPage() {
             setTimeout(() => {
                 checkFiveMStatus(page);
                 page.dataset.initialWarningShown = 'true'; // Uyarıyı tekrar gösterme
-                renderWhitelist();
             }, 100);
         }
     });
@@ -361,7 +305,6 @@ export function initFivemPage() {
     // document.getElementById('fivem-whitelist-remove-btn').addEventListener('click', () => handleWhitelist('remove'));
     // document.getElementById('fivem-giveitem-btn').addEventListener('click', handleGiveItem);
     document.getElementById('fivem-setjob-btn').addEventListener('click', handleSetJob);
-    document.getElementById('fivem-refresh-whitelist-btn').addEventListener('click', renderWhitelist);
 
     // Sayfa ilk yüklendiğinde durumu ve whitelist'i kontrol et
     document.getElementById('user-profile-modal-close').addEventListener('click', () => {
@@ -373,8 +316,6 @@ export function initFivemPage() {
     const managementCards = page.querySelector('.management-card');
     if (managementCards) {
         page.addEventListener('click', (e) => {
-            if (e.target.id === 'fivem-whitelist-add-btn') handleWhitelist('add');
-            if (e.target.id === 'fivem-whitelist-remove-btn') handleWhitelist('remove');
             if (e.target.id === 'fivem-giveitem-btn') handleGiveItem();
             if (e.target.id === 'fivem-send-announcement-btn') {
                 const message = document.getElementById('fivem-announcement-message').value;
@@ -385,7 +326,6 @@ export function initFivemPage() {
 
     checkFiveMStatus(page);
     page.dataset.initialWarningShown = 'true'; // İlk yüklemede uyarıyı gösterdik olarak işaretle
-    renderWhitelist();
 
     page.dataset.listenerAttached = 'true';
 }
