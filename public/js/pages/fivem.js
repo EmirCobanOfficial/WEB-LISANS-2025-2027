@@ -323,6 +323,10 @@ export function initFivemPage() {
     page.addEventListener('click', (e) => {
         const profileLink = e.target.closest('.view-user-profile');
         if (profileLink) {
+            // DÜZELTME: Olayın daha fazla yayılmasını engelle.
+            // Bu, profile tıklandığında yanlışlıkla whitelist ekleme/kaldırma
+            // butonlarının da tetiklenmesini önler.
+            e.stopPropagation(); 
             e.preventDefault();
             showUserProfileModal(profileLink.dataset.userId);
         }
@@ -352,9 +356,10 @@ export function initFivemPage() {
         }
     });
 
-    document.getElementById('fivem-whitelist-add-btn').addEventListener('click', () => handleWhitelist('add'));
-    document.getElementById('fivem-whitelist-remove-btn').addEventListener('click', () => handleWhitelist('remove'));
-    document.getElementById('fivem-giveitem-btn').addEventListener('click', handleGiveItem);
+    // DÜZELTME: Buton olaylarını ana olay dinleyicisine taşıyarak kod tekrarını azalt ve hataları önle.
+    // document.getElementById('fivem-whitelist-add-btn').addEventListener('click', () => handleWhitelist('add'));
+    // document.getElementById('fivem-whitelist-remove-btn').addEventListener('click', () => handleWhitelist('remove'));
+    // document.getElementById('fivem-giveitem-btn').addEventListener('click', handleGiveItem);
     document.getElementById('fivem-setjob-btn').addEventListener('click', handleSetJob);
     document.getElementById('fivem-refresh-whitelist-btn').addEventListener('click', renderWhitelist);
 
@@ -364,6 +369,19 @@ export function initFivemPage() {
     });
     document.getElementById('fivem-check-status-btn').addEventListener('click', () => checkFiveMStatus(page));
 
+    // YENİ: Buton olaylarını merkezi dinleyiciye ekle
+    const managementCards = page.querySelector('.management-card');
+    if (managementCards) {
+        page.addEventListener('click', (e) => {
+            if (e.target.id === 'fivem-whitelist-add-btn') handleWhitelist('add');
+            if (e.target.id === 'fivem-whitelist-remove-btn') handleWhitelist('remove');
+            if (e.target.id === 'fivem-giveitem-btn') handleGiveItem();
+            if (e.target.id === 'fivem-send-announcement-btn') {
+                const message = document.getElementById('fivem-announcement-message').value;
+                if (message) api.sendFivemAnnouncement(state.selectedGuildId, message).then(res => ui.showToast(res.message, 'success')).catch(err => ui.showToast(err.message, 'error'));
+            }
+        });
+    }
 
     checkFiveMStatus(page);
     page.dataset.initialWarningShown = 'true'; // İlk yüklemede uyarıyı gösterdik olarak işaretle
