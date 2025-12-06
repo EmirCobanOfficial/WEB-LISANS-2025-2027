@@ -1505,6 +1505,74 @@
               <h2><i class="fa-solid fa-gamepad"></i> FiveM Yönetim Paneli</h2>
             </header>
 
+            <!-- YENİ: FiveM Ayarları Kartı -->
+            <div class="plugin-card" data-module="fivem" style="margin-bottom: 30px;">
+              <div class="plugin-header" data-action="collapse-plugin">
+                <i class="fa-solid fa-gears"></i>
+                <h3>Ayarlar</h3>
+                <i class="fa-solid fa-chevron-down collapse-icon"></i>
+                <label class="switch" style="margin-left: auto">
+                  <input type="checkbox" data-setting="enabled" class="enable-toggle" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <p class="plugin-description">
+                FiveM sunucunuzu panele bağlayarak yönetim özelliklerini aktif edin.
+              </p>
+              <div class="plugin-settings">
+                <label>Sunucu IP Adresi</label>
+                <p class="setting-description">
+                  FiveM sunucunuzun IP adresini girin (port olmadan).
+                </p>
+                <input type="text" data-setting="serverIp" placeholder="Örn: 123.45.67.89" />
+                
+                <hr class="separator" />
+
+                <label>Sunucu Portu</label>
+                <p class="setting-description">
+                  FiveM sunucunuzun port numarasını girin.
+                </p>
+                <input type="number" data-setting="serverPort" placeholder="Örn: 30120" />
+
+                <hr class="separator" />
+
+                <label>RCON Şifresi</label>
+                <p class="setting-description">
+                  Sunucunuzun `server.cfg` dosyasındaki RCON şifresini girin.
+                </p>
+                <input type="password" data-setting="rconPassword" placeholder="RCON şifreniz" />
+
+                <hr class="separator" />
+                <label>Özelleştirilebilir RCON Komutları</label>
+                <p class="setting-description">
+                  FiveM sunucunuzun kullandığı script'lere göre aşağıdaki komut şablonlarını düzenleyin.
+                  Değişkenleri süslü parantez içinde kullanın: <code>{playerId}, {message}, {reason}, {discordId}, {itemName}, {amount}, {jobName}, {grade}</code>
+                </p>
+
+                <label style="margin-top: 15px;">Duyuru Komutu</label>
+                <input type="text" data-setting="commandSay" placeholder="say &quot;[DUYURU] {message}&quot;" />
+                <label style="margin-top: 15px;">Özel Mesaj (DM) Komutu</label>
+                <input type="text" data-setting="commandDm" placeholder="dm {playerId} &quot;[PANEL] {message}&quot;" />
+                <label style="margin-top: 15px;">Oyuncu Atma (Kick) Komutu</label>
+                <input type="text" data-setting="commandKick" placeholder="kick {playerId} &quot;{reason}&quot;" />
+                <label style="margin-top: 15px;">Oyuncu Yasaklama (Ban) Komutu</label>
+                <input type="text" data-setting="commandBan" placeholder="ban {playerId} &quot;{reason}&quot;" />
+                <label style="margin-top: 15px;">Whitelist Ekleme Komutu</label>
+                <input type="text" data-setting="commandWhitelistAdd" placeholder="add_whitelist {discordId}" />
+                <label style="margin-top: 15px;">Whitelist Kaldırma Komutu</label>
+                <input type="text" data-setting="commandWhitelistRemove" placeholder="remove_whitelist {discordId}" />
+                <label style="margin-top: 15px;">Whitelist Listeleme Komutu</label>
+                <input type="text" data-setting="commandGetWhitelist" placeholder="get_whitelist" />
+                <label style="margin-top: 15px;">Eşya Verme Komutu</label>
+                <input type="text" data-setting="commandGiveItem" placeholder="giveitem {playerId} {itemName} {amount}" />
+                <label style="margin-top: 15px;">Meslek Verme Komutu</label>
+                <input type="text" data-setting="commandSetJob" placeholder="setjob {playerId} {jobName} {grade}" />
+              </div>
+              <button class="save-button" data-action="save-plugin">
+                Ayarları Kaydet<span class="unsaved-indicator"></span>
+              </button>
+            </div>
+
             <!-- Sunucu Durumu Kartı -->
             <div class="stat-card wide management-card" style="margin-bottom: 30px;">
               <i id="fivem-status-icon" class="fa-solid fa-question-circle" style="color: var(--text-muted);"></i>
@@ -1534,7 +1602,7 @@
 
             <div class="plugins-grid management-card">
               <!-- Whitelist Yönetimi -->
-              <div class="plugin-card management-card" style="cursor: default;">
+              <div class="plugin-card" style="cursor: default;">
                 <div class="plugin-header" style="cursor: default;">
                   <i class="fa-solid fa-user-check"></i>
                   <h3>Whitelist Yönetimi</h3>
@@ -1548,7 +1616,7 @@
               </div>
 
               <!-- Eşya Verme -->
-              <div class="plugin-card management-card" style="cursor: default;">
+              <div class="plugin-card" style="cursor: default;">
                 <div class="plugin-header" style="cursor: default;">
                   <i class="fa-solid fa-box"></i>
                   <h3>Eşya Verme (Give Item)</h3>
@@ -1563,7 +1631,7 @@
               </div>
 
               <!-- Meslek Verme -->
-              <div class="plugin-card management-card" style="cursor: default;">
+              <div class="plugin-card" style="cursor: default;">
                 <div class="plugin-header" style="cursor: default;">
                   <i class="fa-solid fa-briefcase"></i>
                   <h3>Meslek Verme (Set Job)</h3>
@@ -1578,7 +1646,7 @@
               </div>
 
               <!-- YENİ: Duyuru Gönderme -->
-              <div class="plugin-card management-card" style="cursor: default;">
+              <div class="plugin-card" style="cursor: default;">
                 <div class="plugin-header" style="cursor: default;">
                   <i class="fa-solid fa-bullhorn"></i>
                   <h3>Genel Duyuru Gönder</h3>

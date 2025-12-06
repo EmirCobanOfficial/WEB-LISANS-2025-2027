@@ -55,7 +55,7 @@ async function checkFiveMStatus(page) {
     // YENİ: Eklenti aktif değilse, diğer kartları gizle ve uyarı göster
     const fivemSettings = state.guildData.settings?.fivem;
     if (!fivemSettings || !fivemSettings.enabled) {
-        // DÜZELTME: Sadece yönetim araçlarını gizle, ayarlar kartını gizleme.
+        // DÜZELTME: Sadece yönetim araçlarını gizle, ayarlar kartını (data-module="fivem") gizleme.
         document.querySelectorAll('#fivem-page .management-card').forEach(el => el.style.display = 'none');
         // YENİ: Sayfa her açıldığında uyarı göstermek yerine, sadece ilk yüklemede veya ayar değiştiğinde gösterelim.
         if (!page.dataset.initialWarningShown) {
@@ -63,7 +63,7 @@ async function checkFiveMStatus(page) {
         }
         return;
     }
-    // DÜZELTME: Tüm kartları göster. Ayarlar kartı zaten görünür durumda.
+    // DÜZELTME: Tüm yönetim kartlarını göster. Ayarlar kartı zaten görünür durumda.
     document.querySelectorAll('#fivem-page .management-card, #fivem-page .stat-card').forEach(el => el.style.display = 'flex'); // Kartları göster
     statusText.textContent = 'Kontrol Ediliyor...';
     statusIcon.className = 'fa-solid fa-spinner fa-spin';
