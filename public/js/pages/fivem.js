@@ -56,7 +56,10 @@ async function checkFiveMStatus() {
     const fivemSettings = state.guildData.settings?.fivem;
     if (!fivemSettings || !fivemSettings.enabled) {
         document.querySelectorAll('#fivem-page .plugin-card:not([data-module="fivem"]), #fivem-page .stat-card').forEach(el => el.style.display = 'none');
-        ui.showToast('FiveM modülü aktif değil. Lütfen önce Ayarlar kartından modülü etkinleştirin.', 'warning');
+        // YENİ: Sayfa her açıldığında uyarı göstermek yerine, sadece ilk yüklemede veya ayar değiştiğinde gösterelim.
+        if (!page.dataset.initialWarningShown) {
+            ui.showToast('FiveM modülü aktif değil. Lütfen önce Ayarlar kartından modülü etkinleştirin.', 'warning');
+        }
         return;
     }
     document.querySelectorAll('#fivem-page .plugin-card, #fivem-page .stat-card').forEach(el => el.style.display = 'flex'); // Kartları göster
@@ -92,6 +95,12 @@ async function renderWhitelist() {
     const listContainer = document.getElementById('fivem-whitelist-list');
     const refreshBtn = document.getElementById('fivem-refresh-whitelist-btn');
     if (!listContainer || !refreshBtn) return;
+
+    // YENİ: Modül aktif değilse işlemi durdur.
+    const fivemSettings = state.guildData.settings?.fivem;
+    if (!fivemSettings || !fivemSettings.enabled) {
+        return;
+    }
 
     refreshBtn.disabled = true;
     listContainer.innerHTML = '<p class="setting-description" style="text-align: center;">Liste yükleniyor...</p>';
@@ -271,6 +280,7 @@ export function initFivemPage() {
             // Değişikliğin UI'a yansıması için kısa bir gecikme
             setTimeout(() => {
                 checkFiveMStatus();
+                page.dataset.initialWarningShown = 'true'; // Uyarıyı tekrar gösterme
                 renderWhitelist();
             }, 100);
         }
@@ -290,6 +300,7 @@ export function initFivemPage() {
 
 
     checkFiveMStatus();
+    page.dataset.initialWarningShown = 'true'; // İlk yüklemede uyarıyı gösterdik olarak işaretle
     renderWhitelist();
 
     page.dataset.listenerAttached = 'true';
