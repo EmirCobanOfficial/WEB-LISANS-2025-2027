@@ -48,6 +48,11 @@
           <a href="#" class="nav-link" data-page="audit-log-page">
             <i class="fa-solid fa-clipboard-list fa-fw"></i> Denetim Kaydı
           </a>
+          <% if (isBotOwner) { %>
+            <a href="#" class="nav-link" data-page="fivem-page">
+              <i class="fa-solid fa-gamepad fa-fw"></i> FiveM Yönetimi
+            </a>
+          <% } %>
           <a href="#" class="nav-link" data-page="music-player-page">
             <i class="fa-solid fa-circle-play fa-fw"></i> Müzik Çalar
           </a>
@@ -76,6 +81,9 @@
             </a>
             <a href="#" class="nav-link" data-page="panel-logs-page">
               <i class="fa-solid fa-file-lines fa-fw"></i> Panel Logları
+            </a>
+            <a href="#" class="nav-link" data-page="trusted-users-page">
+              <i class="fa-solid fa-user-shield fa-fw"></i> Güvenilir Kullanıcılar
             </a>
           <% } %>
         </nav>
@@ -210,6 +218,83 @@
                     <button type="button" id="cancel-new-punishment-btn" class="remove-item-btn" style="background-color: #747f8d;">İptal</button>
                   </div>
                   <!-- Otomatik Ceza Ayarları Sonu -->
+                </div>
+                <button class="save-button" data-action="save-plugin">
+                  Ayarları Kaydet<span class="unsaved-indicator"></span>
+                </button>
+              </div>
+
+              <!-- YENİ: FiveM Bağlantı Kartı -->
+              <div class="plugin-card" data-module="fivem">
+                <div class="plugin-header">
+                  <i class="fa-solid fa-server"></i>
+                  <h3>FiveM Bağlantısı</h3>
+                  <i class="fa-solid fa-chevron-down collapse-icon"></i>
+                  <label class="switch" style="margin-left: auto">
+                    <input type="checkbox" data-setting="enabled" class="enable-toggle" />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+                <p class="plugin-description">
+                  FiveM sunucunuzu panele bağlayarak yönetim özelliklerini aktif edin.
+                </p>
+                <div class="plugin-settings">
+                  <label>Sunucu IP Adresi</label>
+                  <p class="setting-description">
+                    FiveM sunucunuzun IP adresini girin (port olmadan).
+                  </p>
+                  <input type="text" data-setting="serverIp" placeholder="Örn: 123.45.67.89" />
+                  
+                  <hr class="separator" />
+
+                  <label>Sunucu Portu</label>
+                  <p class="setting-description">
+                    FiveM sunucunuzun port numarasını girin.
+                  </p>
+                  <input type="number" data-setting="serverPort" placeholder="Örn: 30120" />
+
+                  <hr class="separator" />
+
+                  <label>RCON Şifresi</label>
+                  <p class="setting-description">
+                    Sunucunuzun `server.cfg` dosyasındaki RCON şifresini girin.
+                  </p>
+                  <input type="password" data-setting="rconPassword" placeholder="RCON şifreniz" />
+
+                  <hr class="separator" />
+                  <label>Özelleştirilebilir RCON Komutları</label>
+                  <p class="setting-description">
+                    FiveM sunucunuzun kullandığı script'lere göre aşağıdaki komut şablonlarını düzenleyin.
+                    Değişkenleri süslü parantez içinde kullanın: <code>{playerId}, {message}, {reason}, {discordId}, {itemName}, {amount}, {jobName}, {grade}</code>
+                  </p>
+
+                  <label style="margin-top: 15px;">Duyuru Komutu</label>
+                  <input type="text" data-setting="commandSay" placeholder="say &quot;[DUYURU] {message}&quot;" />
+
+                  <label style="margin-top: 15px;">Özel Mesaj (DM) Komutu</label>
+                  <input type="text" data-setting="commandDm" placeholder="dm {playerId} &quot;[PANEL] {message}&quot;" />
+
+                  <label style="margin-top: 15px;">Oyuncu Atma (Kick) Komutu</label>
+                  <input type="text" data-setting="commandKick" placeholder="kick {playerId} &quot;{reason}&quot;" />
+
+                  <label style="margin-top: 15px;">Oyuncu Yasaklama (Ban) Komutu</label>
+                  <input type="text" data-setting="commandBan" placeholder="ban {playerId} &quot;{reason}&quot;" />
+
+                  <label style="margin-top: 15px;">Whitelist Ekleme Komutu</label>
+                  <input type="text" data-setting="commandWhitelistAdd" placeholder="add_whitelist {discordId}" />
+
+                  <label style="margin-top: 15px;">Whitelist Kaldırma Komutu</label>
+                  <input type="text" data-setting="commandWhitelistRemove" placeholder="remove_whitelist {discordId}" />
+
+                  <label style="margin-top: 15px;">Whitelist Listeleme Komutu</label>
+                  <input type="text" data-setting="commandGetWhitelist" placeholder="get_whitelist" />
+
+                  <label style="margin-top: 15px;">Eşya Verme Komutu</label>
+                  <input type="text" data-setting="commandGiveItem" placeholder="giveitem {playerId} {itemName} {amount}" />
+
+                  <label style="margin-top: 15px;">Meslek Verme Komutu</label>
+                  <input type="text" data-setting="commandSetJob" placeholder="setjob {playerId} {jobName} {grade}" />
+
                 </div>
                 <button class="save-button" data-action="save-plugin">
                   Ayarları Kaydet<span class="unsaved-indicator"></span>
@@ -1490,6 +1575,121 @@
           </div>
         </div>
 
+        <% if (isBotOwner) { %>
+          <!-- YENİ: FiveM Yönetim Sayfası -->
+          <div class="page-content" id="fivem-page" style="display: none;">
+            <header class="main-header">
+              <h2><i class="fa-solid fa-gamepad"></i> FiveM Yönetim Paneli</h2>
+            </header>
+
+            <!-- Sunucu Durumu Kartı -->
+            <div class="stat-card wide" style="margin-bottom: 30px;">
+              <i id="fivem-status-icon" class="fa-solid fa-question-circle" style="color: var(--text-muted);"></i>
+              <div class="stat-info">
+                <span id="fivem-status-text" class="stat-value">Durum Bilinmiyor</span>
+                <span id="fivem-player-count" class="stat-label">Oyuncu: -/-</span>
+              </div>
+              <button id="fivem-check-status-btn" class="header-action-btn">
+                <i class="fa-solid fa-arrows-rotate"></i> Durumu Yenile
+              </button>
+            </div>
+
+            <!-- YENİ: Oyuncu Listesi Kartı -->
+            <div class="plugin-card" style="cursor: default; margin-bottom: 30px;">
+              <div class="plugin-header" style="cursor: default;">
+                <i class="fa-solid fa-users"></i>
+                <h3>Aktif Oyuncular</h3>
+              </div>
+              <p class="plugin-description">
+                Sunucuda anlık olarak bulunan oyuncuların listesi.
+              </p>
+              <div id="fivem-player-list" class="item-list-container" style="max-height: 400px; overflow-y: auto;">
+                <p class="setting-description" style="text-align: center;">Oyuncu listesi yükleniyor...</p>
+              </div>
+            </div>
+            <!-- Oyuncu Listesi Kartı Sonu -->
+
+            <div class="plugins-grid">
+              <!-- Whitelist Yönetimi -->
+              <div class="plugin-card" style="cursor: default;">
+                <div class="plugin-header" style="cursor: default;">
+                  <i class="fa-solid fa-user-check"></i>
+                  <h3>Whitelist Yönetimi</h3>
+                </div>
+                <p class="plugin-description">Kullanıcının Discord ID'sini girerek whitelist'e ekleyin veya kaldırın.</p>
+                <div class="add-item-container">
+                  <input type="text" id="fivem-whitelist-id" class="setting-input" placeholder="Discord ID...">
+                  <button id="fivem-whitelist-add-btn" class="add-btn" style="background: var(--green);"><i class="fa-solid fa-plus"></i> Ekle</button>
+                  <button id="fivem-whitelist-remove-btn" class="add-btn" style="background: var(--red);"><i class="fa-solid fa-minus"></i> Kaldır</button>
+                </div>
+              </div>
+
+              <!-- Eşya Verme -->
+              <div class="plugin-card" style="cursor: default;">
+                <div class="plugin-header" style="cursor: default;">
+                  <i class="fa-solid fa-box"></i>
+                  <h3>Eşya Verme (Give Item)</h3>
+                </div>
+                <p class="plugin-description">Oyuncuya belirtilen miktarda eşya verin.</p>
+                <div class="plugin-settings" style="display: flex; padding-left: 0;">
+                  <input type="text" id="fivem-giveitem-playerid" class="setting-input" placeholder="Oyuncu ID (Sunucu içi)">
+                  <input type="text" id="fivem-giveitem-itemname" class="setting-input" placeholder="Eşya Kodu (Örn: water)">
+                  <input type="number" id="fivem-giveitem-amount" class="setting-input" placeholder="Miktar" min="1">
+                  <button id="fivem-giveitem-btn" class="save-button">Eşyayı Ver</button>
+                </div>
+              </div>
+
+              <!-- Meslek Verme -->
+              <div class="plugin-card" style="cursor: default;">
+                <div class="plugin-header" style="cursor: default;">
+                  <i class="fa-solid fa-briefcase"></i>
+                  <h3>Meslek Verme (Set Job)</h3>
+                </div>
+                <p class="plugin-description">Oyuncunun mesleğini ve rütbesini ayarlayın.</p>
+                <div class="plugin-settings" style="display: flex; padding-left: 0;">
+                  <input type="text" id="fivem-setjob-playerid" class="setting-input" placeholder="Oyuncu ID (Sunucu içi)">
+                  <input type="text" id="fivem-setjob-jobname" class="setting-input" placeholder="Meslek Kodu (Örn: police)">
+                  <input type="number" id="fivem-setjob-grade" class="setting-input" placeholder="Rütbe (Örn: 0)" min="0">
+                  <button id="fivem-setjob-btn" class="save-button">Mesleği Ayarla</button>
+                </div>
+              </div>
+
+              <!-- YENİ: Duyuru Gönderme -->
+              <div class="plugin-card" style="cursor: default;">
+                <div class="plugin-header" style="cursor: default;">
+                  <i class="fa-solid fa-bullhorn"></i>
+                  <h3>Genel Duyuru Gönder</h3>
+                </div>
+                <p class="plugin-description">Sunucudaki tüm oyunculara bir duyuru mesajı gönderin.</p>
+                <div class="add-item-container">
+                  <input type="text" id="fivem-announcement-message" class="setting-input" placeholder="Duyuru mesajınız...">
+                  <button id="fivem-send-announcement-btn" class="add-btn">
+                    <i class="fa-solid fa-paper-plane"></i> Gönder
+                  </button>
+                </div>
+              </div>
+
+              <!-- YENİ: Whitelist Listesi -->
+              <div class="plugin-card" style="cursor: default; grid-column: 1 / -1;">
+                <div class="plugin-header" style="cursor: default;">
+                  <i class="fa-solid fa-list-ul"></i>
+                  <h3>Whitelist'teki Kullanıcılar</h3>
+                  <button id="fivem-refresh-whitelist-btn" class="header-action-btn" style="margin-left: auto;">
+                    <i class="fa-solid fa-arrows-rotate"></i> Listeyi Yenile
+                  </button>
+                </div>
+                <p class="plugin-description">
+                  Şu anda whitelist'te bulunan Discord ID'lerinin listesi.
+                </p>
+                <div id="fivem-whitelist-list" class="item-list-container">
+                  <p class="setting-description" style="text-align: center;">Liste yükleniyor...</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        <% } %>
+
         <!-- Page: Custom Commands -->
         <div class="page-content" id="custom-commands-page" style="display: none">
           <header class="main-header">
@@ -1638,6 +1838,35 @@
               </div>
           </div>
         </div>
+
+        <% if (isBotOwner) { %>
+          <!-- YENİ: Güvenilir Kullanıcılar Sayfası -->
+          <div class="page-content" id="trusted-users-page" style="display: none;">
+            <header class="main-header">
+              <h2><i class="fa-solid fa-user-shield"></i> Güvenilir Kullanıcıları Yönet</h2>
+            </header>
+            <p class="setting-description">
+              Bu sayfadan, panele yönetici yetkileriyle erişebilecek ek kullanıcıları yönetebilirsiniz. Bu liste, `.env` dosyasındaki `TRUSTED_USERS` listesine ek olarak çalışır.
+            </p>
+            <div class="plugin-card" data-module="trustedUsers" style="cursor: default;">
+              <div class="plugin-settings" style="display: flex; padding-left: 0;">
+                <label>Yeni Güvenilir Kullanıcı Ekle</label>
+                <p class="setting-description">
+                  Eklemek istediğiniz kullanıcının Discord ID'sini girin.
+                </p>
+                <div class="add-item-container">
+                  <input type="text" id="user-id-to-trust" class="setting-input" placeholder="Kullanıcı ID'si...">
+                  <button id="add-trusted-user-btn" type="button" class="add-btn">Ekle</button>
+                </div>
+                <hr class="separator" />
+                <label>Panelden Eklenen Güvenilir Kullanıcılar</label>
+                <div id="trusted-users-list" class="item-list-container">
+                  <!-- Güvenilir kullanıcılar buraya JS ile render edilecek -->
+                </div>
+              </div>
+            </div>
+          </div>
+        <% } %>
 
         <!-- YENİ: Müzik Çalar Sayfası -->
         <div class="page-content" id="music-player-page" style="display: none;">
@@ -1852,6 +2081,30 @@
         </form>
       </div>
     </div>
+
+    <!-- YENİ: Kullanıcı Profili Modal'ı -->
+    <div id="user-profile-modal" class="modal-overlay" style="display: none;">
+      <div class="modal-content confirm-modal-content" style="max-width: 400px; text-align: left;">
+        <div id="user-profile-content">
+          <!-- Profil içeriği buraya JS ile yüklenecek -->
+          <div style="text-align: center; padding: 20px;">
+            <i class="fa-solid fa-spinner fa-spin" style="font-size: 2em;"></i>
+            <p>Kullanıcı bilgileri yükleniyor...</p>
+          </div>
+        </div>
+        <div class="modal-actions" style="justify-content: center; border-top: none; padding-top: 0;">
+          <button id="user-profile-modal-close" class="sidebar-btn">Kapat</button>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      #user-profile-banner { width: 100%; height: 120px; background-size: cover; background-position: center; border-radius: 16px 16px 0 0; margin: -35px -35px 20px -35px; }
+      #user-profile-avatar { width: 90px; height: 90px; border-radius: 50%; border: 4px solid var(--bg-tertiary); margin-top: -65px; margin-bottom: 10px; }
+      #user-profile-tag { font-size: 1.5em; font-weight: 700; color: white; }
+      #user-profile-id { font-size: 0.9em; color: var(--text-secondary); font-family: 'Courier New', Courier, monospace; margin-bottom: 15px; }
+      #user-profile-created { font-size: 0.9em; color: var(--text-secondary); }
+    </style>
 
     <!-- Eski dashboard.js yerine yeni modüler yapıyı kullanıyoruz -->
     <script type="module" src="/js/app.js"></script>

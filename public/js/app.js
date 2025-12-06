@@ -16,12 +16,15 @@ import { initBansPage } from './pages/bans.js'; // YENİ
 import { initAuthorizedUsersPage } from './pages/authorized-users.js'; // YENİ
 import { initPanelLogsPage } from './pages/panel-logs.js'; // YENİ
 import { initMusicPlayerPage } from './pages/music.js'; // YENİ
+import { initFivemPage } from './pages/fivem.js'; // YENİ
+import { initTrustedUsersPage } from './pages/trusted-users.js'; // YENİ
 import { initPluginsPage, setupPluginPageListeners } from './pages/plugins.js';
 
 const pageInitializers = {
     'dashboard-page': initDashboardPage,
     'roles-page': initRolesPage,
     'members-page': initMembersPage,
+    'fivem-page': initFivemPage, // YENİ
     'stats-page': initStatsPage,
     'invites-page': initInvitesPage,
     'leaderboard-page': initLeaderboardPage,
@@ -33,6 +36,7 @@ const pageInitializers = {
     'warnings-page': initWarningsPage, // YENİ
     'authorized-users-page': initAuthorizedUsersPage, // YENİ
     'music-player-page': initMusicPlayerPage, // YENİ
+    'trusted-users-page': initTrustedUsersPage, // YENİ
     'panel-logs-page': initPanelLogsPage, // YENİ
     'plugins-page': initPluginsPage,
 };
@@ -105,7 +109,7 @@ async function switchPage(pageId, force = false) {
             // Yetki varsa veya sayfa herkese açıksa, içeriği yükle.
             const initializer = pageInitializers[pageId];
             if (initializer) {
-                const dataKey = pageId.split('-')[0];
+                const dataKey = pageId.replace('-page', '');
                 const alwaysReload = ['plugins', 'roles', 'custom-commands', 'backups', 'stats', 'dashboard', 'authorized-users', 'panel-logs', 'music-player'];
                 if (force || alwaysReload.includes(dataKey) || !state.isDataLoaded(dataKey)) {
                     await initializer();

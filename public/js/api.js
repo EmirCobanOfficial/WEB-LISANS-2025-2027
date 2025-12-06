@@ -38,6 +38,7 @@ export const api = {
     getAuditLogEvents: () => fetchJSON('/api/audit-log-events'),
     getAuthorizedUsers: () => fetchJSON('/api/authorized-users'), // YENİ: Giriş yapanları getiren rota
     getPanelLogs: () => fetchJSON('/api/panel-logs'), // YENİ: Panel loglarını getiren rota
+    getUserProfile: (userId) => fetchJSON(`/api/user/${userId}`), // YENİ: Kullanıcı profili
     checkPermissions: (guildId) => fetchJSON(`/api/guild/${guildId}/permissions-check`), // YENİ: İzin kontrolü
 
     // YENİ: Müzik API
@@ -57,6 +58,46 @@ export const api = {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ trackUrl }),
     }),
+
+    // YENİ: FiveM API
+    getFivemStatus: (guildId) => fetchJSON(`/api/guild/${guildId}/fivem/status`),
+    getFivemWhitelist: (guildId) => fetchJSON(`/api/guild/${guildId}/fivem/whitelist`),
+    manageFivemWhitelist: (guildId, discordId, action) => fetchJSON(`/api/guild/${guildId}/fivem/whitelist`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ discordId, action }),
+    }),
+    giveFivemItem: (guildId, playerId, itemName, amount) => fetchJSON(`/api/guild/${guildId}/fivem/giveitem`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ playerId, itemName, amount }),
+    }),
+    setFivemJob: (guildId, playerId, jobName, grade) => fetchJSON(`/api/guild/${guildId}/fivem/setjob`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ playerId, jobName, grade }),
+    }),
+    kickFivemPlayer: (guildId, playerId, reason) => fetchJSON(`/api/guild/${guildId}/fivem/kick`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ playerId, reason }),
+    }),
+    banFivemPlayer: (guildId, playerId, reason) => fetchJSON(`/api/guild/${guildId}/fivem/ban`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ playerId, reason }),
+    }),
+    sendFivemAnnouncement: (guildId, message) => fetchJSON(`/api/guild/${guildId}/fivem/announcement`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message }),
+    }),
+    sendFivemDm: (guildId, playerId, message) => fetchJSON(`/api/guild/${guildId}/fivem/dm`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ playerId, message }),
+    }),
+
 
     // POST, PATCH, DELETE istekleri
     saveSettings: (guildId, moduleName, newSettings) => fetchJSON('/api/settings', {
@@ -129,6 +170,17 @@ export const api = {
         body: JSON.stringify({ userId })
     }),
     unblockUser: (userId) => fetchJSON(`/api/blocked-users/${userId}`, {
+        method: 'DELETE'
+    }),
+
+    // --- Güvenilir Kullanıcı API Fonksiyonları (YENİ) ---
+    getTrustedUsers: () => fetchJSON('/api/trusted-users'),
+    addTrustedUser: (userId) => fetchJSON('/api/trusted-users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId })
+    }),
+    removeTrustedUser: (userId) => fetchJSON(`/api/trusted-users/${userId}`, {
         method: 'DELETE'
     }),
 };

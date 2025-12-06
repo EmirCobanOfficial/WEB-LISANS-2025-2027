@@ -3238,3 +3238,30 @@ input:checked + .slider:before {
   transform: translateY(-1px);
   box-shadow: 0 4px 15px rgba(239, 68, 68, 0.2);
 }
+
+/* ... */
+.action-btn {
+  /* Genel buton görünümü */
+  background-color: var(--background-light);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  /* ...diğer stiller */
+}
+
+/* Düzenleme / Yapıcı Eylem Butonu (Mavi) */
+.action-btn.edit {
+  background-color: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+}
+
+/* Silme / Tehlikeli Eylem Butonu (Kırmızı) */
+.action-btn.danger {
+  background-color: var(--red);
+  color: #fff;
+  border-color: var(--red);
+}
+/* ... */
