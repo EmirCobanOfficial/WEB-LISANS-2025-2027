@@ -183,6 +183,16 @@ async function updatePluginCardsUI() {
         else if (goodbyePreview) { goodbyePreview.style.display = 'none'; }
     });
 
+    // DÜZELTME: Bot banner önizlemesini ayarla
+    const botBannerFileName = settings.global?.botBanner?.fileName;
+    const botBannerPreview = document.getElementById('bot-banner-preview');
+    if (botBannerFileName && botBannerPreview) {
+        botBannerPreview.src = `/uploads/${botBannerFileName}`;
+        botBannerPreview.style.display = 'block';
+    } else if (botBannerPreview) {
+        botBannerPreview.style.display = 'none';
+    }
+
     // Özel liste render fonksiyonlarını çağır (ui.js'den gelenler)
     if (settings.moderation) {
         ui.renderProtectedChannelsList(channels, settings.moderation.protectedChannelIds);
@@ -248,7 +258,10 @@ async function loadGuildData(guildId) {
         await checkAndShowPermissionsWarning(guildId);
 
         state.updateGuildData({ settings, channels, roles });
-        updatePluginCardsUI(); // EKLENEN SATIR: Arayüzü gelen verilerle doldur.
+
+        // DÜZELTME: Hem sunucuya özel hem de global UI'ı güncelle
+        await updatePluginCardsUI();
+
         console.log("Sunucu verileri yüklendi ve arayüz güncellendi.", state.guildData);
         await switchPage('dashboard-page', true); // Sayfayı zorla değiştir (kaydedilmemiş değişiklik uyarısı olmadan)
     } catch (error) {
@@ -449,6 +462,26 @@ function setupEventListeners() {
                     document.getElementById('import-settings-input')?.click();
                     break;
             }
+
+            // YENİ: Bot Banner Ayarlama Butonu
+            if (action === 'set-bot-banner') {
+                const fileInput = document.getElementById('bot-banner-upload');
+                const file = fileInput?.files[0];
+                if (!file) {
+                    return ui.showToast('Lütfen önce bir banner resmi seçin.', 'warning');
+                }
+
+                const formData = new FormData();
+                formData.append('banner', file);
+
+                try {
+                    ui.showToast('Banner yükleniyor ve ayarlanıyor...', 'info');
+                    const result = await api.setBotBanner(formData);
+                    ui.showToast(result.message, 'success');
+                } catch (error) {
+                    ui.showToast(`Banner ayarlanamadı: ${error.message}`, 'error');
+                }
+            }
         }
 
         // YENİ: Kullanıcı Engelleme Butonu
@@ -551,6 +584,23 @@ function setupEventListeners() {
 
     document.addEventListener('change', async (e) => {
         if (e.target.classList.contains('image-upload-input')) {
+            // DÜZELTME: Eğer bu bot banner yüklemesi ise, bu olay dinleyicisini atla.
+            if (e.target.id === 'bot-banner-upload') {
+                const fileInput = e.target;
+                const file = fileInput.files[0];
+                if (!file) return;
+                const preview = document.getElementById('bot-banner-preview');
+                if (preview) {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        preview.src = event.target.result;
+                        preview.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                }
+                return; // Yükleme yapmadan sadece önizleme göster ve çık
+            }
+
             const fileInput = e.target;
             const file = fileInput.files[0];
             if (!file) return;

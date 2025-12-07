@@ -146,4 +146,9 @@ export const api = {
     clearPanelLogs: () => fetchJSON('/api/panel-logs', { // YENİ
         method: 'DELETE'
     }),
+    // YENİ: Bot Banner API
+    setBotBanner: (formData) => fetch('/api/bot/banner', {
+        method: 'POST',
+        body: formData,
+    }).then(res => res.json().then(data => { if (!res.ok) throw new Error(data.error); return data; })),
 };

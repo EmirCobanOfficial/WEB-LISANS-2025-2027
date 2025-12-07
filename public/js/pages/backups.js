@@ -64,6 +64,21 @@ async function handleRestoreBackup(file) {
     reader.readAsText(file);
 }
 
+/**
+ * YENİ: Dosya boyutunu okunabilir bir formata çevirir (Bytes, KB, MB, GB).
+ * @param {number} bytes - Byte cinsinden dosya boyutu.
+ * @param {number} decimals - Ondalık basamak sayısı.
+ * @returns {string}
+ */
+function formatBytes(bytes, decimals = 2) {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const dm = decimals < 0 ? 0 : decimals;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+}
+
 export async function initBackupsPage() {
     const container = document.getElementById('backups-list-container');
     if (!container) return;
@@ -83,12 +98,14 @@ export async function initBackupsPage() {
             const card = document.createElement('div');
             card.className = 'backup-card';
             const backupDate = new Date(backup.date).toLocaleString('tr-TR');
+            const backupSize = formatBytes(backup.size || 0); // YENİ: Boyutu formatla
 
             card.innerHTML = `
                 <div class="backup-info">
                     <i class="fa-solid fa-database"></i>
                     <div class="backup-details">
                         <span class="backup-date">${backupDate}</span>
+                        <span class="backup-id">Boyut: ${backupSize}</span> <!-- YENİ: Boyut bilgisi eklendi -->
                         <span class="backup-id">ID: ${backup.id}</span>
                     </div>
                 </div>

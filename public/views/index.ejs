@@ -52,7 +52,7 @@
           <a href="#" class="nav-link" data-page="audit-log-page">
             <i class="fa-solid fa-clipboard-list fa-fw"></i> Denetim Kaydı
           </a>
-          <% if (isBotOwner) { %>
+          <% if (isBotOwner === 'true') { %>
             <a href="#" class="nav-link" data-page="fivem-page">
               <i class="fa-solid fa-gamepad fa-fw"></i> FiveM Yönetimi
             </a>
@@ -79,7 +79,7 @@
             <i class="fa-solid fa-puzzle-piece fa-fw"></i> Eklentiler
           </a>
           <!-- YENİ: Sadece bot sahibi görebilir -->
-          <% if (isBotOwner) { %>
+          <% if (isBotOwner === 'true') { %>
             <a href="#" class="nav-link" data-page="authorized-users-page">
               <i class="fa-solid fa-user-check fa-fw"></i> Giriş Yapanlar
             </a>
@@ -1047,7 +1047,7 @@
                 </button>
               </div>
 
-              <% if (isBotOwner) { %>
+              <% if (isBotOwner === 'true') { %>
                 <!-- Bot Durumu Ayarları Kartı (Sadece Bot Sahibi Görür) -->
                 <div class="plugin-card" data-module="botStatus">
                   <div class="plugin-header">
@@ -1296,6 +1296,40 @@
                   Ayarları Kaydet<span class="unsaved-indicator"></span>
                 </button>
               </div>
+
+              <!-- YENİ: Bot Banner Ayarlama Kartı (Sadece Bot Sahibi) -->
+              <% if (isBotOwner === 'true') { %>
+              <div class="plugin-card" data-module="botBanner">
+                <div class="plugin-header">
+                  <i class="fa-solid fa-image-portrait"></i>
+                  <h3>Bot Banner</h3>
+                  <i class="fa-solid fa-chevron-down collapse-icon"></i>
+                </div>
+                <p class="plugin-description">
+                  Botun profil banner'ını buradan değiştirin. (Sadece Nitro gerektiren .gif bannerlar desteklenmez)
+                </p>
+                <div class="plugin-settings" style="display: flex;">
+                  <label>Banner Resmi</label>
+                  <div class="image-upload-container">
+                    <img id="bot-banner-preview" class="image-preview" src="" alt="Banner Önizleme" style="display:none;">
+                    <input type="file" id="bot-banner-upload" class="image-upload-input" data-type="bot-banner" accept="image/png, image/jpeg">
+                    <p class="setting-description">Yeni bir resim yüklemek için seçin. (Max 5MB)</p>
+                  </div>
+                  <!-- YENİ: Rate Limit Uyarısı -->
+                  <div class="beta-notice" style="margin-top: 15px;">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <div>
+                      <strong>Önemli Uyarı:</strong> Banner'ı çok sık değiştirmek, Discord'un kullanım limitlerine (rate limit) takılmanıza neden olabilir. Bu durum, botun geçici olarak kısıtlanmasıyla sonuçlanabilir.
+                    </div>
+                  </div>
+                  <!-- Uyarı Sonu -->
+                  <button id="set-bot-banner-btn" class="save-button" data-action="set-bot-banner" style="margin-top: 20px;">
+                    Banner'ı Ayarla
+                  </button>
+                </div>
+              </div>
+              <% } %>
+              <!-- YENİ KART SONU -->
             </div>
           </div>
         </div>
@@ -1522,7 +1556,7 @@
           </div>
         </div>
 
-        <% if (isBotOwner) { %>
+        <% if (isBotOwner === 'true') { %>
           <!-- YENİ: FiveM Yönetim Sayfası -->
           <div class="page-content" id="fivem-page" style="display: none;">
             <header class="main-header">
@@ -1761,7 +1795,7 @@
           </div>
         </div>
 
-        <% if (isBotOwner) { %>
+        <% if (isBotOwner === 'true') { %>
           <!-- YENİ: Güvenilir Kullanıcılar Sayfası -->
           <div class="page-content" id="trusted-users-page" style="display: none;">
             <header class="main-header">
