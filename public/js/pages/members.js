@@ -1,6 +1,6 @@
 import { api } from '../api.js';
 import { state } from '../state.js';
-import { showToast } from '../ui.js';
+import { showToast, populateSelect } from '../ui.js';
 
 function displayMembers(members) {
     const membersBody = document.getElementById('members-list-body');
@@ -79,23 +79,35 @@ async function handleMemberRolesSave(event) {
     }
 }
 
+function applyMemberFilters() {
+    const searchInput = document.getElementById('member-search-input');
+    const roleFilter = document.getElementById('member-role-filter');
+    if (!searchInput || !roleFilter || !state.guildData.members) return;
+
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    const selectedRoleId = roleFilter.value;
+
+    let filteredMembers = state.guildData.members;
+
+    if (searchTerm) {
+        filteredMembers = filteredMembers.filter(member =>
+            member.tag.toLowerCase().includes(searchTerm) || member.id.includes(searchTerm)
+        );
+    }
+
+    if (selectedRoleId && selectedRoleId !== 'all') {
+        filteredMembers = filteredMembers.filter(member => member.roles.includes(selectedRoleId));
+    }
+
+    displayMembers(filteredMembers);
+}
+
 function setupMemberEventListeners() {
     const searchInput = document.getElementById('member-search-input');
-    if (searchInput) {
-        searchInput.addEventListener('input', () => {
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            if (!state.guildData.members || state.guildData.members.length === 0) return;
+    const roleFilter = document.getElementById('member-role-filter');
 
-            if (!searchTerm) {
-                displayMembers(state.guildData.members);
-                return;
-            }
-            const filteredMembers = state.guildData.members.filter(member =>
-                member.tag.toLowerCase().includes(searchTerm) || member.id.includes(searchTerm)
-            );
-            displayMembers(filteredMembers);
-        });
-    }
+    if (searchInput) searchInput.addEventListener('input', applyMemberFilters);
+    if (roleFilter) roleFilter.addEventListener('change', applyMemberFilters);
 
     document.getElementById('members-list-body')?.addEventListener('click', e => {
         const editBtn = e.target.closest('.edit-member-roles-btn');
@@ -121,10 +133,15 @@ function setupMemberEventListeners() {
 export async function initMembersPage() {
     const membersBody = document.getElementById('members-list-body');
     const searchInput = document.getElementById('member-search-input');
-    if (!membersBody || !searchInput) return;
+    const roleFilter = document.getElementById('member-role-filter');
+    if (!membersBody || !searchInput || !roleFilter) return;
 
     searchInput.value = '';
     membersBody.innerHTML = '<tr><td colspan="3" style="text-align: center;">Üyeler yükleniyor...</td></tr>';
+
+    // Rol filtresini doldur
+    const rolesForFilter = [{ id: 'all', name: 'Tüm Roller' }, ...state.guildData.roles];
+    populateSelect(roleFilter, rolesForFilter, 'all');
 
     try {
         const members = await api.getGuildMembers(state.selectedGuildId);

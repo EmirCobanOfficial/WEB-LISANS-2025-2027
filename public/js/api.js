@@ -143,4 +143,7 @@ export const api = {
     removeTrustedUser: (userId) => fetchJSON(`/api/trusted-users/${userId}`, {
         method: 'DELETE'
     }),
+    clearPanelLogs: () => fetchJSON('/api/panel-logs', { // YENİ
+        method: 'DELETE'
+    }),
 };

@@ -67,11 +67,6 @@ async function switchPage(pageId, force = false) {
     // Tüm sayfaları gizle
     document.querySelectorAll('.page-content').forEach(page => page.style.display = 'none');
     
-    // Eklenti sayfasının özel kapsayıcılarını da gizle
-    document.querySelectorAll('.plugins-grid-container').forEach(container => {
-        container.style.display = 'none';
-    });
-
 
     // Tüm navigasyon linklerinden 'active' sınıfını kaldır
     document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
@@ -82,13 +77,6 @@ async function switchPage(pageId, force = false) {
     if (targetPage) {
         // Sadece hedef sayfayı göster
         targetPage.style.display = 'block';
-
-        // Eğer hedef sayfa eklentiler sayfasıysa, onun özel kapsayıcılarını da göster
-        if (pageId === 'plugins-page') {
-            document.querySelectorAll('.plugins-grid-container').forEach(container => {
-                container.style.display = 'block';
-            });
-        }
 
         if (targetLink) {
             targetLink.classList.add('active'); // İlgili menü öğesini aktif yap
@@ -331,6 +319,54 @@ function setupEventListeners() {
         showServerSelector();
     });
 
+    // YENİ: Mobil menü butonuna tıklama olayı
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // DÜZELTME: Olayın üst elemente (sunucu seçme başlığı) yayılmasını engelle.
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('mobile-menu-open');
+        });
+    }
+
+    // YENİ: Eklentiler sayfası sekme yönetimi
+    const tabsContainer = document.querySelector('.tabs-container');
+    if (tabsContainer) {
+      tabsContainer.addEventListener('click', (e) => {
+        const tabLink = e.target.closest('.tab-link');
+        if (!tabLink) return;
+
+        // Tüm sekmelerden ve içeriklerden 'active' sınıfını kaldır
+        document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+        // Tıklanan sekmeyi ve ilgili içeriği aktif yap
+        tabLink.classList.add('active');
+        const activeTabContent = document.getElementById(tabLink.dataset.tab);
+        if (activeTabContent) {
+            activeTabContent.classList.add('active');
+        }
+      });
+    }
+
+    // YENİ: Eklenti arama çubuğu işlevselliği
+    const pluginSearchInput = document.getElementById('plugin-search-input');
+    if (pluginSearchInput) {
+        pluginSearchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            
+            document.querySelectorAll('.tab-content').forEach(tabContent => {
+                const pluginCards = tabContent.querySelectorAll('.plugin-card');
+                pluginCards.forEach(card => {
+                    const title = card.querySelector('.plugin-header h3')?.textContent.toLowerCase() || '';
+                    const description = card.querySelector('.plugin-description')?.textContent.toLowerCase() || '';
+                    const isVisible = title.includes(searchTerm) || description.includes(searchTerm);
+                    card.style.display = isVisible ? 'flex' : 'none';
+                });
+            });
+        });
+    }
+
     // =================================================================
     // MERKEZİ OLAY YÖNETİCİSİ (GLOBAL EVENT DELEGATION)
     // =================================================================
@@ -347,6 +383,12 @@ function setupEventListeners() {
                     window.location.href = '/auth/logout';
                     break;
 
+                // YENİ: Sunucuya ekle butonunu işlevsel hale getir
+                case 'add-server': {
+                    const inviteUrl = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&permissions=8&scope=bot%20applications.commands`;
+                    window.open(inviteUrl, '_blank');
+                    break;
+                }
                 case 'save-all': {
                     const saveButtons = document.querySelectorAll('.save-button.has-unsaved-changes');
                     console.log(`[Save All] Found ${saveButtons.length} settings to save.`);

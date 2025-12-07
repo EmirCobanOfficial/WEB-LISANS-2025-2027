@@ -1,14 +1,17 @@
 import { api } from '../api.js';
 import { state } from '../state.js';
+import { showToast } from '../ui.js';
 
 function displayAuditLogs() {
     const container = document.getElementById('audit-log-list');
     const eventFilterSelect = document.getElementById('audit-log-filter');
+    const dateFilterInput = document.getElementById('audit-log-date-filter'); // YENİ
     const executorFilterInput = document.getElementById('audit-log-executor-filter');
-    if (!container || !eventFilterSelect || !executorFilterInput) return;
+    if (!container || !eventFilterSelect || !executorFilterInput || !dateFilterInput) return;
 
     const eventFilterValue = eventFilterSelect.value;
     const executorFilterValue = executorFilterInput.value.toLowerCase().trim();
+    const dateFilterValue = dateFilterInput.value; // YENİ
     const logs = state.guildData.auditLogs;
     container.innerHTML = '';
 
@@ -20,6 +23,12 @@ function displayAuditLogs() {
 
     if (executorFilterValue) {
         filteredLogs = filteredLogs.filter(log => log.executor.tag.toLowerCase().includes(executorFilterValue));
+    }
+
+    // YENİ: Tarihe göre filtrele
+    if (dateFilterValue) {
+        // ISO formatındaki timestamp'in başlangıcını (YYYY-MM-DD) kontrol et
+        filteredLogs = filteredLogs.filter(log => new Date(log.timestamp).toISOString().startsWith(dateFilterValue));
     }
 
     if (filteredLogs.length === 0) {
@@ -53,10 +62,14 @@ function displayAuditLogs() {
 export async function initAuditLogPage() {
     const container = document.getElementById('audit-log-list');
     const filterSelect = document.getElementById('audit-log-filter');
+    const dateFilterInput = document.getElementById('audit-log-date-filter'); // YENİ
+    const clearBtn = document.getElementById('clear-audit-logs-btn'); // YENİ
     const executorFilterInput = document.getElementById('audit-log-executor-filter');
-    if (!container || !filterSelect || !executorFilterInput) return;
+    const clearFiltersBtn = document.getElementById('audit-log-clear-filters');
+    if (!container || !filterSelect || !executorFilterInput || !dateFilterInput || !clearFiltersBtn || !clearBtn) return;
 
     executorFilterInput.value = '';
+    dateFilterInput.value = ''; // YENİ
     if (filterSelect.options.length <= 1) {
         filterSelect.innerHTML = '<option value="all">Tüm Eylemler</option>';
         const events = await api.getAuditLogEvents();
@@ -79,4 +92,20 @@ export async function initAuditLogPage() {
 
     filterSelect.onchange = displayAuditLogs;
     executorFilterInput.oninput = displayAuditLogs;
+    dateFilterInput.onchange = displayAuditLogs; // YENİ
+
+    // YENİ: Filtreleri temizleme butonu
+    clearFiltersBtn.addEventListener('click', () => {
+        executorFilterInput.value = '';
+        dateFilterInput.value = '';
+        filterSelect.value = 'all';
+        displayAuditLogs();
+    });
+
+    // YENİ: Görünümü temizleme butonu
+    clearBtn.addEventListener('click', () => {
+        container.innerHTML = '<p>Denetim kaydı görünümü temizlendi. Sayfayı yenileyerek logları geri getirebilirsiniz.</p>';
+        state.updateGuildData({ auditLogs: [] }); // Hafızadaki logları da temizle
+        showToast('Denetim kaydı görünümü temizlendi.', 'info');
+    });
 }

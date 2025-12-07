@@ -25,6 +25,10 @@
         <div id="current-server" class="sidebar-header">
           <img id="current-server-icon" src="" alt="" class="server-icon" />
           <span id="current-server-name">Sunucu seçin</span>
+          <!-- YENİ: Mobil Menü Butonu -->
+          <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
         </div>
         <nav class="sidebar-nav">
           <a href="#" class="nav-link active" data-page="dashboard-page">
@@ -135,25 +139,24 @@
 
         <!-- Page: Plugins (Birleştirilmiş) -->
         <div class="page-content" id="plugins-page" style="display: none">
-          <!-- =================================================================
-               MODERASYON EKLENTİLERİ
-               ================================================================= -->          
-          <div class="plugins-grid-container">
-            <header class="main-header">
-              <h2>🛡️ Moderasyon & Güvenlik</h2>
-              <div class="header-controls">
-                <button data-action="import-settings" class="header-action-btn">
-                  <i class="fa-solid fa-upload"></i> Ayarları İçe Aktar
-                </button>
-                <button data-action="export-settings" class="header-action-btn">
-                  <i class="fa-solid fa-download"></i> Ayarları Dışa Aktar
-                </button>
-                <button data-action="reset-all-settings" class="header-action-btn danger">
-                  <i class="fa-solid fa-trash-arrow-up"></i> Tüm Ayarları Sıfırla
-                </button>
-              </div>
-            </header>
-            <div class="plugins-grid" id="moderation-plugins-grid">
+          <header class="main-header">
+            <h2><i class="fa-solid fa-puzzle-piece"></i> Eklentiler</h2>
+            <div class="header-controls">
+              <input type="text" id="plugin-search-input" class="setting-input" placeholder="Eklenti ara...">
+              <button data-action="import-settings" class="header-action-btn"><i class="fa-solid fa-upload"></i> İçe Aktar</button>
+              <button data-action="export-settings" class="header-action-btn"><i class="fa-solid fa-download"></i> Dışa Aktar</button>
+              <button data-action="reset-all-settings" class="header-action-btn danger"><i class="fa-solid fa-trash-arrow-up"></i> Sıfırla</button>
+            </div>
+          </header>
+
+          <div class="tabs-container">
+            <button class="tab-link active" data-tab="moderation-tab">🛡️ Moderasyon & Güvenlik</button>
+            <button class="tab-link" data-tab="management-tab">⚙️ Yönetim & Otomasyon</button>
+            <button class="tab-link" data-tab="fun-tab">🎉 Etkileşim & Eğlence</button>
+          </div>
+
+          <div id="moderation-tab" class="tab-content active">
+            <div class="plugins-grid">
               <div class="plugin-card" data-module="moderation">
                 <div class="plugin-header">
                   <i class="fa-solid fa-shield-halved"></i>
@@ -586,24 +589,8 @@
 
             </div>
           </div>
-          <!-- =================================================================
-               YÖNETİM EKLENTİLERİ
-               ================================================================= -->
-          <div class="plugins-grid-container">
-            <header class="main-header">
-              <h2>👥 Yönetim & Takip</h2>
-              <div class="header-controls">
-                <button data-action="import-settings" class="header-action-btn">
-                  <i class="fa-solid fa-upload"></i> Ayarları İçe Aktar
-                </button>
-                <button data-action="export-settings" class="header-action-btn">
-                  <i class="fa-solid fa-download"></i> Ayarları Dışa Aktar
-                </button>
-                <button data-action="reset-all-settings" class="header-action-btn danger">
-                  <i class="fa-solid fa-trash-arrow-up"></i> Tüm Ayarları Sıfırla
-                </button>
-              </div>
-            </header>
+
+          <div id="management-tab" class="tab-content">
             <div class="plugins-grid">
               <!-- Invite Tracker Card -->
               <!-- YENİ: Geçici Ses Kanalları (Temp Voice) Kartı -->
@@ -1060,6 +1047,55 @@
                 </button>
               </div>
 
+              <% if (isBotOwner) { %>
+                <!-- Bot Durumu Ayarları Kartı (Sadece Bot Sahibi Görür) -->
+                <div class="plugin-card" data-module="botStatus">
+                  <div class="plugin-header">
+                    <div class="plugin-info">
+                      <i class="fa-solid fa-robot plugin-icon"></i>
+                      <div class="plugin-title-desc">
+                        <h3>Bot Durumu</h3>
+                        <p>Botun Discord'daki durumunu ve aktivitesini yönetin.</p>
+                      </div>
+                    </div>
+                    <div class="plugin-actions">
+                      <label class="switch">
+                        <input type="checkbox" class="enable-toggle" data-setting="enabled">
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="plugin-content">
+                    <div class="setting-item">
+                      <label for="bot-status-type">Durum</label>
+                      <select id="bot-status-type" data-setting="statusType">
+                        <option value="online">Çevrimiçi</option>
+                        <option value="idle">Boşta</option>
+                        <option value="dnd">Rahatsız Etmeyin</option>
+                      </select>
+                    </div>
+                    <div class="setting-item">
+                      <label for="bot-activity-type">Aktivite Türü</label>
+                      <select id="bot-activity-type" data-setting="activityType">
+                        <option value="Playing">Oynuyor</option>
+                        <option value="Watching">İzliyor</option>
+                        <option value="Listening">Dinliyor</option>
+                        <option value="Competing">Yarışıyor</option>
+                      </select>
+                    </div>
+                    <div class="setting-item">
+                      <label for="bot-activity-text">Aktivite Metni</label>
+                      <input type="text" id="bot-activity-text" data-setting="activityText" placeholder="Örn: Destek Bekliyor...">
+                    </div>
+                    <button type="button" class="save-button" data-action="save-plugin">Ayarları Kaydet</button>
+                  </div>
+                </div>
+              <% } %>
+            </div>
+          </div>
+
+          <div id="fun-tab" class="tab-content">
+            <div class="plugins-grid">
               <!-- YENİ: Müzik Sistemi Kartı -->
               <div class="plugin-card" data-module="music">
                 <div class="plugin-header">
@@ -1231,51 +1267,35 @@
                 </button>
               </div>
               <!-- YENİ KART SONU -->
-
-              <% if (isBotOwner) { %>
-                <!-- Bot Durumu Ayarları Kartı (Sadece Bot Sahibi Görür) -->
-                <div class="plugin-card" data-module="botStatus">
-                  <div class="plugin-header">
-                    <div class="plugin-info">
-                      <i class="fa-solid fa-robot plugin-icon"></i>
-                      <div class="plugin-title-desc">
-                        <h3>Bot Durumu</h3>
-                        <p>Botun Discord'daki durumunu ve aktivitesini yönetin.</p>
-                      </div>
-                    </div>
-                    <div class="plugin-actions">
-                      <label class="switch">
-                        <input type="checkbox" class="enable-toggle" data-setting="enabled">
-                        <span class="slider round"></span>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="plugin-content">
-                    <div class="setting-item">
-                      <label for="bot-status-type">Durum</label>
-                      <select id="bot-status-type" data-setting="statusType">
-                        <option value="online">Çevrimiçi</option>
-                        <option value="idle">Boşta</option>
-                        <option value="dnd">Rahatsız Etmeyin</option>
-                      </select>
-                    </div>
-                    <div class="setting-item">
-                      <label for="bot-activity-type">Aktivite Türü</label>
-                      <select id="bot-activity-type" data-setting="activityType">
-                        <option value="Playing">Oynuyor</option>
-                        <option value="Watching">İzliyor</option>
-                        <option value="Listening">Dinliyor</option>
-                        <option value="Competing">Yarışıyor</option>
-                      </select>
-                    </div>
-                    <div class="setting-item">
-                      <label for="bot-activity-text">Aktivite Metni</label>
-                      <input type="text" id="bot-activity-text" data-setting="activityText" placeholder="Örn: Destek Bekliyor...">
-                    </div>
-                    <button type="button" class="save-button" data-action="save-plugin">Ayarları Kaydet</button>
+              <div
+                class="plugin-card"
+                data-module="reactionRoles"
+              >
+                <div class="plugin-header">
+                  <i class="fa-solid fa-masks-theater"></i>
+                  <h3>Tepki Rolleri</h3>
+                  <i class="fa-solid fa-chevron-down collapse-icon"></i>
+                  <label class="switch" style="margin-left: auto"
+                    ><input
+                      type="checkbox"
+                      data-setting="enabled"
+                      class="enable-toggle" /><span class="slider"></span
+                  ></label>
+                </div>
+                <p class="plugin-description">
+                  Kullanıcıların bir mesaja tepki vererek roller almasına izin
+                  verin. Bu özellik şu anda bakımda.
+                </p>
+                <div class="plugin-settings">
+                  <div class="maintenance-notice" style="padding: 20px; margin-top: 0;">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <h3>Bu Özellik Bakımda</h3>
                   </div>
                 </div>
-              <% } %>
+                <button class="save-button" data-action="save-plugin" style="display: none;">
+                  Ayarları Kaydet<span class="unsaved-indicator"></span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1400,6 +1420,7 @@
                 class="setting-input"
                 placeholder="İsim veya ID ile ara..."
               />
+              <select id="member-role-filter" class="setting-select" style="min-width: 250px;"></select>
             </div>
           </header>
           <div class="members-container">
@@ -1420,13 +1441,16 @@
           <header class="main-header">
             <h2>📜 Denetim Kaydı</h2>
             <div class="header-controls">
-              <select id="audit-log-filter" class="setting-select"></select>
               <input
                 type="text"
                 id="audit-log-executor-filter"
                 class="setting-input"
                 placeholder="Kullanıcıya göre filtrele..."
               />
+              <select id="audit-log-filter" class="setting-select"></select>
+              <input type="date" id="audit-log-date-filter" class="setting-input">
+              <button id="audit-log-clear-filters" class="header-action-btn" style="background: var(--bg-quaternary);"><i class="fa-solid fa-xmark"></i> Filtreleri Temizle</button>
+              <button id="clear-audit-logs-btn" class="header-action-btn danger"><i class="fa-solid fa-eraser"></i> Görünümü Temizle</button>
             </div>
           </header>
           <div class="audit-log-container">
@@ -1724,6 +1748,7 @@
               <!-- YENİ: Tarih filtresi eklendi -->
               <input type="date" id="panel-logs-date-filter" class="setting-input">
               <button id="panel-logs-clear-filters" class="header-action-btn" style="background: var(--bg-quaternary);"><i class="fa-solid fa-xmark"></i> Filtreleri Temizle</button>
+              <button id="clear-panel-logs-btn" class="header-action-btn danger"><i class="fa-solid fa-eraser"></i> Tüm Logları Sil</button>
             </div>
           </header>
           <p class="setting-description">

@@ -1,4 +1,5 @@
 import { api } from '../api.js';
+import { showToast, showConfirmModal } from '../ui.js';
 
 let allLogs = []; // Tüm logları hafızada tutmak için
 
@@ -76,6 +77,7 @@ export async function initPanelLogsPage() {
     // Filtreleme elemanlarına olay dinleyicileri ekle
     document.getElementById('panel-logs-user-filter').addEventListener('input', applyFiltersAndRender);
     document.getElementById('panel-logs-date-filter').addEventListener('change', applyFiltersAndRender);
+    const clearLogsBtn = document.getElementById('clear-panel-logs-btn');
     
     // YENİ: Filtreleri temizleme butonu
     document.getElementById('panel-logs-clear-filters').addEventListener('click', () => {
@@ -83,6 +85,22 @@ export async function initPanelLogsPage() {
         document.getElementById('panel-logs-date-filter').value = '';
         applyFiltersAndRender(); // Filtreleri temizledikten sonra listeyi yeniden render et
     });
+
+    // YENİ: Tüm logları silme butonu
+    if (clearLogsBtn) {
+        clearLogsBtn.addEventListener('click', async () => {
+            const confirmed = await showConfirmModal('Tüm Panel Loglarını Sil', 'Bu işlem, kaydedilmiş TÜM panel işlem loglarını kalıcı olarak silecektir. Bu işlem geri alınamaz. Emin misiniz?');
+            if (confirmed) {
+                try {
+                    const result = await api.clearPanelLogs();
+                    showToast(result.message, 'success');
+                    initPanelLogsPage(); // Sayfayı yeniden başlat
+                } catch (error) {
+                    showToast(`Loglar silinirken hata: ${error.message}`, 'error');
+                }
+            }
+        });
+    }
 
     try {
         allLogs = await api.getPanelLogs(); // Logları bir kez çek ve hafızaya al
