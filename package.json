@@ -1,6 +1,6 @@
 {
   "name": "discord-bot-dashboard",
-  "version": "0.24",
+  "version": "0.25",
   "description": "A modular Discord bot with a web control panel.",
   "main": "bot.js",
   "scripts": {

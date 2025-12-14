@@ -380,6 +380,43 @@ function setupEventListeners() {
         });
     }
 
+    // YENİ: Bilet Konusu Modal Formu Submit
+    const ticketTopicForm = document.getElementById('ticket-topic-form');
+    if (ticketTopicForm) {
+        ticketTopicForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const id = document.getElementById('ticket-topic-id').value;
+            const label = document.getElementById('ticket-topic-label').value;
+            const description = document.getElementById('ticket-topic-description').value;
+            const emoji = document.getElementById('ticket-topic-emoji').value;
+            const categoryId = document.getElementById('ticket-topic-category').value;
+            const supportRoleId = document.getElementById('ticket-topic-support-role').value;
+
+            const settings = state.guildData.settings.tickets;
+            if (!settings) return;
+            if (!settings.topics) settings.topics = [];
+
+            const newTopic = { id, label, description, emoji, categoryId, supportRoleId };
+            
+            const existingIndex = settings.topics.findIndex(t => t.id === id);
+            if (existingIndex >= 0) {
+                settings.topics[existingIndex] = newTopic;
+            } else {
+                settings.topics.push(newTopic);
+            }
+
+            ui.renderTicketTopicsList(settings.topics);
+            document.getElementById('ticket-topic-modal').style.display = 'none';
+
+            // Değişikliği kaydetmek için butonu işaretle
+            const card = document.querySelector('.plugin-card[data-module="tickets"]');
+            if (card) {
+                card.querySelector('.save-button').classList.add('has-unsaved-changes');
+                ui.updateUnsavedChangesBar();
+            }
+        });
+    }
+
     // =================================================================
     // MERKEZİ OLAY YÖNETİCİSİ (GLOBAL EVENT DELEGATION)
     // =================================================================
@@ -507,6 +544,43 @@ function setupEventListeners() {
         const unblockBtn = target.closest('.unblock-user-btn');
         if (unblockBtn) {
             handleUnblockUser(unblockBtn.dataset.id);
+        }
+
+        // --- Bilet Sistemi Butonları ---
+        if (target.id === 'add-ticket-topic-btn') {
+            ui.openTicketTopicModal(state.guildData);
+        }
+        else if (target.id === 'ticket-topic-modal-cancel') {
+            document.getElementById('ticket-topic-modal').style.display = 'none';
+        }
+        else {
+            const editTicketBtn = target.closest('.edit-ticket-topic-btn');
+            if (editTicketBtn) {
+                const topicItem = editTicketBtn.closest('.list-item');
+                if (topicItem && topicItem.dataset.topic) {
+                    const topic = JSON.parse(topicItem.dataset.topic);
+                    ui.openTicketTopicModal(state.guildData, topic);
+                }
+            }
+            
+            const deleteTicketBtn = target.closest('.delete-ticket-topic-btn');
+            if (deleteTicketBtn) {
+                const topicItem = deleteTicketBtn.closest('.list-item');
+                if (topicItem && topicItem.dataset.topic) {
+                    const topic = JSON.parse(topicItem.dataset.topic);
+                    const settings = state.guildData.settings.tickets;
+                    if (settings && settings.topics) {
+                        settings.topics = settings.topics.filter(t => t.id !== topic.id);
+                        ui.renderTicketTopicsList(settings.topics);
+                        
+                        const card = document.querySelector('.plugin-card[data-module="tickets"]');
+                        if (card) {
+                            card.querySelector('.save-button').classList.add('has-unsaved-changes');
+                            ui.updateUnsavedChangesBar();
+                        }
+                    }
+                }
+            }
         }
 
         // --- 2. Otomatik Moderasyon kartındaki özel butonları işle ---
