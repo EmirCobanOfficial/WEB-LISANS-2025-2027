@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@discord-player/extractor": "^7.1.0",
-    "@discordjs/opus": "^0.10.0",
+    "opusscript": "^0.0.8",
     "@discordjs/voice": "^0.16.1",
     "@snazzah/davey": "^0.1.6",
     "adm-zip": "^0.5.16",
