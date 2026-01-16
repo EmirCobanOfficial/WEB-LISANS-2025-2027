@@ -1,5 +1,5 @@
 {
-  "version": "0.26",
+  "version": "0.27",
   "notes": "Bu sürüm, panelin kullanıcı deneyimini ve işlevselliğini temelden iyileştiren kapsamlı bir arayüz güncellemesi ve birçok yeni özellik içeriyor. Panel artık mobil cihazlarda tam uyumlu çalışırken, Eklentiler sayfası sekmeli ve aranabilir bir yapıya kavuştu. Sayfa geçişleri ve pencereler modern animasyonlarla daha akıcı hale getirildi. Ayrıca, üye ve log yönetimi sayfalarına güçlü filtreleme özellikleri eklendi.",
   "downloadUrl": "https://github.com/EmirCobanOfficial/WEB-LISANS-2025-2027/archive/refs/heads/main.zip"
 }
