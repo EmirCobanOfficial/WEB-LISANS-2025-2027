@@ -1,5 +1,5 @@
 {
-  "version": "0.30",
+  "version": "0.31",
   "notes": "Müzik sistemi için büyük güncelleme: Çalma listesi kaydetme, sürükle-bırak ile şarkı sıralama, şarkı sözleri, gelişmiş arama ve /join komutu eklendi. Kayıt sistemi daha fazla rol ekleme özelliğiyle yükseltildi. Ayrıca kritik güvenlik açıkları kapatıldı ve Embed oluşturucudaki hatalar giderildi.",
   "downloadUrl": "https://github.com/EmirCobanOfficial/WEB-LISANS-2025-2027/archive/refs/heads/main.zip"
 }
