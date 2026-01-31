@@ -17,8 +17,24 @@
         <i class="fa-solid fa-robot login-icon"></i>
         <h1>Panele Hoş Geldiniz</h1>
         <p>Sunucularınızı yönetmek için Discord hesabınızla devam edin.</p>
-        <a href="/auth/login" class="login-button"><i class="fa-brands fa-discord"></i> Discord ile Giriş Yap</a>
+        
+        <!-- YENİ: Beni Hatırla Seçeneği -->
+        <div class="form-group-checkbox" style="justify-content: center; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" id="remember-me" style="width: auto; margin: 0;">
+            <label for="remember-me" style="color: var(--text-secondary); cursor: pointer; margin: 0;">Beni Hatırla (30 Gün)</label>
+        </div>
+
+        <a href="/auth/login" class="login-button" id="login-btn"><i class="fa-brands fa-discord"></i> Discord ile Giriş Yap</a>
       </div>
     </div>
+    <script>
+        const rememberCheckbox = document.getElementById('remember-me');
+        const loginBtn = document.getElementById('login-btn');
+
+        rememberCheckbox.addEventListener('change', (e) => {
+            const baseUrl = '/auth/login';
+            loginBtn.href = e.target.checked ? `${baseUrl}?remember=true` : baseUrl;
+        });
+    </script>
   </body>
 </html>

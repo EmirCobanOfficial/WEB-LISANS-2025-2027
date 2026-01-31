@@ -5,7 +5,7 @@ import { initDashboardPage } from './pages/dashboard.js';
 import { initRolesPage } from './pages/roles.js';
 import { initMembersPage } from './pages/members.js';
 import { initStatsPage } from './pages/stats.js';
-import { initInvitesPage } from './pages/invites.js'; // Bu satır zaten varsa, tekrar eklemeyin.
+import { initInvitesPage } from './pages/invites.js';
 import { initLeaderboardPage } from './pages/leaderboard.js';
 import { initAuditLogPage } from './pages/audit-log.js';
 import { initModLogPage } from './pages/mod-log.js';
@@ -18,6 +18,7 @@ import { initPanelLogsPage } from './pages/panel-logs.js'; // YENİ
 import { initMusicPlayerPage } from './pages/music.js'; // YENİ
 import { initFivemPage } from './pages/fivem.js'; // YENİ
 import { initTrustedUsersPage } from './pages/trusted-users.js'; // YENİ
+import { initEmbedBuilderPage } from './pages/embed-builder.js'; // YENİ
 import { initPluginsPage, setupPluginPageListeners } from './pages/plugins.js';
 
 const pageInitializers = {
@@ -38,6 +39,7 @@ const pageInitializers = {
     'music-player-page': initMusicPlayerPage, // YENİ
     'trusted-users-page': initTrustedUsersPage, // YENİ
     'panel-logs-page': initPanelLogsPage, // YENİ
+    'embed-builder-page': initEmbedBuilderPage, // YENİ
     'plugins-page': initPluginsPage,
 };
 
@@ -98,7 +100,7 @@ async function switchPage(pageId, force = false) {
             const initializer = pageInitializers[pageId];
             if (initializer) {
                 const dataKey = pageId.replace('-page', '');
-                const alwaysReload = ['plugins', 'roles', 'custom-commands', 'backups', 'stats', 'dashboard', 'authorized-users', 'panel-logs', 'music-player'];
+                const alwaysReload = ['plugins', 'roles', 'custom-commands', 'backups', 'stats', 'dashboard', 'authorized-users', 'panel-logs', 'music-player', 'scheduled-tasks', 'embed-builder'];
                 if (force || alwaysReload.includes(dataKey) || pageId === 'fivem-page' || !state.isDataLoaded(dataKey)) {
                     await initializer();
                 }
@@ -206,6 +208,14 @@ async function updatePluginCardsUI() {
     }
     if (settings.announcements) { // YENİ EKLENDİ
         ui.renderAnnouncementsAllowedRoles(roles, settings.announcements.allowedRoles);
+    }
+    // YENİ: Kayıt sistemi rollerini render et
+    if (settings.register) {
+        let registeredRoleIds = settings.register.registeredRoleIds || [];
+        if (settings.register.registeredRoleId && !registeredRoleIds.includes(settings.register.registeredRoleId)) {
+            registeredRoleIds.push(settings.register.registeredRoleId);
+        }
+        ui.renderRegisteredRolesList(roles, registeredRoleIds);
     }
     if (settings.economy) { // YENİ: Market ürünlerini render et
         ui.renderMarketItemsList(roles, settings.economy.marketItems);
@@ -629,6 +639,31 @@ function setupEventListeners() {
                 ui.updateUnsavedChangesBar();
             }
         }
+
+        // --- 3. Kayıt Sistemi Butonları ---
+        const registerCard = target.closest('.plugin-card[data-module="register"]');
+        if (registerCard) {
+             const settings = state.guildData.settings.register;
+             if (target.id === 'add-registered-role-btn') {
+                 const select = document.getElementById('registered-role-select');
+                 const roleId = select.value;
+                 if (!settings.registeredRoleIds) settings.registeredRoleIds = [];
+                 if (roleId && !settings.registeredRoleIds.includes(roleId)) {
+                     settings.registeredRoleIds.push(roleId);
+                     ui.renderRegisteredRolesList(state.guildData.roles, settings.registeredRoleIds);
+                     registerCard.querySelector('.save-button').classList.add('has-unsaved-changes');
+                     ui.updateUnsavedChangesBar();
+                 }
+             } else if (target.closest('.remove-item-btn[data-type="registered-role"]')) {
+                 const roleId = target.closest('.remove-item-btn').dataset.id;
+                 if (settings.registeredRoleIds) {
+                     settings.registeredRoleIds = settings.registeredRoleIds.filter(id => id !== roleId);
+                     ui.renderRegisteredRolesList(state.guildData.roles, settings.registeredRoleIds);
+                     registerCard.querySelector('.save-button').classList.add('has-unsaved-changes');
+                     ui.updateUnsavedChangesBar();
+                 }
+             }
+        }
     });
 
     // Dosya seçildiğinde içe aktarma işlemini tetikle
@@ -686,6 +721,9 @@ function setupEventListeners() {
             try {
                 const response = await fetch(`/api/guild/${state.selectedGuildId}/upload-welcome-image/${imageType}`, {
                     method: 'POST',
+                    headers: {
+                        'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]')?.getAttribute('content')
+                    },
                     body: formData,
                 });
                 const result = await response.json();
@@ -743,6 +781,10 @@ export async function saveSettings(button) {
     // YENİ: Duyuru sistemi için izinli rolleri kaydet
     if (moduleName === 'announcements') {
         settings.allowedRoles = Array.from(document.querySelectorAll('#announcements-allowed-roles-list .remove-item-btn')).map(btn => btn.dataset.id);
+    }
+    if (moduleName === 'register') {
+        settings.registeredRoleIds = Array.from(document.querySelectorAll('#registered-roles-list .remove-item-btn')).map(btn => btn.dataset.id);
+        settings.registeredRoleId = null; // Eski ayarı temizle
     }
     // YENİ: Ekonomi marketi ürünlerini kaydetme verisine ekle
     if (moduleName === 'economy') {

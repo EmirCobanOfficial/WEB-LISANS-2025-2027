@@ -291,6 +291,37 @@ export function renderAnnouncementsAllowedRoles(allRoles, allowedRoleIds = []) {
     });
 }
 
+/**
+ * YENİ: Kayıtlı roller listesini render eder.
+ * @param {Array} allRoles Sunucudaki tüm roller.
+ * @param {Array} roleIds Seçili rol ID'leri.
+ */
+export function renderRegisteredRolesList(allRoles, roleIds = []) {
+    const listContainer = document.getElementById('registered-roles-list');
+    const selectDropdown = document.getElementById('registered-role-select');
+    if (!listContainer || !selectDropdown) return;
+
+    listContainer.innerHTML = '';
+    if (!Array.isArray(roleIds)) roleIds = [];
+
+    const availableRoles = allRoles.filter(r => r.name !== '@everyone' && !r.managed);
+    populateSelect(selectDropdown, availableRoles, null, { defaultText: 'Rol seçin...' });
+
+    Array.from(selectDropdown.options).forEach(opt => {
+        opt.disabled = roleIds.includes(opt.value);
+    });
+
+    roleIds.forEach(id => {
+        const role = allRoles.find(r => r.id === id);
+        if (role) {
+            const item = document.createElement('div');
+            item.className = 'protected-item';
+            item.innerHTML = `<span><span class="role-color-dot" style="background-color: ${role.color};"></span>@${role.name}</span><button type="button" class="remove-item-btn" data-id="${id}" data-type="registered-role">&times;</button>`;
+            listContainer.appendChild(item);
+        }
+    });
+}
+
 export function renderInviteRewardsList(allRoles, rewardRoles = []) {
     const listContainer = document.getElementById('invite-rewards-list');
     const selectDropdown = document.getElementById('new-reward-role-select');

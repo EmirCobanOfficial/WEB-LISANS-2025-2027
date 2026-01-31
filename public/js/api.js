@@ -1,5 +1,15 @@
+// CSRF Token'ı meta etiketinden al
+function getCsrfToken() {
+    return document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+}
+
 async function fetchJSON(url, options = {}) {
     try {
+        // Otomatik olarak CSRF başlığını ekle
+        const headers = options.headers || {};
+        headers['X-CSRF-Token'] = getCsrfToken();
+        options.headers = headers;
+
         const response = await fetch(url, options);
         if (!response.ok) {
             let data;
@@ -18,6 +28,18 @@ async function fetchJSON(url, options = {}) {
 
 export const api = {
     // GET istekleri
+    get: (url) => fetchJSON(url),
+    post: (url, body) => fetchJSON(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+    }),
+    delete: (url) => fetchJSON(url, { method: 'DELETE' }),
+    patch: (url, body) => fetchJSON(url, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+    }),
     getUserGuilds: () => fetchJSON('/api/user/guilds'),
     getBotGuilds: () => fetchJSON('/api/bot/guilds'),
     getGuildSettings: (guildId) => fetchJSON(`/api/settings?guildId=${guildId}`),
@@ -35,6 +57,9 @@ export const api = {
     getGuildWarnings: (guildId) => fetchJSON(`/api/guild/${guildId}/warnings`), // YENİ
     getGuildBans: (guildId) => fetchJSON(`/api/guild/${guildId}/bans`), // YENİ
     getPermissions: () => fetchJSON('/api/permissions'),
+    getScheduledTask: (guildId, taskId) => fetchJSON(`/api/guild/${guildId}/scheduled-tasks/${taskId}`), // YENİ
+    getScheduledTasks: (guildId) => fetchJSON(`/api/guild/${guildId}/scheduled-tasks`),
+    deleteScheduledTask: (guildId, taskId) => fetchJSON(`/api/guild/${guildId}/scheduled-tasks/${taskId}`, { method: 'DELETE' }),
     getAuditLogEvents: () => fetchJSON('/api/audit-log-events'),
     getAuthorizedUsers: () => fetchJSON('/api/authorized-users'), // YENİ: Giriş yapanları getiren rota
     getPanelLogs: () => fetchJSON('/api/panel-logs'), // YENİ: Panel loglarını getiren rota
@@ -43,10 +68,10 @@ export const api = {
 
     // YENİ: Müzik API
     getMusicQueue: (guildId) => fetchJSON(`/api/guild/${guildId}/music/queue`),
-    controlMusic: (guildId, action, volume) => fetchJSON(`/api/guild/${guildId}/music/control`, { // YENİ: volume parametresi eklendi
+    controlMusic: (guildId, action, value) => fetchJSON(`/api/guild/${guildId}/music/control`, { // YENİ: value parametresi (volume veya seekTime)
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action, volume }), // YENİ: volume'u isteğe ekle
+        body: JSON.stringify({ action, value }), // YENİ: value'yu isteğe ekle
     }),
     searchMusic: (guildId, query) => fetchJSON(`/api/guild/${guildId}/music/search`, {
         method: 'POST',
@@ -57,6 +82,22 @@ export const api = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ trackUrl }),
+    }),
+    getLyrics: (guildId) => fetchJSON(`/api/guild/${guildId}/music/lyrics`), // YENİ
+    reorderMusicQueue: (guildId, order) => fetchJSON(`/api/guild/${guildId}/music/reorder`, { // YENİ: Sıralama
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ order }),
+    }),
+    // YENİ: Çalma Listesi İşlemleri
+    getUserPlaylists: () => fetchJSON('/api/user/playlists'),
+    saveUserPlaylist: (name, url) => fetchJSON('/api/user/playlists', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, url }),
+    }),
+    deleteUserPlaylist: (name) => fetchJSON(`/api/user/playlists/${encodeURIComponent(name)}`, {
+        method: 'DELETE',
     }),
 
     getFivemStatus: (guildId) => fetchJSON(`/api/guild/${guildId}/fivem/status`),
@@ -121,6 +162,21 @@ export const api = {
     unbanUser: (guildId, userId) => fetchJSON(`/api/guild/${guildId}/bans/${userId}`, { // YENİ
         method: 'DELETE',
     }),
+    updateScheduledTask: (guildId, taskId, taskData) => fetchJSON(`/api/guild/${guildId}/scheduled-tasks/${taskId}`, { // YENİ
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(taskData)
+    }),
+    executeScheduledTask: (guildId, taskId) => fetchJSON(`/api/guild/${guildId}/scheduled-tasks/${taskId}/execute`, { // YENİ
+        method: 'POST'
+    }),
+    // YENİ: Dosya yüklemeli embed gönderimi (FormData kullanır)
+    postEmbedWithFiles: (guildId, formData) => fetch(`/api/guild/${guildId}/embed`, {
+        method: 'POST',
+        headers: { 'X-CSRF-Token': getCsrfToken() },
+        body: formData
+        // Content-Type header'ı eklemiyoruz, tarayıcı boundary ile birlikte otomatik ekler
+    }).then(res => res.json().then(data => { if (!res.ok) throw new Error(data.error); return data; })),
 
     // --- Kullanıcı Engelleme API Fonksiyonları ---
     getBlockedUsers: () => fetchJSON('/api/blocked-users'),
@@ -149,6 +205,32 @@ export const api = {
     // YENİ: Bot Banner API
     setBotBanner: (formData) => fetch('/api/bot/banner', {
         method: 'POST',
+        headers: { 'X-CSRF-Token': getCsrfToken() },
         body: formData,
     }).then(res => res.json().then(data => { if (!res.ok) throw new Error(data.error); return data; })),
+
+    // --- Embed & Şablon İşlemleri (YENİ) ---
+    getEmbedTemplates: (guildId) => fetchJSON(`/api/guild/${guildId}/embed-templates`),
+    
+    saveEmbedTemplate: (guildId, name, template) => fetchJSON(`/api/guild/${guildId}/embed-templates`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, template })
+    }),
+    
+    deleteEmbedTemplate: (guildId, name) => fetchJSON(`/api/guild/${guildId}/embed-templates/${name}`, { method: 'DELETE' }),
+    
+    sendEmbed: (guildId, data) => fetchJSON(`/api/guild/${guildId}/embed`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    }),
+    
+    getMessage: (guildId, channelId, messageId) => fetchJSON(`/api/guild/${guildId}/channels/${channelId}/messages/${messageId}`),
+
+    updateMessage: (guildId, channelId, messageId, data) => fetchJSON(`/api/guild/${guildId}/channels/${channelId}/messages/${messageId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    }),
 };

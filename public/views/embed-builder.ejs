@@ -1,0 +1,241 @@
+<div id="embed-builder-page" class="page-content">
+    <div class="main-header">
+        <h2><i class="fa-solid fa-paintbrush header-icon"></i> Görsel Embed Oluşturucu</h2>
+        <div class="header-controls">
+            <button id="import-json-btn" class="header-action-btn" title="JSON İçe Aktar"><i class="fa-solid fa-file-import"></i> JSON Al</button>
+            <button id="export-json-btn" class="header-action-btn" title="JSON Dışa Aktar"><i class="fa-solid fa-file-export"></i> JSON Ver</button>
+            <button id="send-embed-btn" class="header-action-btn">
+                <i class="fa-solid fa-paper-plane"></i> Gönder
+            </button>
+        </div>
+    </div>
+
+    <div class="embed-builder-wrapper">
+        <!-- SOL TARAF: AYARLAR -->
+        <div class="builder-inputs">
+            
+            <!-- YENİ: Düzenleme Modu -->
+            <div class="builder-section" style="border-left: 4px solid var(--orange);">
+                <h3><i class="fa-solid fa-pen-to-square"></i> Düzenleme Modu</h3>
+                <div class="setting-with-toggle" style="margin-bottom: 10px;">
+                    <label>Varolan Mesajı Düzenle <span style="font-size: 0.85em; color: var(--text-secondary); font-weight: normal; margin-left: 5px;">(Sadece botun mesajları)</span></label>
+                    <label class="switch"><input type="checkbox" id="edit-mode-toggle"><span class="slider"></span></label>
+                </div>
+                <div id="edit-mode-inputs" style="display: none; gap: 10px;">
+                    <input type="text" id="edit-message-id" class="setting-input" placeholder="Mesaj ID'si (Sağ Tık -> ID Kopyala)">
+                    <button id="fetch-message-btn" class="add-btn-small">Getir</button>
+                </div>
+            </div>
+
+            <div class="builder-section">
+                <h3>Genel İçerik</h3>
+                <div class="form-group">
+                    <label>Gönderim Yöntemi</label>
+                    <select id="send-method-select" class="setting-select">
+                        <option value="channel">Bot (Kanal Seçimi)</option>
+                        <option value="webhook">Webhook (URL)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="channel-select-group">
+                    <label>Kanal Seçin</label>
+                    <select id="channel-select" class="setting-select">
+                        <option value="">Kanal Seçin...</option>
+                        <!-- Kanallar JS ile doldurulacak -->
+                    </select>
+                </div>
+                <div class="form-group" id="webhook-url-group" style="display: none;">
+                    <label>Webhook URL</label>
+                    <input type="text" id="webhook-url" class="setting-input" placeholder="https://discord.com/api/webhooks/...">
+                </div>
+                <div class="form-group">
+                    <label>Mesaj Başında Etiketle</label>
+                    <div style="display: flex; gap: 10px;">
+                        <select id="mention-type-select" class="setting-select" style="width: 150px;">
+                            <option value="">Yok</option>
+                            <option value="everyone">@everyone</option>
+                            <option value="here">@here</option>
+                            <option value="role">Rol Etiketle</option>
+                            <option value="user">Kullanıcı Etiketle</option>
+                        </select>
+                        <select id="mention-role-select" class="setting-select" style="display: none; flex-grow: 1;">
+                            <option value="">Rol Seçin...</option>
+                        </select>
+                        <input type="text" id="mention-user-input" class="setting-input" placeholder="Kullanıcı ID" style="display: none; flex-grow: 1;">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Mesaj İçeriği (Embed Dışı)</label>
+                    <textarea id="message-content" class="setting-input" rows="2" placeholder="Embed kutusunun üzerinde görünecek düz metin..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Zamanlama (İsteğe Bağlı)</label>
+                    <input type="datetime-local" id="schedule-time" class="setting-input">
+                    <p class="setting-description">Boş bırakırsanız mesaj hemen gönderilir.</p>
+                </div>
+                <div class="form-group">
+                    <label>Tekrar Sıklığı (Zamanlanmışsa)</label>
+                    <select id="schedule-recurrence" class="setting-select">
+                        <option value="once">Tek Seferlik</option>
+                        <option value="daily">Her Gün</option>
+                        <option value="weekly">Her Hafta</option>
+                        <option value="monthly">Her Ay</option>
+                        <option value="specific_days">Belirli Günler</option>
+                    </select>
+                </div>
+                <div class="form-group" id="recurrence-days-group" style="display: none;">
+                    <label>Günleri Seçin</label>
+                    <div class="days-selector" style="display: flex; gap: 15px; flex-wrap: wrap; background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+                        <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;"><input type="checkbox" value="1"> Pzt</label>
+                        <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;"><input type="checkbox" value="2"> Sal</label>
+                        <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;"><input type="checkbox" value="3"> Çar</label>
+                        <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;"><input type="checkbox" value="4"> Per</label>
+                        <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;"><input type="checkbox" value="5"> Cum</label>
+                        <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;"><input type="checkbox" value="6"> Cmt</label>
+                        <label style="cursor: pointer; display: flex; align-items: center; gap: 5px;"><input type="checkbox" value="0"> Paz</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="builder-section">
+                <h3>Yazar (Author)</h3>
+                <div class="form-group">
+                    <label>Yazar Adı</label>
+                    <input type="text" id="embed-author-name" class="setting-input" placeholder="Örn: Sunucu Yönetimi">
+                </div>
+                <div class="form-group">
+                    <label>Yazar İkon URL</label>
+                    <input type="text" id="embed-author-icon" class="setting-input" placeholder="https://...">
+                </div>
+            </div>
+
+            <div class="builder-section">
+                <h3>Temel Bilgiler</h3>
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input type="text" id="embed-title" class="setting-input" placeholder="Duyuru Başlığı">
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <textarea id="embed-description" class="setting-input" rows="4" placeholder="Mesajınızın ana içeriği..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Kenar Rengi</label>
+                          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                              <input type="color" id="embed-color" class="setting-input" value="#5865F2" style="height: 40px; padding: 5px; cursor: pointer; flex-grow: 1; min-width: 60px;">
+                              <div class="color-palette">
+                                  <div class="color-swatch" data-color="#5865F2" style="background-color: #5865F2;" title="Blurple (Discord)"></div>
+                                  <div class="color-swatch" data-color="#EB459E" style="background-color: #EB459E;" title="Fuchsia"></div>
+                                  <div class="color-swatch" data-color="#ED4245" style="background-color: #ED4245;" title="Kırmızı"></div>
+                                  <div class="color-swatch" data-color="#FEE75C" style="background-color: #FEE75C;" title="Sarı"></div>
+                                  <div class="color-swatch" data-color="#57F287" style="background-color: #57F287;" title="Yeşil"></div>
+                                  <div class="color-swatch" data-color="#FFFFFF" style="background-color: #FFFFFF;" title="Beyaz"></div>
+                                  <div class="color-swatch" data-color="#000000" style="background-color: #000000;" title="Siyah"></div>
+                              </div>
+                          </div>
+                </div>
+            </div>
+
+            <div class="builder-section">
+                <h3>Görseller</h3>
+                <div class="form-group">
+                          <label>Küçük Resim (Thumbnail)</label>
+                    <input type="text" id="embed-thumbnail" class="setting-input" placeholder="Sağ üstteki küçük resim URL'si">
+                          <div class="image-upload-container" style="margin-top: 5px;">
+                              <input type="file" id="embed-thumbnail-file" class="image-upload-input" accept="image/*">
+                              <p class="setting-description" style="font-size: 0.8em;">Veya bilgisayarınızdan yükleyin</p>
+                          </div>
+                </div>
+                <div class="form-group">
+                          <label>Büyük Resim (Image)</label>
+                    <input type="text" id="embed-image" class="setting-input" placeholder="Alttaki büyük resim URL'si">
+                          <div class="image-upload-container" style="margin-top: 5px;">
+                              <input type="file" id="embed-image-file" class="image-upload-input" accept="image/*">
+                              <p class="setting-description" style="font-size: 0.8em;">Veya bilgisayarınızdan yükleyin</p>
+                          </div>
+                </div>
+            </div>
+
+            <div class="builder-section">
+                <h3>Alanlar (Fields)</h3>
+                <div id="fields-container"></div>
+                <button id="add-field-btn" class="add-btn-small" style="width: 100%; justify-content: center; margin-top: 10px; padding: 12px;">
+                    <i class="fa-solid fa-plus"></i> Yeni Alan Ekle
+                </button>
+            </div>
+
+            <div class="builder-section">
+                <h3>Mesaj Bileşenleri (Butonlar)</h3>
+                <p class="setting-description">Mesajın altına en fazla 5 adet buton ekleyebilirsiniz.</p>
+                <div id="buttons-container"></div>
+                <button id="add-button-btn" class="add-btn-small" style="width: 100%; justify-content: center; margin-top: 10px; padding: 12px;">
+                    <i class="fa-solid fa-link"></i> Yeni Buton Ekle
+                </button>
+            </div>
+
+            <div class="builder-section">
+                <h3>Alt Bilgi (Footer)</h3>
+                <div class="form-group">
+                    <label>Alt Bilgi Metni</label>
+                    <input type="text" id="embed-footer-text" class="setting-input" placeholder="En altta yazacak küçük yazı">
+                </div>
+                <div class="form-group">
+                    <label>Alt Bilgi İkon URL</label>
+                    <input type="text" id="embed-footer-icon" class="setting-input" placeholder="https://...">
+                </div>
+                <div class="form-group-checkbox">
+                    <input type="checkbox" id="embed-timestamp" checked>
+                    <label for="embed-timestamp">Zaman Damgası (Bugünün Tarihi)</label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SAĞ TARAF: CANLI ÖNİZLEME -->
+        <div class="preview-pane">
+            <div class="discord-message">
+                <div class="discord-avatar">
+                    <img src="<%= user.avatar ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png` : 'https://cdn.discordapp.com/embed/avatars/0.png' %>" style="width: 100%; height: 100%; border-radius: 50%;">
+                </div>
+                <div class="discord-content">
+                    <div class="discord-header">
+                        <span class="discord-username"><%= user.username %></span>
+                        <span class="discord-timestamp">Bugün saat 14:30</span>
+                    </div>
+                    <div class="discord-message-body"></div>
+                    
+                    <div class="discord-embed">
+                        <div class="embed-author" style="display: none;">
+                            <img class="embed-author-icon" src="" style="display: none;">
+                            <span></span>
+                        </div>
+                        <div class="embed-title" style="display: none;"></div>
+                        <div class="embed-description" style="display: none;"></div>
+                        
+                        <div class="embed-fields" style="display: none;"></div>
+                        
+                        <img class="embed-thumbnail" src="" style="display: none;">
+                        <img class="embed-image" src="" style="display: none;">
+                        
+                        <div class="embed-footer" style="display: none;">
+                            <img class="embed-footer-icon" src="" style="display: none;">
+                            <span></span>
+                        </div>
+                    </div>
+                          <!-- Buton Önizleme Alanı -->
+                          <div class="discord-buttons" style="display: none; margin-top: 8px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- YENİ: Şablon Yönetim Modalı -->
+    <div id="manage-templates-modal" class="modal-overlay" style="display: none">
+        <div class="modal-content" style="max-width: 500px; text-align: left;">
+            <h3>Kayıtlı Şablonlar</h3>
+            <div id="templates-list-container" class="item-list-container" style="max-height: 400px; overflow-y: auto; margin-top: 15px;"></div>
+            <div class="modal-actions">
+                <button id="manage-templates-close" class="sidebar-btn">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>

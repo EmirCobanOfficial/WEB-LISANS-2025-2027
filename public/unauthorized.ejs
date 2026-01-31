@@ -4,53 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erişim Reddedildi</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <!-- DÜZELTME: CSS yolu /style.css olarak güncellendi -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: var(--background-primary);
-            color: var(--text-normal);
-            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-primary); /* style.css değişkenleri kullanıldı */
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
             text-align: center;
+            margin: 0;
         }
         .container {
-            padding: 40px;
-            background-color: var(--background-secondary);
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            padding: 60px 40px;
+            background-color: var(--bg-secondary);
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border-color);
+            max-width: 500px;
+            width: 90%;
         }
         h1 {
             color: var(--red);
-            font-size: 2.5rem;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
         p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-top: 10px;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: var(--brand-experiment);
+        .logout-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--brand-color), var(--accent-purple));
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        a:hover {
-            background-color: var(--brand-experiment-560);
+        .logout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🛡️ Erişim Reddedildi 🛡️</h1>
+        <h1><i class="fa-solid fa-shield-halved"></i> Erişim Reddedildi</h1>
         <p>Bu panele erişim yetkiniz bulunmamaktadır.</p>
-        <p>Bu alan sadece bot sahibine özeldir.</p>
-        <a href="/auth/logout">Çıkış Yap</a>
+        <p>Bu alan sadece bot sahibi ve yetkili kullanıcılar içindir.</p>
+        <a href="/auth/logout" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Çıkış Yap</a>
     </div>
 </body>
 </html>
