@@ -20,6 +20,7 @@ import { initFivemPage } from './pages/fivem.js'; // YENİ
 import { initTrustedUsersPage } from './pages/trusted-users.js'; // YENİ
 import { initEmbedBuilderPage } from './pages/embed-builder.js'; // YENİ
 import { initPluginsPage, setupPluginPageListeners } from './pages/plugins.js';
+import { initUpdateNotesPage } from './pages/update-notes.js'; // YENİ
 
 const pageInitializers = {
     'dashboard-page': initDashboardPage,
@@ -41,6 +42,7 @@ const pageInitializers = {
     'panel-logs-page': initPanelLogsPage, // YENİ
     'embed-builder-page': initEmbedBuilderPage, // YENİ
     'plugins-page': initPluginsPage,
+    'update-notes-page': initUpdateNotesPage, // YENİ
 };
 
 async function switchPage(pageId, force = false) {
@@ -85,7 +87,7 @@ async function switchPage(pageId, force = false) {
         }
 
         // GÜNCELLENDİ: Yetki kontrolü ve sayfa yükleme mantığı düzeltildi.
-        const ownerPages = ['authorized-users-page', 'panel-logs-page', 'fivem-page', 'trusted-users-page'];
+        const ownerPages = ['authorized-users-page', 'panel-logs-page', 'fivem-page', 'trusted-users-page', 'update-notes-page'];
         if (ownerPages.includes(pageId) && !window.isBotOwner) {
             // Yetki yoksa, sadece uyarı göster ve başka bir işlem yapma.
             targetPage.innerHTML = `

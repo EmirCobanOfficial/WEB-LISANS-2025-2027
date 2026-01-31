@@ -98,6 +98,9 @@
             <a href="#" class="nav-link" data-page="trusted-users-page">
               <i class="fa-solid fa-user-shield fa-fw"></i> Güvenilir Kullanıcılar
             </a>
+            <a href="#" class="nav-link" data-page="update-notes-page">
+              <i class="fa-solid fa-newspaper fa-fw"></i> Güncelleme Notları
+            </a>
           <% } %>
         </nav>
         <div class="sidebar-footer">
@@ -2067,6 +2070,16 @@
             </div>
           </div>
         <% } %>
+
+        <!-- YENİ: Güncelleme Notları Sayfası -->
+        <div class="page-content" id="update-notes-page" style="display: none;">
+          <header class="main-header">
+            <h2><i class="fa-solid fa-newspaper"></i> Güncelleme Notları</h2>
+          </header>
+          <div id="update-notes-content" class="audit-log-container">
+              <!-- Notlar buraya JS ile eklenecek -->
+          </div>
+        </div>
 
         <!-- YENİ: Müzik Çalar Sayfası -->
         <div class="page-content" id="music-player-page" style="display: none;">

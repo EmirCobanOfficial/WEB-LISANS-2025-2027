@@ -65,6 +65,8 @@ export const api = {
     getPanelLogs: () => fetchJSON('/api/panel-logs'), // YENİ: Panel loglarını getiren rota
     getUserProfile: (userId) => fetchJSON(`/api/user/${userId}`), // YENİ: Kullanıcı profili
     checkPermissions: (guildId) => fetchJSON(`/api/guild/${guildId}/permissions-check`), // YENİ: İzin kontrolü
+    getVersion: () => fetchJSON('/api/version'), // YENİ: Sürüm bilgisi
+    restartBot: () => fetchJSON('/api/bot/restart', { method: 'POST' }), // YENİ: Yeniden başlatma
 
     // YENİ: Müzik API
     getMusicQueue: (guildId) => fetchJSON(`/api/guild/${guildId}/music/queue`),
