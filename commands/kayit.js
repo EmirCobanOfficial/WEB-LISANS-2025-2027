@@ -1,1 +1,277 @@
-function a14_0x2848(){const _0x2ee884=['ktOG','E3LHC30','wvLRzKG','y3jLyxrLtwvZCW','zwSGW7X5zs4','q3HYvwW','zMv0y2G','z0fLrMW','zCsFAwXZAw5PEI4','DgfN','igTHBmsXy8sXig9S','DsbRDwXSyw5Tyq','wCo2BMv0AwnPks4','4PQG77Ipie9UyxKGr2vY','BgvUz3rO','ywrKvxnLCK9WDa','qMLYimo8Ewv5Asa','uM9SzuLK','Aw5JBhvKzxm','AYbPW6DPBIbNzxi','CMvWBhK','ywrKrMLLBgrZ','u0Txrgm','y29TCg9Uzw50CW','CMvNAxn0zxi','z1ndzKC','t25HEsbZW7XYzxm','ECsXDcbPC3rHDgK','wg1iA3C','s2f5Xlf0iejHXz9H','BNrZ','uefRBw0','ugrPAum','BIbYB2ZdVcbIzw4','y29UDgvUDa','lIOQia','qKD5y3a','sgf5XlfYlcdeShb0','whnSqK8','C3rLBwKGyNuGCW','lIbsB2WGAxPPBG','AxnbCNjHEq','Dxr1igT1BgXHBG','t3b0Aw9U','uM1zuhO','W7zUzxrPy2LSzxi','zw1IzwrZ','y2HHBM5LBhm','AgLNAgvZDa','EwfW','mteYAhLjsMr5','C2fKzwnLigTVBq','mta3n0jZy29ozq','s3n2CMm','yxrPC3rPA2XLCG','zxHWB3j0CW','8j+pHIa','nMTiDMjzyq','vfHUC0q','s1H4Cgi','wgffr1O','y2fJAgu','z2v0twvTyMvY','E3vZzxj9','E2LZAw19','EKrPBKy','qNuGyNv0B251ia','yxrHig9SDCwFDhu','mtm1oty3BLHmv2v5','B3rbrhK','BMKGC8sXzSsXCMXH','zxjPCI4','zxjYB3i','CIb5zxrRAwXPBG','u2fKzwnLigjLBa','D05TqK8','y2f0y2G','zgLZCgXHEuf2yq','EMftyuG','ACoNAw4GACwFBgvT','EwuGC2fOAxaGza','BwLZAw5PEJ8GqG','BMfTzq','AxnPBq','y2zgqxK','rgvuyLO','DwX1BMfTywteSs4','D1PAue0','Dg9tDhjPBMC','zxHLy3v0zvn0yq','Aw4GA2f5Xlf0igK','ug9wwhK','s2f5Xlf0igHHDge','B3b0Aw9UCW','EMrLBIbLBwLUia','yMXVC3u','ywTPicOQvmoCtsO','CIaOu2fKzwnLia','y29TCg9Uzw50va','XleGB2XHCMfRihm','CSsXEwXHihpeSwBeSq','rw5Uywq','BwvZC2fNzq','CuTfqNC','zvvyq0S','C29YDa','svn2DKW','C2fNzq','C2v0q3vZDg9Tsq','mtmWvwfYAgTH','EMr0Chq','qNuGC3vUDwn1za','wwv0A2LSAq','Aw9U','C8sXoG','Bvbts2G','tLrtvfG','sgXAC0G','uu1WBfq','BgvTAsbZXlfYyxm','4P2miej1imo8EwvUAq','CMXHlG','C2XPy2u','C3rHDhnfBMfIBa','BMfTzxm','yxrZ','v0XNBM8','A0fesuu','ycbRyxNeSxqk','C3rHDhm','DsbPXz9Szw0Gz2u','ww9lswC','ysbOzw7dVhOGAgK','y2XPzw50','Bsb5yxbHBwfTlG','BcbLzgLSzgKU','Cg9ZAxrPB24','zxHLy3v0zvjLCW','cIOQs2f5Xlf0ieu','kIbRyxNeSxqGAxm','q0HZzKq','z8o2CI4','mJrfDgDpswS','AwrLCMXPAYbuyq','Dw5YzwDPC3rLCG','Dw51y3vKysbHAW','ChvZAa','cIOQwwvUAsdeShm','BgvTzwrPicG','sgTzzxa','C2v0tMfTzq','CMvNAxn0zxjtDa','ruDwuw4','Du5qzwW','zgLSzw46kIOG','mZiXmZyWDe9duLnq','DgLVBG','odGZmZmZvvvdtwHp','XlfMXlfYBgfTywSG','AwTSzxiGyMhfN2e','rxzLDcWGu8sXzSsX','D2vSy29Tzu1LCW','C2v0','tgXAsgS','Bg9N','DgfYvvjm','s2f5Xlf0igLZDge','AsbPC21PlG','q0n3Dw0','C2v0q29SB3i','mJG2ndaWnvHbBvfRtW','suXPBfe','uM9SzuLKCW','C3rHzMzsB2XLsq','CmsXBg1HBCsXXz8U','Ewrqyw8','BML6pW','Aw4GAxn0yxrPCW','C2f2zvjLz2LZDa','W5X5zsblyxLKzwq','CMvTB3zL','yw4GA2NfN2KGA3u','z0P2ENi','AvnRuNm','kIOGA3vSBgfUXle','BgXHBSsXy8sXEweG','BgXHBMfIAwXPCG','Axn0zwrPXj9PBMK','twfUywDLtMLJAW','CM9Szxm','CMKGywZeSw5HBwe','y3vZDg9Tswq','DgLRBgvYAw5Pia','zwTSAsb5zxrRAq','C2v0qxv0Ag9Y','B0D0BNO','zw5HyMXLza','zw5K','yNPWvK0','AgfZ','qNv0Dg9U','EwfZ','zwrPDfjLCgX5','tfHjBgW','C2v0vgLTzxn0yq','zxjtDgf0C1rVrG','y29SBgvJDa','4PYfimsWC3rHDgLZDa','DgLZDgLRBgvYAq','mLPksKzZqq','4P2miej1igTVBxv0','C2vUza','zfHkwxq','AsbKB2XKDCsFDsa','shLHq0G','z2v0u3vIy29TBq','kIOG','qMLSAw5TzxLLBG','A2HLufy','wNvlAMG','DLrSCNe','ic0Gs2f5Xlf0ieW','ywrKsw50zwDLCG','A29AzLC','CMvWBgfJzq','Dg9Y','C3vUDwn1EweGAW','yLHjzgK','te9VD0i','C2v0uMvXDwLYzq','BwvTyMvYCW','s3vzEeK','CMXHBMteSs4','BKnftNO','vLjpsuu','BwvTyMvY','y8sXC8sXBSsXBIbRyq','DxbKyxrL','ywrK','wwv0A2LSAwXLCG','DhjVBcbLzgLUlG','AwXKAq','BgfTywSGAxn0zq','AxnZAw9UCW','C2v0rgvZy3jPCa','igT1BgXHBMfIAq','C2vRig9SzhxeN3u','C3rHDgLZDgLRBa','ywrKu3rYAw5NtW','C2L6zq','ntqZodK2y2LpAe5L','z3zoEum','igLWDgfSigvKAq','igjHXz9HCSsXEwXH','A2f5Axq','C2v0tgfIzwW','y29UzMLYBv9Yzq','AxHWDwO','re0Gz8o2BMrLCMK','W6CGA2f5Xlf0ihLH','t05LrhC','A3vSBgfUAwnP','kIOGA2f5Xlf0ihK','DgLTzq','ndm2mJu3rvjsyuPP','yw5K','w0THECsXDf0Gs3u','kIOGDg9WBgfTia','DLfRtui','Du9xuKe','rND3tgK','EevuDNK','rKLAsNO','CgvYBwLZC2LVBG','CMn3AxO','s1b1Bhi','4P2mieTHECsXDcbZAq','ndm0Cu5yqND5','zgvgExu','ywrKu3vIy29TBq','Au5YC1q','t2zMzei','zgNeN2LUAxPKzw4','yxLKzwrLCI4','zwnLAYddVhLLigi','zvnqDM4','C3H3z0C','CMvNAxn0zxjLza','Bg9Nq2HHBM5LBa','Dgf0Axn0AwTSzq','y01nvhi','nZe4ne9qD3H6rG','ywrKq29TCg9Uzq','DxnLCG','BIbKywHHihNdVgS','C2v0vgL0Bgu','zxrtDgf0CW','BgLYlG','zwrsB2XLswq','DsbZywrLy2uGEq','igTHEwrLzgLSza','XlfUzgeGyMLYigG','yxbTXlhfNY4','ChrPB24','DMTVBfe','zxbOzw1LCMfS','DgLMigrLXj9PBc4','yM1PEg4','z3vPBgq','4P2mieTHEwrLzgLS','CMXH','whbICK8','zwTSAq','ic0Gya','BvjMtLa','u2vJB25Kyxj5','BgvYAw1PigTVBG','vwLftvm','ieTHECsXDcdeShn0','C2v0u3r5Bgu','BgrPlG','quz5AMC'];a14_0x2848=function(){return _0x2ee884;};return a14_0x2848();}const a14_0x4a2dfc=a14_0x395f;(function(_0xb773dc,_0x367c5a){const _0x52d1df=a14_0x395f,_0x5e2c8c=_0xb773dc();while(!![]){try{const _0x44041d=parseInt(_0x52d1df(0x151))/(-0x3df*-0x9+-0x1c73+-0xf*0x6d)*(parseInt(_0x52d1df(0x17a))/(0xf*-0x17c+0xc9c+0x1*0x9aa))+-parseInt(_0x52d1df(0x1f6))/(0x1*-0xfd3+-0x1a71*-0x1+-0xa9b)*(parseInt(_0x52d1df(0x1a3))/(-0x19dc+-0x3a8+0x1d88))+parseInt(_0x52d1df(0x12a))/(-0x181b+0x89*-0x23+0x2adb)*(-parseInt(_0x52d1df(0x1fb))/(0x1470+0x3*0x4ab+-0x226b))+parseInt(_0x52d1df(0x1f4))/(-0x1f*-0x3b+-0x7f4+0xd6)*(parseInt(_0x52d1df(0x11b))/(-0x1eab+0x1ad2+0x3e1))+parseInt(_0x52d1df(0x188))/(0x35*0x42+0x17*0x7c+-0x18c5)*(parseInt(_0x52d1df(0xed))/(-0xd97*-0x2+-0x20*-0xd4+-0x35a4))+parseInt(_0x52d1df(0x11d))/(-0x1*0x1f9+-0x16a8+-0x1*-0x18ac)*(parseInt(_0x52d1df(0x10e))/(-0x7ca*0x2+-0x17eb+-0x278b*-0x1))+-parseInt(_0x52d1df(0x206))/(0x1*-0xbb1+-0xd6*0x29+0x9b*0x4c)*(parseInt(_0x52d1df(0x195))/(0x1eb+-0x1be9+0x1a0c*0x1));if(_0x44041d===_0x367c5a)break;else _0x5e2c8c['push'](_0x5e2c8c['shift']());}catch(_0x33665c){_0x5e2c8c['push'](_0x5e2c8c['shift']());}}}(a14_0x2848,0xb7c03*0x1+-0x3d441+-0x10249));function a14_0x395f(_0x1ee479,_0x2f5832){const _0x545609=a14_0x2848();return a14_0x395f=function(_0x41dd89,_0x3cc5a5){_0x41dd89=_0x41dd89-(0x245+-0x13*0x13+0x9*0x1);let _0x239a8b=_0x545609[_0x41dd89];if(a14_0x395f['hqjltE']===undefined){var _0x3c7791=function(_0x2a8675){const _0x4fed5b='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x2d62f9='',_0x2fa493='';for(let _0x51e863=0x6b2+-0xf22+0x870,_0x3e3f71,_0x44364b,_0x583062=0x2645+0x6fa*-0x5+0x363*-0x1;_0x44364b=_0x2a8675['charAt'](_0x583062++);~_0x44364b&&(_0x3e3f71=_0x51e863%(0x604+-0x275+-0x38b)?_0x3e3f71*(0x561+0x7*0x449+-0x2320)+_0x44364b:_0x44364b,_0x51e863++%(-0x2f5+0x151*0xe+0x3*-0x527))?_0x2d62f9+=String['fromCharCode'](0x261f+-0x88f+-0x1c91&_0x3e3f71>>(-(0xb8d*0x2+-0x13ad+0x7*-0x7d)*_0x51e863&0xb*-0x7f+-0x26c8*0x1+0x2c43)):0xc27+-0xd26+0x55*0x3){_0x44364b=_0x4fed5b['indexOf'](_0x44364b);}for(let _0xc15a92=-0x231a+-0x1*-0x24a6+0x16*-0x12,_0x28649f=_0x2d62f9['length'];_0xc15a92<_0x28649f;_0xc15a92++){_0x2fa493+='%'+('00'+_0x2d62f9['charCodeAt'](_0xc15a92)['toString'](0x211*0x2+0x1e43+-0x2255))['slice'](-(0x19b+-0x18c5*-0x1+-0x1a5e));}return decodeURIComponent(_0x2fa493);};a14_0x395f['bRHoXG']=_0x3c7791,_0x1ee479=arguments,a14_0x395f['hqjltE']=!![];}const _0x172a66=_0x545609[-0xbf4+0x3f8*-0x4+0xdea*0x2],_0x35c784=_0x41dd89+_0x172a66,_0x2a49b8=_0x1ee479[_0x35c784];return!_0x2a49b8?(_0x239a8b=a14_0x395f['bRHoXG'](_0x239a8b),_0x1ee479[_0x35c784]=_0x239a8b):_0x239a8b=_0x2a49b8,_0x239a8b;},a14_0x395f(_0x1ee479,_0x2f5832);}const {SlashCommandBuilder,PermissionFlagsBits,EmbedBuilder,ActionRowBuilder,ButtonBuilder,ButtonStyle,ComponentType}=require('discord.js');module[a14_0x4a2dfc(0x1f9)]={'data':new SlashCommandBuilder()[a14_0x4a2dfc(0x116)](a14_0x4a2dfc(0x17e))['setDescrip'+a14_0x4a2dfc(0x11c)](a14_0x4a2dfc(0x1d2)+'sunucuya\x20k'+a14_0x4a2dfc(0x19b))['setDefault'+'MemberPerm'+a14_0x4a2dfc(0x173)](PermissionFlagsBits[a14_0x4a2dfc(0x13c)+a14_0x4a2dfc(0xfc)])[a14_0x4a2dfc(0x197)+a14_0x4a2dfc(0x189)](_0x12b01b=>_0x12b01b['setName'](a14_0x4a2dfc(0x1f3))[a14_0x4a2dfc(0x174)+a14_0x4a2dfc(0x11c)](a14_0x4a2dfc(0x1d2)+a14_0x4a2dfc(0x162)+a14_0x4a2dfc(0x19b))[a14_0x4a2dfc(0x1d1)+a14_0x4a2dfc(0xf1)](_0x4e0990=>_0x4e0990['setName'](a14_0x4a2dfc(0x185))['setDescrip'+a14_0x4a2dfc(0x11c)]('Kaydedilec'+a14_0x4a2dfc(0x1c6))[a14_0x4a2dfc(0x165)+'d'](!![]))[a14_0x4a2dfc(0x178)+a14_0x4a2dfc(0x1af)](_0x4afcf0=>_0x4afcf0[a14_0x4a2dfc(0x116)](a14_0x4a2dfc(0x215))['setDescrip'+a14_0x4a2dfc(0x11c)]('Üyenin\x20yen'+a14_0x4a2dfc(0x127))[a14_0x4a2dfc(0x165)+'d'](!![]))[a14_0x4a2dfc(0x15e)+a14_0x4a2dfc(0x1ed)](_0x55b413=>_0x55b413['setName'](a14_0x4a2dfc(0x149))[a14_0x4a2dfc(0x174)+a14_0x4a2dfc(0x11c)]('Üyenin\x20yaş'+'ı.')[a14_0x4a2dfc(0x165)+'d'](!![])))[a14_0x4a2dfc(0x197)+'and'](_0x500521=>_0x500521[a14_0x4a2dfc(0x116)](a14_0x4a2dfc(0x101))['setDescrip'+'tion'](a14_0x4a2dfc(0x16f)+a14_0x4a2dfc(0x21c)+a14_0x4a2dfc(0x177)+'erini\x20göst'+a14_0x4a2dfc(0x209))['addUserOpt'+a14_0x4a2dfc(0xf1)](_0xed58c1=>_0xed58c1[a14_0x4a2dfc(0x116)](a14_0x4a2dfc(0x185))[a14_0x4a2dfc(0x174)+'tion']('Belirli\x20bi'+a14_0x4a2dfc(0x20b)+a14_0x4a2dfc(0x131)+a14_0x4a2dfc(0x140)+a14_0x4a2dfc(0x10d))[a14_0x4a2dfc(0x165)+'d'](![])))[a14_0x4a2dfc(0x197)+a14_0x4a2dfc(0x189)](_0x520994=>_0x520994['setName']('stats-sifi'+a14_0x4a2dfc(0x1b6))[a14_0x4a2dfc(0x174)+a14_0x4a2dfc(0x11c)](a14_0x4a2dfc(0x126)+a14_0x4a2dfc(0x150)+a14_0x4a2dfc(0x208)+a14_0x4a2dfc(0x223)+a14_0x4a2dfc(0x1ce))[a14_0x4a2dfc(0x1d1)+'ion'](_0x1d46b1=>_0x1d46b1[a14_0x4a2dfc(0x116)]('kullanici')[a14_0x4a2dfc(0x174)+a14_0x4a2dfc(0x11c)](a14_0x4a2dfc(0x20c)+'irtilen\x20ye'+'tkilinin\x20i'+a14_0x4a2dfc(0x177)+'erini\x20sıfı'+a14_0x4a2dfc(0xf9))[a14_0x4a2dfc(0x165)+'d'](![]))),async 'execute'(_0x3db59b,_0x194f1d,_0x1ac55c){const _0x39cf30=a14_0x4a2dfc,_0xa2ac11={};_0xa2ac11[_0x39cf30(0xff)]=_0x39cf30(0x194)+'stemi\x20bu\x20s'+'unucuda\x20ak'+_0x39cf30(0x1b2),_0xa2ac11[_0x39cf30(0x15f)]=function(_0x5ad756,_0x23bf52){return _0x5ad756===_0x23bf52;},_0xa2ac11[_0x39cf30(0x21d)]=_0x39cf30(0x101),_0xa2ac11['LOowB']=_0x39cf30(0x1f3),_0xa2ac11[_0x39cf30(0x18f)]=function(_0x383a43,_0x3abcca){return _0x383a43!==_0x3abcca;},_0xa2ac11[_0x39cf30(0x203)]=_0x39cf30(0xee);const _0x5799a7=_0xa2ac11,_0x216671=_0x194f1d[_0x3db59b['guild']['id']]?.[_0x39cf30(0x1da)],_0x4dcabf=_0x3db59b[_0x39cf30(0x21f)][_0x39cf30(0x157)+_0x39cf30(0x189)]();if(!_0x216671||!_0x216671['enabled']){const _0x3f2a1d={};return _0x3f2a1d[_0x39cf30(0x1e4)]=_0x39cf30(0x194)+'stemi\x20bu\x20s'+_0x39cf30(0x111)+_0x39cf30(0x1b2),_0x3f2a1d[_0x39cf30(0x1b1)]=!![],_0x3db59b[_0x39cf30(0x1d6)](_0x3f2a1d);}if(_0x5799a7['koZfW'](_0x4dcabf,_0x5799a7[_0x39cf30(0x21d)]))await this[_0x39cf30(0x21b)+'ts'](_0x3db59b,_0x216671,_0x1ac55c[_0x39cf30(0x117)+'ats']);else{if(_0x4dcabf===_0x5799a7[_0x39cf30(0x164)])await this['executeReg'+'ister'](_0x3db59b,_0x216671,_0x1ac55c);else{if(_0x4dcabf==='stats-sifi'+_0x39cf30(0x1b6)){if(_0x5799a7[_0x39cf30(0x18f)](_0x39cf30(0xee),_0x5799a7[_0x39cf30(0x203)])){const _0x34366c={};return _0x34366c[_0x39cf30(0x1e4)]=_0x5799a7[_0x39cf30(0xff)],_0x34366c['ephemeral']=!![],_0xb5b778[_0x39cf30(0x1d6)](_0x34366c);}else await this[_0x39cf30(0x109)+_0x39cf30(0x1a8)](_0x3db59b,_0x216671,_0x1ac55c);}}}},async 'executeStats'(_0x23a7b6,_0x487222,_0x5750c2){const _0x2e6950=a14_0x4a2dfc,_0x2d3188={};_0x2d3188['qYijU']=_0x2e6950(0x194)+'stemi\x20bu\x20s'+'unucuda\x20ak'+_0x2e6950(0x1b2),_0x2d3188[_0x2e6950(0xfe)]='kullanici',_0x2d3188[_0x2e6950(0x192)]=function(_0x388bc8,_0x133ae0){return _0x388bc8===_0x133ae0;},_0x2d3188[_0x2e6950(0x1bd)]=function(_0x11c412,_0x802169){return _0x11c412+_0x802169;};const _0xbed432=_0x2d3188;if(!_0x487222||!_0x487222[_0x2e6950(0x144)]){const _0x5dbf30={};return _0x5dbf30[_0x2e6950(0x1e4)]=_0xbed432['qYijU'],_0x5dbf30[_0x2e6950(0x1b1)]=!![],_0x23a7b6[_0x2e6950(0x1d6)](_0x5dbf30);}const _0x47758e=_0x5750c2[_0x23a7b6[_0x2e6950(0x1b4)]['id']],_0xafd105=_0x23a7b6[_0x2e6950(0x21f)]['getUser'](_0xbed432['WLgno']),_0x46581d=new EmbedBuilder()[_0x2e6950(0x129)](0x20e0f5*0x1+0x1*-0x19f879+-0x5f42*-0xdb)[_0x2e6950(0x14c)+'mp']();if(_0xafd105){const _0x653a12=_0x47758e?.[_0xafd105['id']]||-0xf51+-0x1986+-0x267*-0x11;_0x46581d['setAuthor']({'name':_0xafd105['tag']+(_0x2e6950(0x1be)+_0x2e6950(0x1f8)+'i'),'iconURL':_0xafd105['displayAva'+'tarURL']()})['setDescrip'+_0x2e6950(0x11c)]('**'+_0xafd105+(_0x2e6950(0x18b)+'**')+_0x653a12+(_0x2e6950(0x186)+_0x2e6950(0x1ae)));}else{_0x46581d['setTitle'](_0x2e6950(0x1fa)+_0x23a7b6[_0x2e6950(0x1b4)]['name']+(_0x2e6950(0x15d)+_0x2e6950(0x10f)+_0x2e6950(0x221)));if(!_0x47758e||_0xbed432[_0x2e6950(0x192)](Object['keys'](_0x47758e)[_0x2e6950(0x1d0)],0x1*0x1cb6+-0x1529+-0x78d))_0x46581d[_0x2e6950(0x174)+_0x2e6950(0x11c)](_0x2e6950(0xef)+_0x2e6950(0x104)+_0x2e6950(0x183)+'pılmamış.');else{const _0x313e03=Object['entries'](_0x47758e)[_0x2e6950(0xe9)](([,_0x580a36],[,_0x579003])=>_0x579003-_0x580a36)[_0x2e6950(0xfa)](0xb*0x347+-0xce8+0x5*-0x4a1,0xc8f+0x464*-0x4+0x510);let _0x33478b='';for(let _0x2dbd77=0xe92+-0x21d9+0x1347;_0x2dbd77<_0x313e03['length'];_0x2dbd77++){const [_0x17ca8b,_0x343efa]=_0x313e03[_0x2dbd77],_0x3a1534=await _0x23a7b6[_0x2e6950(0x105)]['users'][_0x2e6950(0x1c8)](_0x17ca8b)['catch'](()=>({'tag':_0x2e6950(0x159)+'\x20Kullanıcı'}));_0x33478b+='**'+_0xbed432[_0x2e6950(0x1bd)](_0x2dbd77,0x1944+-0x14ad+-0x2*0x24b)+_0x2e6950(0x1e5)+_0x3a1534[_0x2e6950(0x1cb)]+_0x2e6950(0x1b9)+_0x343efa+_0x2e6950(0x100);}_0x46581d['setDescrip'+'tion'](_0x33478b);}}const _0x1d5318={};_0x1d5318[_0x2e6950(0x1f0)]=[_0x46581d],await _0x23a7b6['reply'](_0x1d5318);},async 'executeResetStats'(_0x3d816b,_0x31a9c6,_0x2677be){const _0x3b14be=a14_0x4a2dfc,_0x3cb48b={};_0x3cb48b['KXxpb']='❌\x20Kayıt\x20si'+_0x3b14be(0x1e9)+_0x3b14be(0x111)+_0x3b14be(0x1b2),_0x3cb48b[_0x3b14be(0x193)]=function(_0x49829e,_0x527026){return _0x49829e!==_0x527026;},_0x3cb48b[_0x3b14be(0x1d8)]=function(_0x315a9e,_0x5d9028){return _0x315a9e===_0x5d9028;},_0x3cb48b['eUXCK']=_0x3b14be(0x180)+_0x3b14be(0x122),_0x3cb48b[_0x3b14be(0x1b7)]=function(_0x3e9dd1,_0x5b4b69){return _0x3e9dd1!==_0x5b4b69;},_0x3cb48b[_0x3b14be(0xea)]=_0x3b14be(0xf3),_0x3cb48b[_0x3b14be(0x137)]=_0x3b14be(0x14f)+_0x3b14be(0x11f)+_0x3b14be(0x226)+_0x3b14be(0x168),_0x3cb48b[_0x3b14be(0x17b)]='cancel_res'+'et',_0x3cb48b['otADy']=_0x3b14be(0x1fc),_0x3cb48b[_0x3b14be(0x1b0)]='İşlem\x20ipta'+_0x3b14be(0x107),_0x3cb48b[_0x3b14be(0x1c1)]=_0x3b14be(0x1a2),_0x3cb48b[_0x3b14be(0x154)]=function(_0x450d72,_0x4d865e){return _0x450d72===_0x4d865e;},_0x3cb48b[_0x3b14be(0x169)]=_0x3b14be(0x1e8),_0x3cb48b[_0x3b14be(0x12b)]=_0x3b14be(0x181),_0x3cb48b[_0x3b14be(0x123)]='Onay\x20süres'+'i\x20dolduğu\x20'+'için\x20işlem'+_0x3b14be(0x17c)+_0x3b14be(0x1c0),_0x3cb48b[_0x3b14be(0x18c)]=_0x3b14be(0x210),_0x3cb48b[_0x3b14be(0x163)]=_0x3b14be(0x152)+'u\x20sadece\x20y'+_0x3b14be(0x1ef)+_0x3b14be(0x175)+_0x3b14be(0x1a9),_0x3cb48b[_0x3b14be(0x14b)]=_0x3b14be(0x1e7)+'al\x20Et',_0x3cb48b[_0x3b14be(0x12f)]=_0x3b14be(0x14e),_0x3cb48b[_0x3b14be(0x16a)]=_0x3b14be(0x145);const _0x7cf6c6=_0x3cb48b;if(!_0x3d816b[_0x3b14be(0x16b)][_0x3b14be(0x191)+'s'][_0x3b14be(0x147)](PermissionFlagsBits['Administra'+_0x3b14be(0x161)])){if(_0x3b14be(0x210)===_0x7cf6c6['vQkMB']){const _0x5b1de5={};return _0x5b1de5['content']=_0x7cf6c6[_0x3b14be(0x163)],_0x5b1de5['ephemeral']=!![],_0x3d816b[_0x3b14be(0x1d6)](_0x5b1de5);}else _0x469e9c[_0x3b14be(0x174)+'tion'](_0x3b14be(0xef)+_0x3b14be(0x222)+_0x3b14be(0x10b)+_0x3b14be(0x1a1)+'rini\x20kalıc'+_0x3b14be(0x225)+_0x3b14be(0x11e)+_0x3b14be(0x13b)+_0x3b14be(0x220)+_0x3b14be(0x213)+_0x3b14be(0x102)+_0x3b14be(0x13e)+'z.');}const _0x293977=_0x3d816b['options']['getUser']('kullanici'),_0x5b487a=_0x3d816b[_0x3b14be(0x1b4)]['id'],_0x4fa60e=new EmbedBuilder()[_0x3b14be(0x129)](0x17f4988+-0x83d550+0x430c8)['setTitle'](_0x3b14be(0x1cf)+_0x3b14be(0x1b8));_0x293977?_0x4fa60e[_0x3b14be(0x174)+_0x3b14be(0x11c)]('**'+_0x293977[_0x3b14be(0x1cb)]+(_0x3b14be(0x138)+_0x3b14be(0x16c)+_0x3b14be(0x1dd)+'stiklerini'+_0x3b14be(0x1cc)+'arak\x20sıfır'+_0x3b14be(0x172)+_0x3b14be(0x19a)+'\x20emin\x20misi'+_0x3b14be(0x130))):_0x4fa60e[_0x3b14be(0x174)+_0x3b14be(0x11c)](_0x3b14be(0xef)+_0x3b14be(0x222)+_0x3b14be(0x10b)+'tatistikle'+'rini\x20kalıc'+_0x3b14be(0x225)+_0x3b14be(0x11e)+_0x3b14be(0x13b)+'zden\x20emin\x20'+_0x3b14be(0x213)+'u\x20işlem\x20ge'+'ri\x20alınama'+'z.');const _0x2e3f07=new ButtonBuilder()[_0x3b14be(0xec)+'d'](_0x7cf6c6['eUXCK'])[_0x3b14be(0x17f)](_0x3b14be(0x120)+_0x3b14be(0x1b6))[_0x3b14be(0x1bf)](ButtonStyle['Danger']),_0x434617=new ButtonBuilder()[_0x3b14be(0xec)+'d']('cancel_res'+'et')['setLabel'](_0x7cf6c6[_0x3b14be(0x14b)])['setStyle'](ButtonStyle[_0x3b14be(0x1bb)]),_0x41db85=new ActionRowBuilder()[_0x3b14be(0x1a4)+_0x3b14be(0x1e0)](_0x2e3f07,_0x434617),_0x353718={};_0x353718[_0x3b14be(0x1f0)]=[_0x4fa60e],_0x353718[_0x3b14be(0x1d9)]=[_0x41db85],_0x353718[_0x3b14be(0x1b1)]=!![];const _0x1a4dfa=await _0x3d816b[_0x3b14be(0x1d6)](_0x353718),_0x32912a={};_0x32912a[_0x3b14be(0x224)+'ype']=ComponentType[_0x3b14be(0x148)],_0x32912a[_0x3b14be(0x187)]=0x3a98;const _0x4b94f9=_0x1a4dfa[_0x3b14be(0x1c5)+'ageCompone'+'ntCollecto'+'r'](_0x32912a);_0x4b94f9['on'](_0x7cf6c6['ydPao'],async _0x49c288=>{const _0x4bdc15=_0x3b14be;if(_0x7cf6c6[_0x4bdc15(0x193)](_0x49c288[_0x4bdc15(0x1a5)]['id'],_0x3d816b[_0x4bdc15(0x1a5)]['id'])){const _0x2474ce={};return _0x2474ce[_0x4bdc15(0x1e4)]=_0x4bdc15(0x204)+'sadece\x20kom'+_0x4bdc15(0x1ec)+_0x4bdc15(0x135)+_0x4bdc15(0x13a)+'.',_0x2474ce[_0x4bdc15(0x1b1)]=!![],_0x49c288['reply'](_0x2474ce);}if(_0x7cf6c6['SKWDc'](_0x49c288[_0x4bdc15(0x13f)],_0x7cf6c6[_0x4bdc15(0xe8)])){if(_0x293977)_0x2677be['registerSt'+_0x4bdc15(0xfd)][_0x5b487a]?.[_0x293977['id']]&&delete _0x2677be[_0x4bdc15(0x117)+_0x4bdc15(0xfd)][_0x5b487a][_0x293977['id']];else{if(_0x2677be[_0x4bdc15(0x117)+_0x4bdc15(0xfd)][_0x5b487a]){if(_0x7cf6c6[_0x4bdc15(0x1b7)](_0x7cf6c6['ISvvL'],_0x4bdc15(0xf3))){const _0x44df4a={};return _0x44df4a[_0x4bdc15(0x1e4)]=_0x7cf6c6[_0x4bdc15(0x1fd)],_0x44df4a[_0x4bdc15(0x1b1)]=!![],_0x51c93b[_0x4bdc15(0x1d6)](_0x44df4a);}else delete _0x2677be[_0x4bdc15(0x117)+_0x4bdc15(0xfd)][_0x5b487a];}}await _0x2677be['saveRegist'+_0x4bdc15(0x14d)+'ile']();const _0x50326e={};_0x50326e['content']=_0x7cf6c6[_0x4bdc15(0x137)],_0x50326e[_0x4bdc15(0x1f0)]=[],_0x50326e[_0x4bdc15(0x1d9)]=[],await _0x49c288[_0x4bdc15(0x16d)](_0x50326e);}else{if(_0x7cf6c6[_0x4bdc15(0x1d8)](_0x49c288[_0x4bdc15(0x13f)],_0x7cf6c6[_0x4bdc15(0x17b)])){if(_0x7cf6c6[_0x4bdc15(0x207)]!==_0x7cf6c6[_0x4bdc15(0x207)]){const _0x33f1cf={};return _0x33f1cf[_0x4bdc15(0x1e4)]=_0x4bdc15(0x152)+_0x4bdc15(0x1cd)+'k\x20için\x20ger'+_0x4bdc15(0x141)+_0x4bdc15(0x212)+_0x4bdc15(0x1ca),_0x33f1cf[_0x4bdc15(0x1b1)]=!![],_0x4d2c63[_0x4bdc15(0x1d6)](_0x33f1cf);}else{const _0x412244={};_0x412244[_0x4bdc15(0x1e4)]=_0x7cf6c6['vkolQ'],_0x412244['embeds']=[],_0x412244[_0x4bdc15(0x1d9)]=[],await _0x49c288['update'](_0x412244);}}}_0x4b94f9['stop']();}),_0x4b94f9['on'](_0x7cf6c6['VROIE'],_0x19284a=>{const _0x3118cf=_0x3b14be;if(_0x7cf6c6['AFyjg']===_0x7cf6c6['AFyjg']){if(_0x7cf6c6['dXJYt'](_0x19284a[_0x3118cf(0x179)],-0x1af*-0xa+-0xfd7*-0x1+-0x5*0x689)){if(_0x7cf6c6['SKWDc'](_0x7cf6c6[_0x3118cf(0x169)],_0x7cf6c6['ILilQ'])){const _0x1ba14f={};return _0x1ba14f[_0x3118cf(0x1e4)]=_0x3118cf(0x152)+_0x3118cf(0x1ab)+_0x3118cf(0x1ef)+_0x3118cf(0x175)+_0x3118cf(0x1a9),_0x1ba14f[_0x3118cf(0x1b1)]=!![],_0x2c1429[_0x3118cf(0x1d6)](_0x1ba14f);}else{const _0x3c55e7={};_0x3c55e7[_0x3118cf(0x1e4)]=_0x7cf6c6[_0x3118cf(0x123)],_0x3c55e7[_0x3118cf(0x1f0)]=[],_0x3c55e7[_0x3118cf(0x1d9)]=[],_0x3d816b[_0x3118cf(0x14a)](_0x3c55e7);}}}else _0x41dd89[_0x3118cf(0x112)](..._0x3cc5a5[_0x3118cf(0x19f)+'RoleIds']);});},async 'executeRegister'(_0x186e6a,_0x1489b4,_0x26da0c){const _0x3d2301=a14_0x4a2dfc,_0x1d29a2={};_0x1d29a2[_0x3d2301(0xf5)]=_0x3d2301(0x1dc)+_0x3d2301(0x155)+_0x3d2301(0x211)+_0x3d2301(0x17c)+_0x3d2301(0x1c0),_0x1d29a2[_0x3d2301(0x136)]='Bu\x20sunucud'+_0x3d2301(0x104)+_0x3d2301(0x183)+_0x3d2301(0x12e),_0x1d29a2[_0x3d2301(0xf6)]=_0x3d2301(0x204)+_0x3d2301(0x1f5)+'utu\x20kullan'+'an\x20kişi\x20ku'+_0x3d2301(0x13a)+'.',_0x1d29a2[_0x3d2301(0x119)]=function(_0x587686,_0x3e17c4){return _0x587686===_0x3e17c4;},_0x1d29a2['bkPLC']=_0x3d2301(0x198),_0x1d29a2[_0x3d2301(0x1c4)]=_0x3d2301(0x194)+_0x3d2301(0x1e9)+'unucuda\x20ak'+_0x3d2301(0x1b2),_0x1d29a2[_0x3d2301(0x1f7)]=_0x3d2301(0x215),_0x1d29a2['wZZPM']=_0x3d2301(0x149),_0x1d29a2[_0x3d2301(0x18d)]=function(_0x1f24dd,_0x1dd62c){return _0x1f24dd===_0x1dd62c;},_0x1d29a2[_0x3d2301(0x20d)]=_0x3d2301(0x1ee),_0x1d29a2[_0x3d2301(0x184)]=_0x3d2301(0x15a),_0x1d29a2[_0x3d2301(0xe5)]=_0x3d2301(0x1b5)+_0x3d2301(0x19c)+_0x3d2301(0x218),_0x1d29a2[_0x3d2301(0x196)]=function(_0x275317,_0x24007d){return _0x275317!==_0x24007d;},_0x1d29a2['oGtnz']=_0x3d2301(0x190),_0x1d29a2['bzpVM']=_0x3d2301(0xf8)+_0x3d2301(0x1e3)+'im\x20rolümde'+_0x3d2301(0x1a6)+_0x3d2301(0x176)+'\x20için\x20işle'+_0x3d2301(0x106),_0x1d29a2[_0x3d2301(0x115)]=_0x3d2301(0x1c3),_0x1d29a2[_0x3d2301(0x216)]=_0x3d2301(0x156),_0x1d29a2[_0x3d2301(0x103)]=function(_0x5b16e2,_0x3af475){return _0x5b16e2+_0x3af475;},_0x1d29a2[_0x3d2301(0x1c7)]=function(_0x59001a,_0x2d564b){return _0x59001a===_0x2d564b;},_0x1d29a2[_0x3d2301(0x167)]=_0x3d2301(0x18e),_0x1d29a2['PdiiC']=_0x3d2301(0xf4),_0x1d29a2[_0x3d2301(0x19e)]=function(_0x47ca43,_0x3bd9bc){return _0x47ca43>_0x3bd9bc;},_0x1d29a2[_0x3d2301(0x217)]=function(_0x3b81d2,_0x1242b5){return _0x3b81d2!==_0x1242b5;},_0x1d29a2[_0x3d2301(0x15b)]='WMRZT',_0x1d29a2[_0x3d2301(0x1db)]=_0x3d2301(0x1df)+'rılı',_0x1d29a2[_0x3d2301(0x1c9)]='Yeni\x20İsim',_0x1d29a2[_0x3d2301(0x1e6)]=_0x3d2301(0xf0),_0x1d29a2[_0x3d2301(0xe7)]=_0x3d2301(0x19d),_0x1d29a2[_0x3d2301(0x1de)]='{server}',_0x1d29a2['CHsfD']=function(_0x766756,_0x568bea){return _0x766756===_0x568bea;},_0x1d29a2[_0x3d2301(0x15c)]=_0x3d2301(0x118),_0x1d29a2[_0x3d2301(0x1fe)]=_0x3d2301(0x1b3),_0x1d29a2[_0x3d2301(0x1ba)]=_0x3d2301(0x21e)+_0x3d2301(0xf2);const _0x16d351=_0x1d29a2;if(!_0x1489b4||!_0x1489b4[_0x3d2301(0x144)]){if(_0x16d351['uNPel'](_0x3d2301(0x199),_0x16d351['bkPLC']))_0x47e42b[_0x3d2301(0x117)+'ats'][_0x1e066a]?.[_0x48ab8f['id']]&&delete _0x337b0b['registerSt'+_0x3d2301(0xfd)][_0x3c5384][_0x43b293['id']];else{const _0x1d9900={};return _0x1d9900[_0x3d2301(0x1e4)]=_0x16d351[_0x3d2301(0x1c4)],_0x1d9900[_0x3d2301(0x1b1)]=!![],_0x186e6a[_0x3d2301(0x1d6)](_0x1d9900);}}if(!_0x1489b4['staffRoleI'+'d']||!_0x186e6a[_0x3d2301(0x16b)][_0x3d2301(0x13d)][_0x3d2301(0x1ff)][_0x3d2301(0x147)](_0x1489b4[_0x3d2301(0x12d)+'d'])){const _0x5d7e10={};return _0x5d7e10[_0x3d2301(0x1e4)]='❌\x20Bu\x20komut'+_0x3d2301(0x1cd)+_0x3d2301(0x1d5)+'ekli\x20yetki'+_0x3d2301(0x212)+'eğilsiniz.',_0x5d7e10[_0x3d2301(0x1b1)]=!![],_0x186e6a['reply'](_0x5d7e10);}const _0x46813c=_0x186e6a[_0x3d2301(0x21f)][_0x3d2301(0x200)]('kullanici'),_0x2b4be6=_0x186e6a[_0x3d2301(0x21f)]['getString'](_0x16d351['Ksvrc']),_0x1f9157=_0x186e6a['options']['getInteger'](_0x16d351[_0x3d2301(0x219)]);if(!_0x46813c){if(_0x16d351[_0x3d2301(0x18d)](_0x16d351[_0x3d2301(0x20d)],_0x16d351['ONeDw'])){if(_0x4deb90[_0x3d2301(0x179)]===0x166f+0x209+0x8*-0x30f){const _0x5b7e65={};_0x5b7e65[_0x3d2301(0x1e4)]=_0x16d351['HlZsH'],_0x5b7e65[_0x3d2301(0x1f0)]=[],_0x5b7e65[_0x3d2301(0x1d9)]=[],_0x350f76[_0x3d2301(0x14a)](_0x5b7e65);}}else{const _0x437b5a={};return _0x437b5a[_0x3d2301(0x1e4)]=_0x16d351[_0x3d2301(0xe5)],_0x437b5a['ephemeral']=!![],_0x186e6a['reply'](_0x437b5a);}}if(_0x46813c[_0x3d2301(0x13d)][_0x3d2301(0x1f2)]['position']>=_0x186e6a[_0x3d2301(0x1b4)][_0x3d2301(0x166)]['me']['roles'][_0x3d2301(0x1f2)][_0x3d2301(0x108)]){if(_0x16d351[_0x3d2301(0x196)](_0x16d351[_0x3d2301(0x143)],_0x16d351[_0x3d2301(0x143)]))_0x3d4dcb['setDescrip'+_0x3d2301(0x11c)](_0x16d351['gJvzr']);else{const _0x3781d5={};return _0x3781d5[_0x3d2301(0x1e4)]=_0x16d351[_0x3d2301(0x146)],_0x3781d5[_0x3d2301(0x1b1)]=!![],_0x186e6a[_0x3d2301(0x1d6)](_0x3781d5);}}try{const _0x16794f=_0x1489b4['nicknameTe'+'mplate'][_0x3d2301(0x160)](_0x3d2301(0x202),_0x2b4be6)[_0x3d2301(0x160)](_0x16d351[_0x3d2301(0x115)],_0x1f9157);if(_0x1489b4[_0x3d2301(0xfb)+'ed']){if(_0x16d351[_0x3d2301(0x18d)](_0x16d351[_0x3d2301(0x216)],_0x3d2301(0x156))){const _0x5af5e3=_0x186e6a['guild']['id'],_0x58bce8=_0x186e6a[_0x3d2301(0x1a5)]['id'];if(!_0x26da0c[_0x3d2301(0x117)+_0x3d2301(0xfd)][_0x5af5e3])_0x26da0c[_0x3d2301(0x117)+_0x3d2301(0xfd)][_0x5af5e3]={};_0x26da0c[_0x3d2301(0x117)+'ats'][_0x5af5e3][_0x58bce8]=_0x16d351[_0x3d2301(0x103)](_0x26da0c['registerSt'+_0x3d2301(0xfd)][_0x5af5e3][_0x58bce8]||-0x2265+-0xb0a+-0x1*-0x2d6f,0x258f+0x1*0x228e+-0x481c),await _0x26da0c[_0x3d2301(0x132)+_0x3d2301(0x14d)+'ile']();}else delete _0x1fa428[_0x3d2301(0x117)+'ats'][_0xa6f790][_0x1b0c50['id']];}await _0x46813c['setNicknam'+'e'](_0x16794f);const _0x1406d9=[];if(_0x1489b4[_0x3d2301(0x19f)+'RoleIds']&&Array[_0x3d2301(0x1eb)](_0x1489b4[_0x3d2301(0x19f)+'RoleIds'])){if(_0x16d351[_0x3d2301(0x1c7)](_0x16d351[_0x3d2301(0x167)],_0x16d351[_0x3d2301(0x1e2)])){const _0x16c99d={};return _0x16c99d[_0x3d2301(0x1e4)]=_0x16d351[_0x3d2301(0xf6)],_0x16c99d[_0x3d2301(0x1b1)]=!![],_0x253e46[_0x3d2301(0x1d6)](_0x16c99d);}else _0x1406d9['push'](..._0x1489b4[_0x3d2301(0x19f)+_0x3d2301(0x12c)]);}_0x1489b4[_0x3d2301(0x19f)+_0x3d2301(0x1d3)]&&!_0x1406d9[_0x3d2301(0x1d4)](_0x1489b4['registered'+_0x3d2301(0x1d3)])&&_0x1406d9[_0x3d2301(0x112)](_0x1489b4[_0x3d2301(0x19f)+_0x3d2301(0x1d3)]);if(_0x16d351[_0x3d2301(0x19e)](_0x1406d9[_0x3d2301(0x1d0)],-0x71*0x41+0x3*0x23b+0x1600)){if(_0x16d351[_0x3d2301(0x217)]('WMRZT',_0x16d351['ZuKjh'])){const _0x3867f7=_0x2cb075?.[_0x242b4e['id']]||0x2397+-0xe85+-0x383*0x6;_0x28ef7f[_0x3d2301(0x142)]({'name':_0x2d6fdb['tag']+(_0x3d2301(0x1be)+'atistikler'+'i'),'iconURL':_0x364065[_0x3d2301(0x20f)+_0x3d2301(0x125)]()})[_0x3d2301(0x174)+_0x3d2301(0x11c)]('**'+_0x544c2b+(_0x3d2301(0x18b)+'**')+_0x3867f7+(_0x3d2301(0x186)+'apmış.'));}else await _0x46813c[_0x3d2301(0x13d)][_0x3d2301(0x16e)](_0x1406d9);}_0x1489b4[_0x3d2301(0x110)+_0x3d2301(0x1aa)]&&await _0x46813c[_0x3d2301(0x13d)][_0x3d2301(0x134)](_0x1489b4['unregister'+_0x3d2301(0x1aa)]);const _0x158ed7=new EmbedBuilder()[_0x3d2301(0x129)](0x854473+0x127ff0+0x6*-0xe027b)[_0x3d2301(0x142)]({'name':_0x16d351['gSCfG'],'iconURL':_0x46813c[_0x3d2301(0x1a5)][_0x3d2301(0x20f)+'tarURL']()})[_0x3d2301(0x174)+_0x3d2301(0x11c)](_0x46813c+(_0x3d2301(0x17d)+_0x3d2301(0x1ac)+'i!'))[_0x3d2301(0x1d7)]({'name':_0x16d351['gAeFl'],'value':_0x16794f,'inline':!![]},{'name':_0x16d351[_0x3d2301(0x1e6)],'value':_0x186e6a['user'][_0x3d2301(0x21a)](),'inline':!![]})[_0x3d2301(0x14c)+'mp'](),_0x431878={};_0x431878['embeds']=[_0x158ed7],await _0x186e6a[_0x3d2301(0x1d6)](_0x431878);if(_0x1489b4[_0x3d2301(0x121)+_0x3d2301(0xeb)]){if(_0x16d351[_0x3d2301(0x18d)](_0x16d351[_0x3d2301(0xe7)],_0x3d2301(0x128)))_0x172a66[_0x3d2301(0x112)](_0x35c784[_0x3d2301(0x19f)+_0x3d2301(0x1d3)]);else{const _0x1b85d6=_0x1489b4['welcomeMes'+_0x3d2301(0xeb)]['replace'](_0x3d2301(0x201),_0x46813c['toString']())['replace'](_0x16d351[_0x3d2301(0x1de)],_0x186e6a[_0x3d2301(0x1b4)][_0x3d2301(0x214)]);await _0x46813c[_0x3d2301(0x153)](_0x1b85d6)[_0x3d2301(0x20e)](_0x2f1af0=>{const _0x50868a=_0x3d2301;console[_0x50868a(0x124)](_0x50868a(0x18a)+_0x50868a(0x139)+_0x50868a(0x182)+_0x50868a(0x114)+_0x46813c[_0x50868a(0x1a5)][_0x50868a(0x1cb)]+'):\x20'+_0x2f1af0[_0x50868a(0xe6)]);});}}if(_0x1489b4[_0x3d2301(0x1a0)+'Id']){if(_0x16d351[_0x3d2301(0x10c)](_0x3d2301(0x1e1),_0x16d351['vTlrq']))_0x1ff046[_0x3d2301(0x117)+'ats'][_0x51507a]&&delete _0x48115f[_0x3d2301(0x117)+_0x3d2301(0xfd)][_0x34bbfa];else{const _0x3a25ab=await _0x186e6a[_0x3d2301(0x1b4)][_0x3d2301(0x1f1)][_0x3d2301(0x1c8)](_0x1489b4[_0x3d2301(0x1a0)+'Id'])[_0x3d2301(0x20e)](()=>null);if(_0x3a25ab){const _0x4418aa=new EmbedBuilder()[_0x3d2301(0x129)](-0x3d5a08*-0x2+0xb9caa+-0x2deac8)[_0x3d2301(0x1a7)](_0x3d2301(0x133)+_0x3d2301(0x171))[_0x3d2301(0x174)+_0x3d2301(0x11c)]('**Yetkili:'+_0x3d2301(0x158)+_0x186e6a[_0x3d2301(0x1a5)][_0x3d2301(0x1cb)]+(_0x3d2301(0x10a)+_0x3d2301(0x11a))+_0x46813c[_0x3d2301(0x1a5)][_0x3d2301(0x1cb)]+(_0x3d2301(0x113)+'im:**\x20')+_0x16794f)['setTimesta'+'mp'](),_0x57f49c={};_0x57f49c[_0x3d2301(0x1f0)]=[_0x4418aa],await _0x3a25ab['send'](_0x57f49c);}}}}catch(_0x24aa64){if(_0x16d351[_0x3d2301(0x1fe)]===_0x16d351[_0x3d2301(0x1fe)]){console[_0x3d2301(0x20a)](_0x16d351[_0x3d2301(0x1ba)],_0x24aa64);const _0x3ecbc3={};_0x3ecbc3[_0x3d2301(0x1e4)]='❌\x20Kayıt\x20iş'+_0x3d2301(0xf7)+_0x3d2301(0x1ad)+_0x3d2301(0x205)+_0x3d2301(0x1ea)+_0x3d2301(0x1bc)+_0x3d2301(0x170),_0x3ecbc3['ephemeral']=!![],await _0x186e6a[_0x3d2301(0x1d6)](_0x3ecbc3);}else _0x2d62f9[_0x3d2301(0x124)](_0x3d2301(0x18a)+_0x3d2301(0x139)+'DM\x20gönderi'+'lemedi\x20('+_0x2fa493[_0x3d2301(0x1a5)][_0x3d2301(0x1cb)]+_0x3d2301(0x1c2)+_0x51e863['message']);}}};
+const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, ComponentType, MessageFlags } = require('discord.js');
+
+module.exports = {
+    data: new SlashCommandBuilder()
+        .setName('kayit')
+        .setDescription('Bir üyeyi sunucuya kaydeder.')
+        .setDefaultMemberPermissions(PermissionFlagsBits.ManageNicknames)
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('yap')
+                .setDescription('Bir üyeyi sunucuya kaydeder.')
+                .addUserOption(option =>
+                    option.setName('kullanici')
+                        .setDescription('Kaydedilecek üye.')
+                        .setRequired(true))
+                .addStringOption(option =>
+                    option.setName('isim')
+                        .setDescription('Üyenin yeni ismi.')
+                        .setRequired(true))
+                .addIntegerOption(option =>
+                    option.setName('yas')
+                        .setDescription('Üyenin yaşı.')
+                        .setRequired(true)))
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('stats')
+                .setDescription('Yetkililerin kayıt istatistiklerini gösterir.')
+                .addUserOption(option =>
+                    option.setName('kullanici')
+                        .setDescription('Belirli bir yetkilinin istatistiklerini gör.')
+                        .setRequired(false)))
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('stats-sifirla')
+                .setDescription('Kayıt istatistiklerini sıfırlar (Sadece Yönetici).')
+                .addUserOption(option =>
+                    option.setName('kullanici')
+                        .setDescription('Sadece belirtilen yetkilinin istatistiklerini sıfırla.')
+                        .setRequired(false))),
+
+    async execute(interaction, serverSettings, db) {
+        const settings = serverSettings[interaction.guild.id]?.register;
+        const subcommand = interaction.options.getSubcommand();
+
+        // Yetki kontrolü
+        if (!settings || !settings.enabled) {
+            return interaction.reply({ content: '❌ Kayıt sistemi bu sunucuda aktif değil.', flags: MessageFlags.Ephemeral });
+        }
+
+        if (subcommand === 'stats') {
+            await this.executeStats(interaction, settings, db.registerStats);
+        } else if (subcommand === 'yap') {
+            await this.executeRegister(interaction, settings, db);
+        } else if (subcommand === 'stats-sifirla') {
+            await this.executeResetStats(interaction, settings, db);
+        }
+    },
+
+    async executeStats(interaction, settings, registerStats) {
+        if (!settings || !settings.enabled) {
+            return interaction.reply({ content: '❌ Kayıt sistemi bu sunucuda aktif değil.', flags: MessageFlags.Ephemeral });
+        }
+
+        const guildStats = registerStats[interaction.guild.id];
+        const targetUser = interaction.options.getUser('kullanici');
+
+        const embed = new EmbedBuilder()
+            .setColor(0x5865F2)
+            .setTimestamp();
+
+        if (targetUser) {
+            // Belirli bir yetkilinin istatistiği
+            const count = guildStats?.[targetUser.id] || 0;
+            embed
+                .setAuthor({ name: `${targetUser.tag} Kayıt İstatistikleri`, iconURL: targetUser.displayAvatarURL() })
+                .setDescription(`**${targetUser}** toplam **${count}** kayıt yapmış.`);
+        } else {
+            // Genel liderlik tablosu
+            embed.setTitle(`🏆 ${interaction.guild.name} - Kayıt Liderlik Tablosu`);
+
+            if (!guildStats || Object.keys(guildStats).length === 0) {
+                embed.setDescription('Bu sunucuda henüz hiç kayıt yapılmamış.');
+            } else {
+                const sortedStats = Object.entries(guildStats)
+                    .sort(([, a], [, b]) => b - a)
+                    .slice(0, 15); // İlk 15 kişiyi göster
+
+                let description = '';
+                for (let i = 0; i < sortedStats.length; i++) {
+                    const [userId, count] = sortedStats[i];
+                    const user = await interaction.client.users.fetch(userId).catch(() => ({ tag: 'Bilinmeyen Kullanıcı' }));
+                    description += `**${i + 1}.** ${user.tag} - \`${count}\` kayıt\n`;
+                }
+                embed.setDescription(description);
+            }
+        }
+
+        await interaction.reply({ embeds: [embed] });
+    },
+
+    async executeResetStats(interaction, settings, db) {
+        // YENİ: Yönetici izni kontrolü
+        if (!interaction.member.permissions.has(PermissionFlagsBits.Administrator)) {
+            return interaction.reply({ content: '❌ Bu komutu sadece yöneticiler kullanabilir.', flags: MessageFlags.Ephemeral });
+        }
+
+        const targetUser = interaction.options.getUser('kullanici');
+        const guildId = interaction.guild.id;
+
+        const confirmationEmbed = new EmbedBuilder()
+            .setColor(0xFFA500) // Turuncu
+            .setTitle('⚠️ Onay Gerekli');
+
+        if (targetUser) {
+            confirmationEmbed.setDescription(`**${targetUser.tag}** kullanıcısının kayıt istatistiklerini kalıcı olarak sıfırlamak istediğinizden emin misiniz?`);
+        } else {
+            confirmationEmbed.setDescription(`Bu sunucudaki **TÜM** kayıt istatistiklerini kalıcı olarak sıfırlamak istediğinizden emin misiniz? Bu işlem geri alınamaz.`);
+        }
+
+        const confirmButton = new ButtonBuilder()
+            .setCustomId('confirm_reset')
+            .setLabel('Evet, Sıfırla')
+            .setStyle(ButtonStyle.Danger);
+
+        const cancelButton = new ButtonBuilder()
+            .setCustomId('cancel_reset')
+            .setLabel('Hayır, İptal Et')
+            .setStyle(ButtonStyle.Secondary);
+
+        const row = new ActionRowBuilder().addComponents(confirmButton, cancelButton);
+
+        const reply = await interaction.reply({
+            embeds: [confirmationEmbed],
+            components: [row],
+            flags: MessageFlags.Ephemeral
+        });
+
+        const collector = reply.createMessageComponentCollector({
+            componentType: ComponentType.Button,
+            time: 15000 // 15 saniye
+        });
+
+        collector.on('collect', async i => {
+            if (i.user.id !== interaction.user.id) {
+                return i.reply({ content: 'Bu butonu sadece komutu kullanan kişi kullanabilir.', flags: MessageFlags.Ephemeral });
+            }
+
+            if (i.customId === 'confirm_reset') {
+                if (targetUser) {
+                    if (db.registerStats[guildId]?.[targetUser.id]) {
+                        delete db.registerStats[guildId][targetUser.id];
+                    }
+                } else {
+                    if (db.registerStats[guildId]) {
+                        delete db.registerStats[guildId];
+                    }
+                }
+                await db.saveRegisterStatsToFile();
+                await i.update({ content: '✅ İstatistikler başarıyla sıfırlandı.', embeds: [], components: [] });
+            } else if (i.customId === 'cancel_reset') {
+                await i.update({ content: 'İşlem iptal edildi.', embeds: [], components: [] });
+            }
+            collector.stop();
+        });
+
+        collector.on('end', collected => {
+            if (collected.size === 0) {
+                interaction.editReply({ content: 'Onay süresi dolduğu için işlem iptal edildi.', embeds: [], components: [] });
+            }
+        });
+    },
+
+
+    async executeRegister(interaction, settings, db) {
+        // Bu fonksiyonun içeriği, önceki execute fonksiyonunuzun içeriği olacak.
+        // Sadece istatistik artırma kodunu ekleyeceğiz.
+
+        // 1. Modül aktif mi?
+        if (!settings || !settings.enabled) {
+            return interaction.reply({ content: '❌ Kayıt sistemi bu sunucuda aktif değil.', flags: MessageFlags.Ephemeral });
+        }
+
+        // 2. Komutu kullanan yetkili mi?
+        if (!settings.staffRoleId || !interaction.member.roles.cache.has(settings.staffRoleId)) {
+            return interaction.reply({ content: '❌ Bu komutu kullanmak için gerekli yetkiye sahip değilsiniz.', flags: MessageFlags.Ephemeral });
+        }
+
+        const memberToRegister = interaction.options.getMember('kullanici');
+        const newName = interaction.options.getString('isim');
+        const newAge = interaction.options.getInteger('yas');
+
+        if (!memberToRegister) {
+            return interaction.reply({ content: '❌ Kaydedilecek üye bulunamadı.', flags: MessageFlags.Ephemeral });
+        }
+
+        // Botun rolü, kayıt edilecek üyenin rolünden yüksek olmalı
+        if (memberToRegister.roles.highest.position >= interaction.guild.members.me.roles.highest.position) {
+            return interaction.reply({ content: '❌ Bu üyenin rolü benim rolümden daha yüksek olduğu için işlem yapamam.', flags: MessageFlags.Ephemeral });
+        }
+
+        try {
+            // 3. İsim ve Rolleri Güncelle
+            const nickname = settings.nicknameTemplate
+                .replace('{isim}', newName)
+                .replace('{yas}', newAge);
+
+            // YENİ: İstatistikleri artır
+            if (settings.statsEnabled) {
+                const guildId = interaction.guild.id;
+                const staffId = interaction.user.id;
+                if (!db.registerStats[guildId]) db.registerStats[guildId] = {};
+                db.registerStats[guildId][staffId] = (db.registerStats[guildId][staffId] || 0) + 1;
+                await db.saveRegisterStatsToFile();
+            }
+
+            await memberToRegister.setNickname(nickname);
+
+            // YENİ: Çoklu rol desteği
+            const rolesToAdd = [];
+            if (settings.registeredRoleIds && Array.isArray(settings.registeredRoleIds)) {
+                rolesToAdd.push(...settings.registeredRoleIds);
+            }
+            // Geriye dönük uyumluluk (Eski ayar varsa onu da ekle)
+            if (settings.registeredRoleId && !rolesToAdd.includes(settings.registeredRoleId)) {
+                rolesToAdd.push(settings.registeredRoleId);
+            }
+
+            if (rolesToAdd.length > 0) {
+                await memberToRegister.roles.add(rolesToAdd);
+            }
+            if (settings.unregisteredRoleId) {
+                await memberToRegister.roles.remove(settings.unregisteredRoleId);
+            }
+
+            // 4. Başarı Mesajı
+            const successEmbed = new EmbedBuilder()
+                .setColor(0x43B581) // Yeşil
+                .setAuthor({ name: 'Kayıt Başarılı', iconURL: memberToRegister.user.displayAvatarURL() })
+                .setDescription(`${memberToRegister} başarıyla kaydedildi!`)
+                .addFields(
+                    { name: 'Yeni İsim', value: nickname, inline: true },
+                    { name: 'Yetkili', value: interaction.user.toString(), inline: true }
+                )
+                .setTimestamp();
+
+            await interaction.reply({ embeds: [successEmbed] });
+
+            // 5. YENİ: Kullanıcıya özel mesaj gönder
+            if (settings.welcomeMessage) {
+                const welcomeDM = settings.welcomeMessage
+                    .replace('{user}', memberToRegister.toString())
+                    .replace('{server}', interaction.guild.name);
+
+                await memberToRegister.send(welcomeDM).catch(err => {
+                    console.log(`[Kayıt] Kullanıcıya DM gönderilemedi (${memberToRegister.user.tag}): ${err.message}`);
+                });
+            }
+
+            // 5. Log Kanalına Mesaj Gönder
+            if (settings.logChannelId) {
+                const logChannel = await interaction.guild.channels.fetch(settings.logChannelId).catch(() => null);
+                if (logChannel) {
+                    const logEmbed = new EmbedBuilder()
+                        .setColor(0x5865F2)
+                        .setTitle('Üye Kaydedildi')
+                        .setDescription(`**Yetkili:** ${interaction.user.tag}\n**Kayıt Edilen:** ${memberToRegister.user.tag}\n**Yeni İsim:** ${nickname}`)
+                        .setTimestamp();
+                    await logChannel.send({ embeds: [logEmbed] });
+                }
+            }
+
+        } catch (error) {
+            console.error('Kayıt hatası:', error);
+            await interaction.reply({ content: '❌ Kayıt işlemi sırasında bir hata oluştu. Rol izinlerimi kontrol edin.', flags: MessageFlags.Ephemeral });
+        }
+    }
+};

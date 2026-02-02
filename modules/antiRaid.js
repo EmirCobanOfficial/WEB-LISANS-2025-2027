@@ -1,1 +1,132 @@
-const a1_0x529ac7=a1_0x579c;function a1_0x4b60(){const _0x1f3161=['igjPCIbUzwrLBG','BgvUz3rO','igj1imo8Ewv5Asa','C2v0q29SB3i','B3DUzxjjza','qM90Dw4Gj8oCEwu','DgfN','zgvSzxrL','BM93','W5X5zsbKzxrHEwW','CgXgwuS','zxrPA2XLzgKGyq','ig1LC2fQigFdTM4','BgvTzwrPicG','yw50AvjHAwq','z3vPBgq','Dg9vChbLCKnHCW','AwjPignLEMfSyq','kIOGC3bHBs9Yyq','ihnHBML5zwrLia','C2v0','yM90','4PQG77IpicOQrxLSzw0G','D3fNEuu','qMhfN2fYXlfZXlf6oG','BM1mzLq','zw1IzwrZ','W6DLA2XLXz90AxjP','twvZC2fNzunYzq','qw50As1sywLKoG','CfbjDe4','Bw9KzxjHDgLVBG','Bw9KzxjHDgfIBa','C2v0vgLTzxn0yq','rf9nru1crvjtia','ywteSs4GkeDvsuW','ywn0Aw9U','yxrL','DgLVBG','BMteSxleSwXHBwf6','mtG0mJu2nK5XBhLyvW','DgLTzw91Da','yxjLDgXLBMrPlG','s3vSBgfUXlfJXleG','ChvZAa','sfD2rxa','Aw50zw50j2KGyq','v1DgyMi','igvRC2LRlG','qM90Dw4GtCo8zge','zvrTz3a','r0Xzshe','mtrTEu1Qr0S','tvLLyxC','AxrPighfN8sXBgteSq','mti3ogjRyLLiAa','yvbYDwG','lI9TB2rLCMf0Aq','ig1LC2fQic8G','BgvYAsbAyw1HBG','ie1LC2fQigXPBq','zMv0y2G','C2v0vgL0Bgu','AxiGAgf0ysbVBa','z2v0','j2rLBIbMyxPSyq','CSsXBmsXCMTLBIbI','qM90Dw4GCM9SW7W','DxnLCG','mZeYmdu0A3rrzurg','yxv0Ag9Y','yw5KXlfYXlfSyw1H','BguGy2v6ywXHBG','ywrKtg9N','C2vUza','yMfU','vvnxruu','uNDsvvu','y2f0y2G','mZe1ntqWneLMALbnCW','uM56zfe','mtbmC3DRr3C','s3vSBgfUXlfJXle','u2vIzxa','zmsXlG','ugL6v00','tfLdwfe','EMfZy2O','CKPsANq','ignLEMfSyw5KXle','otu2mtKWmenqy1zIEa','DMfSDwu','mJuXngjWD3jrzq','zMLSDgvY','Aw5SAw5L','zgvYzgKU','kIOG','Xj9YyxqNigL6BMK','ntCXnJbXwvrPyLq','8j+AQcbbtLrjlvjbsq','zxjYB3i','A2LJAW','mtu5mtu4yMv2zKf5','vxLNDwXHBMfUia','veT2Cge','CfvHq1y','A3rPzIbTAt8P','yxleSsbHBmsXBMfT','u3rsAxi','qMLSAw5TzxLLBG','W6DPBIb5zxrLCMK','DNH1rfC','t2LZwfi','kIOGC3bHBsbMAq','C2v0rgvZy3jPCa','mJGWmJfLB2jqBvC','yMnqv24','BMfTzq','zhzjCK0','zw5HyMXLza','vufWreO','zxHWB3j0CW','rcbvwufssvnjia','zgHIyK4','qw50As1YywLKia','zxLSzw1PigDLCG','Bg9Nq2HHBM5LBa','zujWzhG'];a1_0x4b60=function(){return _0x1f3161;};return a1_0x4b60();}(function(_0x12d185,_0x426138){const _0x2d5ff1=a1_0x579c,_0x49eab0=_0x12d185();while(!![]){try{const _0x538cdd=-parseInt(_0x2d5ff1(0x19b))/(-0x1edf+-0x333*0x1+0x2213)*(-parseInt(_0x2d5ff1(0x1cd))/(0x25e2+0x11e7+-0x37c7))+parseInt(_0x2d5ff1(0x1ac))/(0x5ba+0x23e9*-0x1+-0x305*-0xa)+parseInt(_0x2d5ff1(0x1b6))/(-0x6*0x225+-0x1adf+-0x1*-0x27c1)*(parseInt(_0x2d5ff1(0x1b8))/(0x1b34+0x7*0xe+-0x1b91))+-parseInt(_0x2d5ff1(0x1c3))/(0xfec*0x1+0xc3*0x7+-0x153b)*(parseInt(_0x2d5ff1(0x15a))/(-0x13c3+-0x38*0x47+0x2352))+parseInt(_0x2d5ff1(0x1c9))/(-0x1d96+-0x129b+0x3039)*(-parseInt(_0x2d5ff1(0x19e))/(0x2b1*-0x7+0x22a*-0x8+0x30*0xc1))+parseInt(_0x2d5ff1(0x1c1))/(0x1*-0x247e+0x24eb*0x1+-0xb*0x9)+-parseInt(_0x2d5ff1(0x18f))/(0x4e*0x2e+-0x11*-0x59+-0x13e2);if(_0x538cdd===_0x426138)break;else _0x49eab0['push'](_0x49eab0['shift']());}catch(_0x176f0b){_0x49eab0['push'](_0x49eab0['shift']());}}}(a1_0x4b60,-0x4*-0x1d97d+0x1*0x115355+-0xb1a52));function a1_0x579c(_0x1505f0,_0x2fb3a1){const _0x39b9be=a1_0x4b60();return a1_0x579c=function(_0xe8da67,_0x459848){_0xe8da67=_0xe8da67-(0x5a5*-0x4+-0xfc9*-0x1+0x81e);let _0x143314=_0x39b9be[_0xe8da67];if(a1_0x579c['EWeKBU']===undefined){var _0x3ddf10=function(_0xc21f80){const _0x85f544='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x1c4024='',_0x1a1d7f='';for(let _0x49bd44=0x2115+-0x25a2+0x48d,_0x27a245,_0x524340,_0x5f3662=-0xd3+-0x143a*0x1+0x150d;_0x524340=_0xc21f80['charAt'](_0x5f3662++);~_0x524340&&(_0x27a245=_0x49bd44%(0x10f1+0x8*-0x3a9+-0xc5b*-0x1)?_0x27a245*(0x13ba+-0x3a*0x5e+0x1*0x1d2)+_0x524340:_0x524340,_0x49bd44++%(0x1f1e+-0x2f*0xba+-0x3*-0x104))?_0x1c4024+=String['fromCharCode'](0xcd*0x11+0x1476+-0x124*0x1d&_0x27a245>>(-(-0x1*-0xc4c+-0x1705+0xabb)*_0x49bd44&-0x1f1b+-0x11a3+-0x2*-0x1862)):0x19ac+-0x6*0x467+0x5f*0x2){_0x524340=_0x85f544['indexOf'](_0x524340);}for(let _0xec0faa=0x1edc+0xcfe+-0x2bda,_0x2d5fe4=_0x1c4024['length'];_0xec0faa<_0x2d5fe4;_0xec0faa++){_0x1a1d7f+='%'+('00'+_0x1c4024['charCodeAt'](_0xec0faa)['toString'](-0x13cf+-0x578+0x1957))['slice'](-(-0x5b*-0x13+-0x2057+0x1998));}return decodeURIComponent(_0x1a1d7f);};a1_0x579c['oMxQez']=_0x3ddf10,_0x1505f0=arguments,a1_0x579c['EWeKBU']=!![];}const _0x525257=_0x39b9be[0x362+0x655+-0x9b7],_0x2b5f62=_0xe8da67+_0x525257,_0x690a37=_0x1505f0[_0x2b5f62];return!_0x690a37?(_0x143314=a1_0x579c['oMxQez'](_0x143314),_0x1505f0[_0x2b5f62]=_0x143314):_0x143314=_0x690a37,_0x143314;},a1_0x579c(_0x1505f0,_0x2fb3a1);}const {Events,EmbedBuilder}=require('discord.js'),userMessages=new Map();module[a1_0x529ac7(0x160)]={'name':a1_0x529ac7(0x175),'getSettings':()=>({'enabled':![],'messageLimit':0x5,'timeInterval':0xbb8,'action':a1_0x529ac7(0x190)}),'init':(_0x4497f0,_0x4e1bb8)=>{const _0x3addcb=a1_0x529ac7,_0xb4a432={'HWvEp':_0x3addcb(0x1aa)+_0x3addcb(0x169)+'yönetmek\x20i'+_0x3addcb(0x155)+'nce\x20yüksek'+'\x20değil.','WWFbb':_0x3addcb(0x170)+_0x3addcb(0x1d2)+'adı.\x20(GUIL'+'D_MEMBERS\x20'+'intent\x27i\x20a'+'ktif\x20mi?)','PizWM':'Sunucu\x20sah'+_0x3addcb(0x178)+_0x3addcb(0x18e)+'.','UApDJ':function(_0x282ae4,_0x46d5fb){return _0x282ae4>_0x46d5fb;},'bcPWn':_0x3addcb(0x154)+_0x3addcb(0x167)+_0x3addcb(0x1af)+'dırılamadı'+'.','OCVPf':function(_0x5d9bd4,_0x525e65){return _0x5d9bd4===_0x525e65;},'GLYHq':_0x3addcb(0x15d),'eBpdx':_0x3addcb(0x16c)+_0x3addcb(0x1a2)+'\x20Aşımına\x20U'+_0x3addcb(0x1c8)+_0x3addcb(0x197),'aPruh':_0x3addcb(0x1ca)+'D\x20EYLEMİ\x20B'+'AŞARISIZ\x20🚨','OisXR':function(_0x1a557d,_0x2c9c17){return _0x1a557d/_0x2c9c17;},'nmLfT':function(_0x3b2ab2,_0xccb339){return _0x3b2ab2!==_0xccb339;},'zascj':'kMytb','plFYK':'kick','IcLxM':_0x3addcb(0x1b2),'dhbbN':'timeout','TKvpa':function(_0x429fb5,_0x1e836f){return _0x429fb5*_0x1e836f;},'AmTPa':function(_0x127dda,_0x3405cd){return _0x127dda(_0x3405cd);},'YXLjw':_0x3addcb(0x1a0)+'onLogger.j'+'s','pPItN':function(_0x5a617a,_0x405821){return _0x5a617a!==_0x405821;},'rJRjt':_0x3addcb(0x153),'USWEE':_0x3addcb(0x1b4),'pUaCV':_0x3addcb(0x17e),'MYeaw':_0x3addcb(0x199),'vxuDW':_0x3addcb(0x1ca)+_0x3addcb(0x161)+'🚨','NiuKG':'Detaylar','LYCXQ':_0x3addcb(0x198)+'halesi'};_0x4497f0['on'](Events[_0x3addcb(0x183)+_0x3addcb(0x18c)],async _0x4c7a43=>{const _0x486458=_0x3addcb,_0x3bf518={};_0x3bf518[_0x486458(0x1b7)]=_0xb4a432[_0x486458(0x1bc)];const _0x2d9805=_0x3bf518;if(_0x4c7a43[_0x486458(0x1ad)][_0x486458(0x17c)]||!_0x4c7a43[_0x486458(0x176)])return;const _0x5b238c=_0x4e1bb8[_0x4c7a43['guild']['id']]?.[_0x486458(0x175)],_0x5314b0=_0x4e1bb8[_0x4c7a43[_0x486458(0x176)]['id']]?.[_0x486458(0x186)];if(!_0x5b238c||!_0x5b238c[_0x486458(0x15e)])return;const _0x245fe5=_0x4c7a43[_0x486458(0x176)]['id']+'-'+_0x4c7a43[_0x486458(0x1ad)]['id'],_0x4dc085=Date[_0x486458(0x16f)](),_0x4c5736=_0x5b238c['timeInterv'+'al']||-0x67d+0x602*0x1+0x15b*0x9,_0x48818a=_0x5b238c['messageLim'+'it']||0x3*-0xb07+-0xe42+0x2f5c,_0x18372e=userMessages[_0x486458(0x1a7)](_0x245fe5)||[],_0x16d9c9=_0x18372e[_0x486458(0x1c4)](_0x3c4307=>_0x4dc085-_0x3c4307<_0x4c5736);_0x16d9c9[_0x486458(0x193)](_0x4dc085),userMessages[_0x486458(0x17b)](_0x245fe5,_0x16d9c9);if(_0xb4a432[_0x486458(0x15f)](_0x16d9c9[_0x486458(0x168)],_0x48818a)){const _0x13b029=_0x4c7a43['member'];if(!_0x13b029||!_0x13b029[_0x486458(0x187)+'e']){if(_0x5314b0&&_0x5314b0[_0x486458(0x15e)]&&_0x5314b0['logChannel'+'Id']){const _0x2af29e=await _0x4497f0['channels']['fetch'](_0x5314b0['logChannel'+'Id'])[_0x486458(0x1b5)](()=>null);if(_0x2af29e){let _0x42cb13=_0xb4a432[_0x486458(0x15b)];if(!_0x13b029)_0x42cb13=_0x486458(0x170)+_0x486458(0x1d2)+_0x486458(0x18a)+_0x486458(0x189)+_0x486458(0x195)+_0x486458(0x1d1);else{if(_0x13b029[_0x486458(0x1ab)]['id']===_0x4c7a43[_0x486458(0x176)][_0x486458(0x16b)])_0xb4a432['OCVPf'](_0xb4a432[_0x486458(0x19a)],_0xb4a432['GLYHq'])?_0x42cb13=_0xb4a432[_0x486458(0x1bc)]:(_0x4c88bc[_0x486458(0x1cb)](_0x486458(0x163)+'eylemi\x20ger'+_0x486458(0x182)+'lemedi\x20('+_0x9b3df4[_0x486458(0x1ab)][_0x486458(0x16d)]+'):',_0x47c3dc),_0x15b16e=_0x486458(0x17d)+_0x486458(0x17f)+_0x486458(0x1c7)+_0x263d1c['user']['tag']+(_0x486458(0x1c0)+_0x486458(0x1a9)+_0x486458(0x1a6)+'uştu.'));else!_0x13b029['manageable']?_0x42cb13=_0xb4a432[_0x486458(0x194)]:_0x42cb13=_0xb4a432[_0x486458(0x166)];}const _0x3bf806={};_0x3bf806[_0x486458(0x15c)]=_0x486458(0x1ba),_0x3bf806[_0x486458(0x1c2)]=_0x42cb13,_0x3bf806[_0x486458(0x1c5)]=![];const _0x3a3adc=new EmbedBuilder()[_0x486458(0x16a)](0x1*-0x19984fb+-0xf9e4cc+-0x65ac4f*-0x9)[_0x486458(0x1a5)](_0xb4a432[_0x486458(0x19f)])[_0x486458(0x159)+_0x486458(0x18d)]('Kullanıcı\x20'+'**'+_0x4c7a43['author'][_0x486458(0x16d)]+(_0x486458(0x158)+'ltresini\x20t'+_0x486458(0x172)+'ncak\x20cezal'+_0x486458(0x1ae)+_0x486458(0x1bb)))['addFields'](_0x3bf806)[_0x486458(0x188)+'mp'](),_0x402b4d={};_0x402b4d[_0x486458(0x181)]=[_0x3a3adc],await _0x2af29e[_0x486458(0x1b1)](_0x402b4d);}}userMessages[_0x486458(0x16e)](_0x245fe5);return;}let _0x36c0c2=_0x486458(0x1ce)+'Eylem:\x20**'+_0x5b238c[_0x486458(0x18b)]['toUpperCas'+'e']()+'**';const _0x5c4c92=_0x486458(0x184)+_0x486458(0x1a3)+_0x486458(0x19d)+'\x20('+_0x48818a+_0x486458(0x1a1)+_0xb4a432[_0x486458(0x157)](_0x4c5736,-0x828+0x1472+-0x862)+'s).';try{if(_0xb4a432[_0x486458(0x180)](_0xb4a432[_0x486458(0x1be)],'kMytb'))_0x41553f=_0xb4a432['HWvEp'];else{switch(_0x5b238c[_0x486458(0x18b)]){case _0xb4a432[_0x486458(0x171)]:await _0x13b029[_0x486458(0x1cc)](_0x5c4c92);break;case _0xb4a432['IcLxM']:const _0x1312d1={};_0x1312d1['reason']=_0x5c4c92,await _0x13b029['ban'](_0x1312d1);break;case _0xb4a432[_0x486458(0x162)]:default:await _0x13b029[_0x486458(0x190)](_0xb4a432[_0x486458(0x1cf)]((-0x21*0x63+-0x4*0xc7+0xfe9)*(-0x1e8d+0x3*0x6c8+-0x129*-0x9),0x1*-0x2667+0x4f*-0x3d+0x272*0x19),_0x5c4c92);break;}const _0x368d29=_0xb4a432['AmTPa'](require,_0xb4a432['YXLjw']);_0x368d29[_0x486458(0x1b0)](_0x4c7a43[_0x486458(0x176)]['id'],_0x5b238c['action'][_0x486458(0x177)+'e'](),_0x13b029[_0x486458(0x1ab)],_0x4497f0[_0x486458(0x1ab)],_0x5c4c92);}}catch(_0x2f82c1){_0xb4a432[_0x486458(0x185)](_0xb4a432[_0x486458(0x1bf)],_0xb4a432[_0x486458(0x1b3)])?(console[_0x486458(0x1cb)](_0x486458(0x163)+_0x486458(0x164)+_0x486458(0x182)+_0x486458(0x174)+_0x13b029[_0x486458(0x1ab)][_0x486458(0x16d)]+'):',_0x2f82c1),_0x36c0c2=_0x486458(0x17d)+_0x486458(0x17f)+_0x486458(0x1c7)+_0x13b029['user'][_0x486458(0x16d)]+('\x20cezalandı'+'rılırken\x20b'+_0x486458(0x1a6)+'uştu.')):_0xeb3e8c=_0xb4a432[_0x486458(0x196)];}userMessages[_0x486458(0x16e)](_0x245fe5);if(_0x5314b0&&_0x5314b0['enabled']&&_0x5314b0[_0x486458(0x165)+'Id']){if(_0xb4a432[_0x486458(0x1d0)]!==_0xb4a432[_0x486458(0x19c)]){const _0x2528f0=await _0x4497f0['channels'][_0x486458(0x1a4)](_0x5314b0[_0x486458(0x165)+'Id'])[_0x486458(0x1b5)](()=>null);if(_0x2528f0){const _0x23242f=new EmbedBuilder()['setColor'](0x1*-0x1489caa+-0x9*0x2d4c9a+0x3df4e14)[_0x486458(0x1a5)](_0xb4a432[_0x486458(0x156)])[_0x486458(0x159)+_0x486458(0x18d)](_0x486458(0x192)+'**'+_0x4c7a43[_0x486458(0x1ad)][_0x486458(0x16d)]+(_0x486458(0x179)+'id\x20için\x20iş'+_0x486458(0x191)))['addFields']({'name':_0x486458(0x1b9),'value':_0x4c7a43[_0x486458(0x1ad)][_0x486458(0x16d)]+'\x20('+_0x4c7a43[_0x486458(0x1ad)]['id']+')','inline':![]},{'name':_0xb4a432['NiuKG'],'value':_0xb4a432[_0x486458(0x157)](_0x4c5736,0x58*-0xa+-0x268c*0x1+0x2de4)+_0x486458(0x17a)+_0x48818a+(_0x486458(0x1a8)+_0x486458(0x173)+_0x486458(0x1c6)),'inline':![]},{'name':_0xb4a432[_0x486458(0x1bd)],'value':_0x36c0c2,'inline':![]})['setTimesta'+'mp'](),_0x519c28={};_0x519c28[_0x486458(0x181)]=[_0x23242f],await _0x2528f0[_0x486458(0x1b1)](_0x519c28);}}else _0x170013=_0x2d9805[_0x486458(0x1b7)];}}});}};
+const { EmbedBuilder } = require('discord.js');
+
+// Bu map, kullanıcıların mesaj zaman damgalarını saklayacaktır.
+// Anahtar: `${sunucu.id}-${kullanıcı.id}`, Değer: [zamanDamgası1, zamanDamgası2, ...]
+const userMessages = new Map();
+
+// YENİ: Bellek temizliği (Garbage Collection)
+// Her 10 dakikada bir çalışır ve 5 dakikadan eski verileri temizler.
+setInterval(() => {
+    const now = Date.now();
+    for (const [key, timestamps] of userMessages.entries()) {
+        if (timestamps.length === 0 || now - timestamps[timestamps.length - 1] > 300000) { // 5 dakika
+            userMessages.delete(key);
+        }
+    }
+}, 600000); // 10 dakika
+
+module.exports = {
+    name: 'antiRaid',
+    getSettings: () => ({
+        enabled: false,
+        messageLimit: 5,      // Örn: 5 mesaj
+        timeInterval: 3000,   // Örn: 3 saniye içinde (3000ms)
+        action: 'timeout',    // 'timeout', 'kick', 'ban'
+    }),
+    // DÜZELTME: init yerine onMessage kullanılarak bot.js mimarisine uyumlu hale getirildi.
+    onMessage: async (client, message, serverSettings) => {
+        if (message.author.bot || !message.guild) return;
+
+        const settings = serverSettings[message.guild.id]?.antiRaid;
+        const modSettings = serverSettings[message.guild.id]?.moderation;
+
+        if (!settings || !settings.enabled) return;
+
+        const key = `${message.guild.id}-${message.author.id}`;
+        const now = Date.now();
+        const time = settings.timeInterval || 3000;
+        const limit = settings.messageLimit || 5;
+
+        // 1. Önceki zaman damgalarını al ve süresi geçenleri temizle.
+        const previousTimestamps = userMessages.get(key) || [];
+        const recentTimestamps = previousTimestamps.filter(ts => now - ts < time);
+
+        // 2. Yeni mesajın zaman damgasını ekle.
+        recentTimestamps.push(now);
+
+        // 3. Güncellenmiş listeyi tekrar map'e kaydet.
+        userMessages.set(key, recentTimestamps);
+
+        // 4. Kullanıcının mesaj limitini aşıp aşmadığını kontrol et.
+        if (recentTimestamps.length > limit) {
+            const member = message.member;
+
+            // Üyenin cezalandırılabilir olup olmadığını kontrol et.
+            if (!member || !member.moderatable) {
+                // Başarısızlık nedenini log kanalına bildir.
+                if (modSettings && modSettings.enabled && modSettings.logChannelId) {
+                    const logChannel = await client.channels.fetch(modSettings.logChannelId).catch(() => null);
+                    if (logChannel) {
+                        let reason = "Bilinmeyen bir nedenle cezalandırılamadı.";
+                        if (!member) {
+                            reason = "Üye detayları alınamadı.";
+                        } else if (member.user.id === message.guild.ownerId) {
+                            reason = "Sunucu sahibi cezalandırılamaz.";
+                        } else if (!member.manageable) {
+                            reason = "Botun rolü bu üyeyi yönetmek için yeterince yüksek değil.";
+                        } else {
+                            reason = "Botun 'Üyeleri Zaman Aşımına Uğrat' izni eksik.";
+                        }
+
+                        const embed = new EmbedBuilder()
+                            .setColor(0xFFA500) // Turuncu (Uyarı)
+                            .setTitle('🚨 ANTI-RAID EYLEMİ BAŞARISIZ 🚨')
+                            .setDescription(`Kullanıcı **${message.author.tag}** spam filtresini tetikledi ancak cezalandırılamadı.`)
+                            .addFields({ name: 'Sebep', value: reason, inline: false })
+                            .setTimestamp();
+                        await logChannel.send({ embeds: [embed] });
+                    }
+                }
+                // Log kanalını spamlememek için kullanıcının mesaj geçmişini temizle
+                userMessages.delete(key);
+                return;
+            }
+
+            let punishmentLog = `Uygulanan Eylem: **${settings.action.toUpperCase()}**`;
+            const reason = `Anti-Raid: Mesaj limiti aşıldı (${limit} mesaj / ${time / 1000}s).`;
+
+            try {
+                switch (settings.action) {
+                    case 'kick':
+                        await member.kick(reason);
+                        break;
+                    case 'ban':
+                        await member.ban({ reason });
+                        break;
+                    case 'timeout':
+                    default:
+                        await member.timeout(10 * 60 * 1000, reason);
+                        break;
+                }
+                // Moderasyon eylemini doğrudan logger modülüne kaydet
+                const moderationLogger = require('./moderationLogger.js');
+                moderationLogger.addLog(message.guild.id, settings.action.toUpperCase(), member.user, client.user, reason);
+
+            } catch (error) {
+                console.error(`Anti-raid eylemi gerçekleştirilemedi (${member.user.tag}):`, error);
+                punishmentLog = `⚠️ **Eylem Başarısız:** ${member.user.tag} cezalandırılırken bir hata oluştu.`;
+            }
+
+            // Tekrar tetiklenmesini önlemek için kullanıcının mesaj geçmişini temizle
+            userMessages.delete(key);
+
+            // Moderasyon kanalı varsa eylemi logla
+            if (modSettings && modSettings.enabled && modSettings.logChannelId) {
+                const logChannel = await client.channels.fetch(modSettings.logChannelId).catch(() => null);
+                if (logChannel) {
+                    const embed = new EmbedBuilder()
+                        .setColor(0xFF0000) // Kırmızı
+                        .setTitle('🚨 ANTI-RAID UYARISI 🚨')
+                        .setDescription(`Kullanıcı **${message.author.tag}** spam/raid için işaretlendi.`)
+                        .addFields(
+                            { name: 'Kullanıcı', value: `${message.author.tag} (${message.author.id})`, inline: false },
+                            { name: 'Detaylar', value: `${time / 1000} saniyede ${limit}'den fazla mesaj gönderdi.`, inline: false },
+                            { name: 'Botun Müdahalesi', value: punishmentLog, inline: false }
+                        )
+                        .setTimestamp();
+                    await logChannel.send({ embeds: [embed] });
+                }
+            }
+        }
+    }
+};

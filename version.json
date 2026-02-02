@@ -1,5 +1,5 @@
 {
-  "version": "0.31",
-  "notes": "Müzik sistemi için büyük güncelleme: Çalma listesi kaydetme, sürükle-bırak ile şarkı sıralama, şarkı sözleri, gelişmiş arama ve /join komutu eklendi. Kayıt sistemi daha fazla rol ekleme özelliğiyle yükseltildi. Ayrıca kritik güvenlik açıkları kapatıldı ve Embed oluşturucudaki hatalar giderildi.",
+  "version": "0.32",
+  "notes": "<strong>v0.32 Yenilikleri:</strong><br>• <strong>Sistem:</strong> Bot başlatılırken eksik modülleri otomatik tespit edip yükleyen 'Otomatik Onarım' mekanizması eklendi.<br>• <strong>Panel:</strong> Güncelleme notları sayfasına botu tek tıkla yeniden başlatma butonu eklendi.<br>• <strong>Performans:</strong> Anti-Raid modülünde bellek temizliği (Garbage Collection) yapılarak RAM kullanımı optimize edildi.<br>• <strong>Düzeltme:</strong> Anti-Spam modülündeki gereksiz hata logları giderildi.<br><br><strong>v0.31 Özeti:</strong> Müzik sistemi (Playlist, Lyrics, Sürükle-Bırak), Kayıt sistemi güncellemeleri ve güvenlik yamaları.",
   "downloadUrl": "https://github.com/EmirCobanOfficial/WEB-LISANS-2025-2027/archive/refs/heads/main.zip"
 }

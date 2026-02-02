@@ -27,14 +27,23 @@ export async function initUpdateNotesPage() {
         `;
 
         // Yeniden başlatma butonu dinleyicisi
-        document.getElementById('restart-bot-btn').addEventListener('click', async () => {
+        const restartBtn = document.getElementById('restart-bot-btn');
+        restartBtn.addEventListener('click', async () => {
             const confirmed = await showConfirmModal('Botu Yeniden Başlat', 'Botu yeniden başlatmak istediğinize emin misiniz? Bu işlem sırasında panel kısa bir süre erişilemez olabilir.');
             if (confirmed) {
+                // Butonu devre dışı bırak ve yükleniyor göster
+                restartBtn.disabled = true;
+                restartBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Başlatılıyor...';
+
                 try {
                     const result = await api.restartBot();
                     showToast(result.message, 'success');
+                    // Başarılı olursa buton kapalı kalsın, çünkü bot kapanıyor.
                 } catch (error) {
                     showToast(`Hata: ${error.message}`, 'error');
+                    // Hata durumunda butonu eski haline getir
+                    restartBtn.disabled = false;
+                    restartBtn.innerHTML = '<i class="fa-solid fa-power-off"></i> Botu Yeniden Başlat';
                 }
             }
         });
