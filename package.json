@@ -7,28 +7,32 @@
     "start": "node bot.js",
     "dev": "npm run build && node dist/bot.js",
     "build": "rimraf dist && javascript-obfuscator bot.js --config obfuscator.json --output dist/bot.js && javascript-obfuscator setup.js --config obfuscator.json --output dist/setup.js && javascript-obfuscator routes --config obfuscator.json --output dist/routes && javascript-obfuscator modules --config obfuscator.json --output dist/modules && javascript-obfuscator commands --config obfuscator.json --output dist/commands && cpx \"./{public,db}/**/*.{json,ejs,html,css,js}\" dist && cpx \"./*.json\" dist && cpx \"./KURULUM.md\" dist",
-    "setup": "node setup.js"
+    "setup": "node setup.js",
+    "update:check": "ncu",
+    "update:interactive": "ncu -i",
+    "update:do": "ncu -u && npm install"
   },
   "dependencies": {
     "@discord-player/extractor": "^7.1.0",
-    "@discordjs/voice": "^0.16.1",
-    "@snazzah/davey": "^0.1.6",
+    "@discordjs/voice": "^0.19.0",
+    "@snazzah/davey": "^0.1.9",
     "adm-zip": "^0.5.16",
-    "canvas": "^3.2.0",
+    "canvas": "^3.2.1",
     "crypto": "^1.0.1",
     "discord-giveaways": "^6.0.1",
     "discord-player": "^7.1.0",
-    "discord.js": "^14.22.1",
-    "dotenv": "^17.2.3",
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.2.4",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "express-session": "^1.18.0",
+    "express-rate-limit": "^8.2.1",
+    "express-session": "^1.19.0",
     "ffmpeg-static": "^5.3.0",
-    "libsodium-wrappers": "^0.7.15",
+    "libsodium-wrappers": "^0.8.2",
     "ms": "^2.1.3",
     "multer": "^2.0.2",
     "node-fetch": "^2.7.0",
-    "opusscript": "^0.0.8",
+    "opusscript": "^0.1.1",
     "passport": "^0.7.0",
     "passport-discord": "^0.1.4",
     "play-dl": "^1.9.7",
@@ -38,6 +42,7 @@
   "devDependencies": {
     "cpx": "^1.5.0",
     "javascript-obfuscator": "^4.1.1",
-    "rimraf": "^5.0.10"
+    "npm-check-updates": "^19.3.2",
+    "rimraf": "^6.1.2"
   }
 }
