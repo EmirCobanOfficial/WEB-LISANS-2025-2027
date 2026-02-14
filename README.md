@@ -85,6 +85,9 @@ APP_URL=http://localhost:3000
 LICENSE_KEY=BURAYA_SIZE_VERİLEN_LİSANS_ANAHTARINI_YAPISTIRIN
 LICENSE_API_ENDPOINT=GELİŞTİRİCİNİN_LİSANS_DOGRULAMA_API_ADRESİ
 
+GITHUB_TOKEN=github_...  (güncellemeleri otomatik almanız için gerekli kısıtlama takılmamak için) github token yazınız.
+YOUTUBE_COOKIE_PATH=./db/cookies.txt (kurumda bahsettiğim eklenti indirin ve dosyayı db klasorunu atınız)
+
 # Port numarasını değiştirmek isterseniz bu satırı kullanabilirsiniz (isteğe bağlı).
 # PORT=3000
 ```
