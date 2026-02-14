@@ -1,5 +1,5 @@
 {
-  "version": "0.33",
+  "version": "0.34",
   "notes": "<strong>v0.33 Yenilikleri:</strong><br>• <strong>Bilet Sistemi:</strong> Bilet kapatma sürecinde yaşanan 'Bilinmeyen Mesaj' (Unknown Message) ve 'Cannot read properties of null' hataları giderilerek sistemin kararlılığı artırıldı.<br>• <strong>Koruma (Guard) Sistemi:</strong> Yetersiz yetki (Missing Permissions) durumunda konsola yazdırılan hata mesajları, sorunun çözümünü içerecek şekilde daha açıklayıcı hale getirildi.<br><br><strong>v0.32 Özeti:</strong> Otomatik onarım, panelden botu yeniden başlatma ve performans iyileştirmeleri.",
   "downloadUrl": "https://github.com/EmirCobanOfficial/WEB-LISANS-2025-2027/archive/refs/heads/main.zip"
 }
