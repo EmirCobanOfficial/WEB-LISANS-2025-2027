@@ -1627,191 +1627,117 @@ input:checked + .slider:before {
 }
 
 /* =================================================================
-   MÜZİK ÇALAR STİLLERİ (YENİ)
+   MÜZİK LİSTESİ (ARAMA & SIRA) STİLLERİ (YENİ)
    ================================================================= */
 
-.music-player-card {
-  display: flex;
-  gap: 30px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  border-radius: 20px;
-  padding: 30px;
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-lg);
-  align-items: center;
-}
-
-.music-thumbnail {
-  width: 180px;
-  height: 180px;
-  border-radius: 16px;
-  object-fit: cover;
-  flex-shrink: 0;
-  box-shadow: var(--shadow-md);
-}
-
-.music-details {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.music-title {
-  font-size: 1.8em;
-  font-weight: 700;
-  color: white;
-  margin: 0 0 5px 0;
-  line-height: 1.2;
-}
-
-.music-author {
-  font-size: 1.1em;
-  color: var(--text-secondary);
-  margin: 0 0 20px 0;
-  font-weight: 500;
-}
-
-.music-progress-bar-container {
-  width: 100%;
-  height: 6px;
-  background: var(--bg-tertiary);
-  border-radius: 3px;
-  overflow: hidden;
-  margin-bottom: 8px;
-  cursor: pointer; /* YENİ: Tıklanabilir imleç */
-}
-
-.music-progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, var(--brand-color), var(--accent-purple));
-  border-radius: 3px;
-}
-
-.music-time {
-  font-size: 0.85em;
-  color: var(--text-secondary);
-  font-weight: 500;
-  margin-bottom: 15px;
-}
-
-.music-requested-by {
-  font-size: 0.9em;
-  color: var(--text-secondary);
-  margin: 0;
-}
-
-.music-controls {
+.music-list-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 15px;
-}
-
-.music-action-buttons {
-  display: flex;
   gap: 15px;
-  align-items: center;
+  padding: 12px 15px;
+  background: var(--glass-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
-.music-volume-control {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-grow: 1;
-  max-width: 180px;
-  margin-left: 30px;
+.music-list-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-hover);
+  transform: translateX(3px);
 }
 
-.music-volume-control i {
-  font-size: 1.1em;
-  color: var(--text-secondary);
-  transition: color 0.2s;
+.music-list-item.search-result {
+  cursor: default;
 }
 
-.volume-slider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 6px;
-  background: var(--bg-tertiary);
-  border-radius: 3px;
-  outline: none;
-  opacity: 0.8;
-  transition: opacity .2s;
-  cursor: pointer;
+.music-list-item.queue-item {
+  cursor: grab;
 }
 
-.volume-slider:hover {
-  opacity: 1;
+.music-list-item.queue-item:active {
+  cursor: grabbing;
 }
 
-/* Chrome, Safari, Opera, and Edge */
-.volume-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  background: white;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.2s;
-}
-
-.volume-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.1);
-}
-
-/* Firefox */
-.volume-slider::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  background: white;
-  border-radius: 50%;
-  cursor: pointer;
-  border: none;
-  box-shadow: var(--shadow-sm);
-}
-
-.music-control-btn {
+.music-list-thumbnail {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.music-list-rank {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--text-secondary);
+  width: 40px;
+  text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
 }
 
-.music-control-btn:hover {
-  background: var(--brand-color);
-  transform: scale(1.1);
+.music-list-rank .fa-grip-lines {
+  color: var(--text-muted);
 }
 
-/* YENİ: Aktif buton stili (Loop vb. için) */
-.music-control-btn.active {
-  color: var(--brand-color);
-  background: rgba(88, 101, 242, 0.2);
+.music-list-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 0; /* Prevent text overflow issues */
 }
 
-.music-control-btn.danger:hover {
-  background: var(--red);
+.music-list-title {
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-@media (max-width: 768px) {
-  .music-player-card {
-    flex-direction: column;
-    text-align: center;
-  }
+.music-list-author {
+  font-size: 0.85em;
+  color: var(--text-secondary);
 }
 
+.music-list-extra {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
+}
+
+.music-list-duration {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: var(--text-secondary);
+  min-width: 50px;
+  text-align: right;
+}
+
+.music-list-item .action-btn.play-from-search {
+  padding: 8px 10px;
+  font-size: 0.9em;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid transparent;
+  color: var(--text-primary);
+}
+
+.music-list-item .action-btn.play-from-search:hover {
+  background: var(--green);
+  border-color: var(--green);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+}
+
+#music-search-results-container h3 {
+    font-size: 1.2em;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
 /* =================================================================
    GİRİŞ YAPANLAR SAYFASI STİLLERİ (YENİ)
    ================================================================= */

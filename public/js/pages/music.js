@@ -7,7 +7,6 @@ let progressInterval = null;
 let isDraggingQueue = false; // YENİ: Sürükleme durumu
 let queueSortable = null; // YENİ: Sortable instance
 
-
 function renderPlayer(data) {
     const container = document.getElementById('music-player-container');
     if (!container) return;
@@ -23,55 +22,59 @@ function renderPlayer(data) {
     }
 
     const track = data.currentTrack;
-    // YENİ: İlerleme çubuğu ve zamanlayıcı için başlangıç değerleri
     const initialProgressMs = track.progress.current;
     const durationMs = track.progress.end || 1; // 0'a bölünmeyi engelle
     const progressPercent = (initialProgressMs / durationMs) * 100;
 
-    // YENİ: Tekrar modu durumu
     const loopModes = ['Kapalı', 'Şarkı', 'Liste'];
     const loopClass = data.repeatMode > 0 ? 'active' : '';
     const loopIcon = data.repeatMode === 1 ? 'fa-repeat' : (data.repeatMode === 2 ? 'fa-rotate' : 'fa-repeat');
 
     container.innerHTML = `
-        <div class="music-player-card">
+        <div class="music-player-card modern">
             <img src="${track.thumbnail}" alt="Albüm Kapağı" class="music-thumbnail">
-            <div class="music-details">
-                <h3 class="music-title">${track.title}</h3>
-                <p class="music-author">${track.author}</p>
-                <div class="music-progress-bar-container" data-duration="${durationMs}">
-                    <div id="music-progress-bar" class="music-progress-bar" style="width: ${progressPercent}%"></div>
+            <div class="music-player-body">
+                <div class="music-details">
+                    <h3 class="music-title">${track.title}</h3>
+                    <p class="music-author">${track.author}</p>
+                    <p class="music-requested-by">İsteyen: ${track.requestedBy || 'Bilinmiyor'}</p>
                 </div>
-                <div class="music-time">
-                    <span id="music-current-time">${formatTime(initialProgressMs)}</span> / <span>${track.duration}</span>
+
+                <div class="music-playback-controls">
+                    <div class="music-action-buttons">
+                        <button class="music-control-btn small" data-action="shuffle" title="Karıştır">
+                            <i class="fa-solid fa-shuffle"></i>
+                        </button>
+                        <button class="music-control-btn large" data-action="togglePause" title="${data.isPaused ? 'Devam Et' : 'Duraklat'}">
+                            <i class="fa-solid ${data.isPaused ? 'fa-play' : 'fa-pause'}"></i>
+                        </button>
+                        <button class="music-control-btn" data-action="skip" title="Geç">
+                            <i class="fa-solid fa-forward-step"></i>
+                        </button>
+                        <button class="music-control-btn small ${loopClass}" data-action="loop" title="Tekrarla: ${loopModes[data.repeatMode] || 'Kapalı'}">
+                            <i class="fa-solid ${loopIcon}"></i>
+                        </button>
+                    </div>
+                    <div class="music-progress-section">
+                        <span id="music-current-time">${formatTime(initialProgressMs)}</span>
+                        <div class="music-progress-bar-container" data-duration="${durationMs}">
+                            <div id="music-progress-bar" class="music-progress-bar" style="width: ${progressPercent}%"></div>
+                        </div>
+                        <span id="music-total-time">${track.duration}</span>
+                    </div>
                 </div>
-                <p class="music-requested-by">İsteyen: ${track.requestedBy}</p>
-            </div>
-            <div class="music-controls">
-               <div class="music-action-buttons">
-                    <button class="music-control-btn" data-action="shuffle" title="Karıştır">
-                        <i class="fa-solid fa-shuffle"></i>
-                    </button>
-                    <button class="music-control-btn" data-action="togglePause" title="${data.isPaused ? 'Devam Et' : 'Duraklat'}">
-                        <i class="fa-solid ${data.isPaused ? 'fa-play' : 'fa-pause'}"></i>
-                    </button>
-                    <button class="music-control-btn" data-action="skip" title="Geç">
-                        <i class="fa-solid fa-forward-step"></i>
-                    </button>
-                    <button class="music-control-btn ${loopClass}" data-action="loop" title="Tekrarla: ${loopModes[data.repeatMode] || 'Kapalı'}">
-                        <i class="fa-solid ${loopIcon}"></i>
-                    </button>
-                    <button class="music-control-btn" id="show-lyrics-btn" title="Şarkı Sözleri">
+
+                <div class="music-extra-controls">
+                    <button class="music-control-btn small" id="show-lyrics-btn" title="Şarkı Sözleri">
                         <i class="fa-solid fa-file-lines"></i>
                     </button>
-                    <button class="music-control-btn danger" data-action="stop" title="Durdur">
+                    <div class="music-volume-control">
+                        <i id="volume-icon" class="fa-solid fa-volume-high"></i>
+                        <input type="range" id="music-volume-slider" min="0" max="150" value="${data.volume}" class="volume-slider" title="Ses Seviyesi">
+                    </div>
+                    <button class="music-control-btn small danger" data-action="stop" title="Durdur">
                         <i class="fa-solid fa-stop"></i>
                     </button>
-                </div>
-                <div class="music-volume-control">
-                    <i id="volume-icon" class="fa-solid fa-volume-high"></i>
-                    <input type="range" id="music-volume-slider" min="0" max="150" value="${data.volume}" class="volume-slider" title="Ses Seviyesi">
-                    <span id="music-volume-text" style="min-width: 40px; text-align: right; font-size: 0.9em; color: var(--text-secondary);">%${data.volume}</span>
                 </div>
             </div>
         </div>
@@ -87,17 +90,18 @@ function renderSearchResults(tracks) {
     if (!container) return;
 
     container.style.display = 'block';
-    container.innerHTML = tracks.map(track => `
-        <div class="leaderboard-entry" style="padding: 15px 20px; cursor: pointer;" data-track-url="${track.url}">
-            <img src="${track.thumbnail}" alt="thumbnail" style="width: 60px; height: 60px; border-radius: 8px; margin-right: 15px;">
-            <div class="leaderboard-user" style="flex-grow: 1;">
-                <div class="leaderboard-user-info">
-                    <span class="leaderboard-user-tag">${track.title}</span>
-                    <span class="list-item-description">${track.author}</span>
-                </div>
+    container.innerHTML = `<h3>Arama Sonuçları</h3>` + tracks.map(track => `
+        <div class="music-list-item search-result" data-track-url="${track.url}">
+            <img src="${track.thumbnail}" alt="thumbnail" class="music-list-thumbnail">
+            <div class="music-list-details">
+                <span class="music-list-title">${track.title}</span>
+                <span class="music-list-author">${track.author}</span>
             </div>
-            <div class="leaderboard-stats" style="min-width: auto;">
-                <span class="leaderboard-level"><span>Süre</span>${track.duration}</span>
+            <div class="music-list-extra">
+                <span class="music-list-duration">${track.duration}</span>
+                <button class="action-btn play-from-search" title="Sıraya Ekle">
+                    <i class="fa-solid fa-play"></i>
+                </button>
             </div>
         </div>
     `).join('');
@@ -122,17 +126,17 @@ function renderQueue(tracks) {
     }
 
     container.innerHTML = tracks.map((track, index) => `
-        <div class="leaderboard-entry" style="padding: 15px 20px; cursor: grab;" data-index="${index}">
-            <span class="leaderboard-rank"><i class="fa-solid fa-grip-lines" style="color: var(--text-secondary); margin-right: 10px;"></i>${index + 1}</span>
-            <div class="leaderboard-user" style="flex-grow: 1;">
-                <div class="leaderboard-user-info">
-                    <span class="leaderboard-user-tag">${track.title}</span>
-                    <span class="list-item-description">${track.author}</span>
-                </div>
+        <div class="music-list-item queue-item" data-index="${index}">
+            <span class="music-list-rank">
+                <i class="fa-solid fa-grip-lines"></i>
+                ${index + 1}
+            </span>
+            <div class="music-list-details">
+                <span class="music-list-title">${track.title}</span>
+                <span class="music-list-author">İsteyen: ${track.requestedBy || 'Bilinmiyor'}</span>
             </div>
-            <div class="leaderboard-stats" style="min-width: auto; gap: 20px;">
-                <span class="leaderboard-xp"><span>İsteyen</span>${track.requestedBy}</span>
-                <span class="leaderboard-level"><span>Süre</span>${track.duration}</span>
+            <div class="music-list-extra">
+                <span class="music-list-duration">${track.duration}</span>
             </div>
         </div>
     `).join('');
@@ -282,7 +286,7 @@ export function initMusicPlayerPage() {
     // SOCKET.IO ENTEGRASYONU
     // Socket.io scriptinin sayfada yüklü olduğunu varsayıyoruz
     if (typeof io !== 'undefined') {
-        const socket = io();
+        const socket = io(APP_URL); // DÜZELTME: Sunucu adresini belirt
         socket.emit('joinMusicRoom', state.selectedGuildId);
 
         socket.on('musicUpdate', (data) => {
@@ -503,9 +507,12 @@ export function initMusicPlayerPage() {
 
     // YENİ: Arama sonuçlarından birine tıklama
     searchResultsContainer.addEventListener('click', async (e) => {
-        const trackElement = e.target.closest('.leaderboard-entry');
-        if (!trackElement || !trackElement.dataset.trackUrl) return;
+        const playButton = e.target.closest('.play-from-search');
+        if (!playButton) return;
 
+        const trackElement = playButton.closest('.music-list-item');
+        if (!trackElement || !trackElement.dataset.trackUrl) return;
+        
         const url = trackElement.dataset.trackUrl;
         showToast('Şarkı sıraya ekleniyor...', 'info');
         try {

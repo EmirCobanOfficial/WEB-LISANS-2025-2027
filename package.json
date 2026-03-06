@@ -1,12 +1,12 @@
 {
   "name": "discord-bot-dashboard",
-  "version": "0.34",
+  "version": "0.35",
   "description": "A modular Discord bot with a web control panel.",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js",
-    "dev": "npm run build && node dist/bot.js",
-    "build": "rimraf dist && javascript-obfuscator bot.js --config obfuscator.json --output dist/bot.js && javascript-obfuscator setup.js --config obfuscator.json --output dist/setup.js && javascript-obfuscator routes --config obfuscator.json --output dist/routes && javascript-obfuscator modules --config obfuscator.json --output dist/modules && javascript-obfuscator commands --config obfuscator.json --output dist/commands && cpx \"./{public,db}/**/*.{json,ejs,html,css,js}\" dist && cpx \"./*.json\" dist && cpx \"./KURULUM.md\" dist",
+    "start": "node index.js",
+    "dev": "npm run build && node dist/index.js",
+    "build": "rimraf dist && javascript-obfuscator index.js --config obfuscator.json --output dist/index.js && javascript-obfuscator bot.js --config obfuscator.json --output dist/bot.js && javascript-obfuscator setup.js --config obfuscator.json --output dist/setup.js && javascript-obfuscator routes --config obfuscator.json --output dist/routes && javascript-obfuscator modules --config obfuscator.json --output dist/modules && javascript-obfuscator commands --config obfuscator.json --output dist/commands && cpx \"./{public,db}/**/*.{json,ejs,html,css,js}\" dist && cpx \"./*.json\" dist && cpx \"./package-lock.json\" dist && cpx \"./ecosystem.config.js\" dist && cpx \"./KURULUM.md\" dist",
     "setup": "node setup.js",
     "update:check": "ncu",
     "update:interactive": "ncu -i",

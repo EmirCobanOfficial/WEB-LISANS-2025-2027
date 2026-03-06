@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bot Control Panel</title>
     <link
-      rel="stylesheet"
+      rel="icon" type="image/x-icon" href="/favicon.ico"
+    />
+    <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -18,6 +20,7 @@
     <!-- DÜZELTME: Sunucu verilerini JavaScript'e aktaran script bloğu -->
     <script>
       const CLIENT_ID = "<%= clientId %>";
+      const APP_URL = "<%= APP_URL %>"; // YENİ: APP_URL'i global değişkene ata
       const USER_ID = "<%= USER_ID %>";
       window.isBotOwner = '<%= isBotOwner %>' === 'true';
     </script>

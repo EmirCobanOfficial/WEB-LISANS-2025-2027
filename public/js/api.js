@@ -10,7 +10,7 @@ async function fetchJSON(url, options = {}) {
         headers['X-CSRF-Token'] = getCsrfToken();
         options.headers = headers;
 
-        const response = await fetch(url, options);
+        const response = await fetch(APP_URL + url, options); // DÜZELTME: APP_URL'i ekle
         if (!response.ok) {
             let data;
             try {
@@ -206,6 +206,12 @@ export const api = {
     }),
     // YENİ: Bot Banner API
     setBotBanner: (formData) => fetch('/api/bot/banner', {
+        method: 'POST',
+        headers: { 'X-CSRF-Token': getCsrfToken() },
+        body: formData,
+    }).then(res => res.json().then(data => { if (!res.ok) throw new Error(data.error); return data; })),
+    // YENİ: Favicon API
+    setFavicon: (formData) => fetch('/api/bot/favicon', {
         method: 'POST',
         headers: { 'X-CSRF-Token': getCsrfToken() },
         body: formData,
