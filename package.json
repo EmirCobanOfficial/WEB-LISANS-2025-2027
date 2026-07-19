@@ -16,7 +16,7 @@
     "@discord-player/extractor": "^7.1.0",
     "@discordjs/voice": "^0.19.0",
     "@snazzah/davey": "^0.1.9",
-    "adm-zip": "^0.5.16",
+    "adm-zip": "^0.6.0",
     "canvas": "^3.2.1",
     "crypto": "^1.0.1",
     "discord-giveaways": "^6.0.1",
